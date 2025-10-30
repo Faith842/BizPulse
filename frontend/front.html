@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="frontstyle.css" />
 </head>
 <body>
+    <div class="cursor"></div>
     <nav class="navbar">
         <div class="logo">BizPulse</div>
         <a href="index.html" class="login-btn">Login</a>
     </nav>
     <section class="hero">
+        <div>
+            <img class="image-gradient" src="gradient.png" alt="gradient">
+            <div class="layer-blur"></div>
+            <spline-viewer id="robot-3d" url="https://prod.spline.design/EGxPnBmenc-JZji6/scene.splinecode"></spline-viewer>
+        </div>
         <h1>Hey! Yes, You.</h1>
         <p>Want to stop wasting hours on business admin?</p>
         <p class="big-text">BizPulse gives you back your time so you can focus on what matters</p>
@@ -41,6 +47,11 @@
         <h2>Ready to get started?</h2>
         <a href="index.html" class="btn-primary">Join Now</a>
     </section>
+
+    <footer>
+        <p>&copy; 2024 BizPulse. All rights reserved.</p>
+    </footer>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.90/build/spline-viewer.js"></script>
     <script src="frontscript.js"></script>
 </body>
 </html>

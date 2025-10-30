@@ -8,18 +8,17 @@
 }
 
 body {
-    background: radial-gradient(circle at center, #1C1C1C, #0E0E0E);
+    background: black;
     color: #fff;
     overflow-x: hidden;
 }
 
-/* -------------------- NAVBAR -------------------- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 60px;
-    background: rgba(28, 28, 28, 0.8);
+    padding: 20px 60px;
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: fixed;
@@ -48,12 +47,11 @@ body {
     box-shadow: 0 0 20px rgba(45, 212, 191, 0.4);
 }
 
-/* -------------------- HERO SECTION -------------------- */
 .hero {
-    text-align: center;
-    padding: 180px 20px 100px;
-    max-width: 800px;
-    margin: auto;
+    text-align: right;
+    padding: 180px 20px 100px; 
+    max-width: 500px;
+    margin-right: 55%;
 }
 
 .hero h1 {
@@ -71,6 +69,27 @@ body {
     opacity: 1;
     transform: none;
 }
+.image-gradient{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0.5;
+    z-index: -1;
+}
+.layer-blur {
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    rotate: -30deg;
+    z-index: -1;
+}
+#robot-3d{
+    position: absolute;
+    top: 5%;
+    right: -20%;
+}
 
 .big-text {
     font-size: 1.3em;
@@ -84,7 +103,6 @@ body {
     gap: 20px;
 }
 
-/* -------------------- BUTTONS -------------------- */
 .btn-primary,
 .btn-secondary {
     padding: 12px 30px;
@@ -111,7 +129,6 @@ body {
     box-shadow: 0 0 20px rgba(45, 212, 191, 0.3);
 }
 
-/* -------------------- FEATURES -------------------- */
 .features {
     text-align: center;
     padding: 100px 20px;
@@ -144,7 +161,7 @@ body {
 
 .feature:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(45, 212, 191, 0.2);
+    box-shadow: 0 0 25px rgba(48, 17, 105, 0.692);
 }
 
 .feature h3 {
@@ -156,24 +173,23 @@ body {
     color: rgba(255, 255, 255, 0.75);
 }
 
-/* -------------------- CALL TO ACTION -------------------- */
+
 .call-to-action {
     text-align: center;
     padding: 120px 20px;
-    background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(162, 89, 255, 0.1));
+    background: black;
 }
 
 .call-to-action h2 {
     font-size: 2.2em;
     color: #2DD4BF;
-    margin-bottom: 30px;
 }
 
 .call-to-action .btn-primary {
     font-size: 1.1em;
 }
 
-/* -------------------- ANIMATIONS (OPTIONAL) -------------------- */
+
 .feature,
 .call-to-action h2 {
     opacity: 0;
@@ -186,7 +202,6 @@ body {
     transform: translateY(0);
 }
 
-/* -------------------- RESPONSIVE -------------------- */
 @media (max-width: 768px) {
     .navbar {
         padding: 20px 30px;
