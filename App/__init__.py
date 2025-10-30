@@ -1,9 +1,11 @@
 import sqlite3
 import os
-from flask import Flask, render_template,session,g
+from flask import Flask, render_template,session,g,request,jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+
+from .routes.auth import auth_bp
 
 
 # app.py
@@ -21,11 +23,8 @@ def create_app(test_config=None):
     init_extensions(app) 
     with app.app_context():
         db.create_all()
+    app.register_blueprint(auth_bp)
 
-    @app.route('/')
-    def index():
-        return '<p> hello BizPulse</p>'
-   
     @app.before_request
     def load_user_id():
         user_id = session.get('user_id')
@@ -37,7 +36,7 @@ def create_app(test_config=None):
             g.user_id = user_id
             email = email 
             
-
+   
     if test_config is None:
         # load the instance config, if it exists, when not testing
         app.config.from_pyfile('config.py', silent=True)

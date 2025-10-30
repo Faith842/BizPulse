@@ -23,7 +23,7 @@ class Expenses(db.Model):
     productname = db.Column(db.String(255))
     credit = db.Column(db.Boolean)
     paymentmethod= db.Column(db.String(50))
-    userid= db.column(db.Integer, db.ForeignKey('users.userid'))
+    userid= db.Column(db.Integer, db.ForeignKey('users.userid'))
     date = db.Column(db.DateTime)
 
     user = db.relationship('User',backref='expenses',lazy=True)
@@ -38,7 +38,7 @@ class Sales(db.Model):
     productname = db.Column(db.String(255))
     debit = db.Column(db.Boolean)
     paymentmethod= db.Column(db.String(50))
-    userid= db.column(db.Integer, db.ForeignKey('users.userid'))
+    userid= db.Column(db.Integer, db.ForeignKey('users.userid'))
     date = db.Column(db.DateTime)
 
     user = db.relationship('User',backref='sales',lazy=True)
@@ -52,9 +52,9 @@ class Stock(db.Model):
     costprice = db.Column(db.String(50))
     sellingprice= db.Column(db.String(255))
     debit = db.Column(db.Boolean)
-    credit=db.column(db.Boolean)
+    credit=db.Column(db.Boolean)
     Stockstatus=db.Column(db.String(50))
-    userid= db.column(db.Integer, db.ForeignKey('users.userid'))
+    userid= db.Column(db.Integer, db.ForeignKey('users.userid'))
     expectedprofit=db.Column(db.String(50))
     date = db.Column(db.DateTime)
 
