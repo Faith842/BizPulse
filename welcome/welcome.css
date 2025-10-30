@@ -1,0 +1,85 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  background: white;
+  margin-top: 60px;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.brand {
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+form .form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 15px;
+}
+
+input:focus, select:focus {
+  border-color: #1e3a8a;
+}
+
+.btn {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #102a5c;
+}
+
+#results {
+  margin-top: 25px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.hidden {
+  display: none;
+}
+
+h2 {
+  color: #1e3a8a;
+}
