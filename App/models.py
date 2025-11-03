@@ -22,7 +22,7 @@ class Expenses(db.Model):
     quantity = db.Column(db.String(50))
     cost_per_unit = db.Column(db.String(50))
     productname = db.Column(db.String(255))
-    credit = db.Column(db.Boolean)
+    credit = db.Column(db.String(50))
     paymentmethod= db.Column(db.String(50))
     userid= db.Column(db.Integer, db.ForeignKey('users.userid'))
     date = db.Column(db.DateTime)

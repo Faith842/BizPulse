@@ -13,6 +13,7 @@ from .routes.auth import auth_bp
 import sqlite3
 from flask import Flask
 from .extentions import db, migrate, init_extensions
+from .routes.expensesAPI import expensebp
 
 def create_app(test_config=None):
     app = Flask(__name__)
@@ -21,9 +22,10 @@ def create_app(test_config=None):
     app.config['SECRET_KEY'] = 'testing'
 
     init_extensions(app) 
-    with app.app_context():
-        db.create_all()
+    #with app.app_context():
+        #db.create_all()
     app.register_blueprint(auth_bp)
+    app.register_blueprint(expensebp)
 
     @app.before_request
     def load_user_id():
