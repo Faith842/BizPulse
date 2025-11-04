@@ -37,5 +37,38 @@ def add_record():
         except Exception as e:
             db.session.rollback()
             return jsonify({"message":f"unexpected error occured: {e}"}),500
+@expensebp.route('/editrecord/<int:id>', methods=['POST'])
+def edit_record(id):
+    data = request.get_json()
+    expense = db.session.query(Expenses).filter_by(expenseid=id).first()
+    if not data:
+        return jsonify({"message":"no changes provided"}),200
+    try:
+        changes_made = False
 
+        for k, v in data.items():
+            if not v:  # skip empty fields
+                continue
+
+            
+            elif k in expense.__table__.columns.keys():
+                setattr(expense, k, v)
+                changes_made = True
+            else:
+                #flash(f'Unknown field: {k}', 'danger')
+                return jsonify({"message":"unknown field"}),500
+
+        if changes_made:
+            db.session.commit()
+           # flash('competition updated successfully!', 'success')
+            return jsonify({"message":"record editted successfully"}),201
+        else:
+            #flash('No valid changes detected', 'info')
+            return jsonify({"message":"no changes made"}),200
+
+    except Exception as e:
+        db.session.rollback()
+        #flash(f'Unexpected error occurred: {e}', 'danger')
+        return jsonify({"message":f"unexpected error occued {e}"})
+    
 
