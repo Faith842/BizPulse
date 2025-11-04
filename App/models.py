@@ -27,6 +27,21 @@ class Expenses(db.Model):
     userid= db.Column(db.Integer, db.ForeignKey('users.userid'))
     date = db.Column(db.DateTime)
 
+    def to_dict(self):
+
+        return {
+            'expenseid': self.expenseid,
+            'category':self.category,
+            'description':self.description,
+            'amount':self.amount,
+            'quantity':self.quantity,
+            'cost_per_unit':self.cost_per_unit,
+            'productname':self.productname,
+            'credit':self.credit,
+            'paymentmethod':self.paymentmethod,
+            'date':self.date
+        }
+
     user = db.relationship('User',backref='expenses',lazy=True)
 
 class Sales(db.Model):

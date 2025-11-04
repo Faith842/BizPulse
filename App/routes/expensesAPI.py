@@ -70,5 +70,26 @@ def edit_record(id):
         db.session.rollback()
         #flash(f'Unexpected error occurred: {e}', 'danger')
         return jsonify({"message":f"unexpected error occued {e}"})
+@expensebp.route('/removerecord/<int:id>',methods=['DELETE'])
+def remove_record(id):
+    record = db.session.query(Expenses).filter_by(expenseid=id).first()
+    if not record:
+        return jsonify({"message":"record not found"}),500
+    
+    try:
+        db.session.delete(record)
+        db.session.commit()
+        return jsonify({"message":"record deleted successfully"}),200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"message":f"unexpected error occured: {e}"})
+@expensebp.route('/displayall',methods=['GET'])
+def display_all():
+    all_records = db.session.query(Expenses).all()
+    data =[expense.to_dict() for expense in all_records]
+
+    return jsonify(data), 200
+
+
     
 
