@@ -40,17 +40,7 @@ body {
     left: 40%;
 }
 
-.cursor{
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease-out;
-    z-index: 9999;
-}
+
 
 
 

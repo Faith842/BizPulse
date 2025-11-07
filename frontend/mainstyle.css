@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+body{
+    background-color: #000000;
+}
+nav{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    width: 100px;
+    background: rgba(255, 255, 255, 0.075);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    transition: width 0.2s linear;
+
+}
+.logo{
+    display: flex;
+    text-align: center;
+    transition: all 0.2s linear;
+    margin: 10px 0 0 10px;
+}
+
+.logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.logo span{
+    font-size: 18px;
+    font-weight: 15px;
+    padding-left: 15px;
+    top: 10px;
+    text-transform: uppercase;
+}
+a{
+    position: relative;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    display: table;
+    width: 300px;
+}
+li a .icon{
+    position: relative;
+    font-size: 2px;
+    top: 14px;
+    height:20px;
+    width: 60px;
+    text-align: center;
+}
+.nav-item{
+    position: relative;
+    top: 8px;
+    margin-left: 20px;
+}
+a:hover{
+    background: #000000;
+}
+nav:hover{
+    width: 280px;
+    transition: all 0.5s ease;
+}
+.logout{
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-style: italic;
+    color: #ffffff;
+    text-shadow: 2px 2px #9d1da8;
+}
+
+form {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.075);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 5px;
+}
+
+input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42.5px;
+    line-height: 30px ;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #410aa8;
+    text-align: center;
+    font-size: 1.2em;
+    transform: all 0.5s;
+}
+
+form:hover{
+    width: 300px;
+    cursor: pointer;
+
+}
+
+form:hover input{
+    display: block;
+}
+
+form:hover .fa{
+    color:#d400a6;
+    background: rgba(255, 255, 255, 0.075);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+input[type="text"] {
+    padding: 0.7rem;
+    width: 60%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.chart-container{
+    width: 600px;
+    height: 400px;
+    margin: 20px auto;
+    position: absolute;
+    top: 38%;
+    left: 19%;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-style:normal;
+    color: #ffffff;
+    position: absolute;
+    top: 20%;
+    left: 23%;
+}
+.numbers{
+    font-size: 2rem;
+    font-style:normal;
+    color: #ffffff;
+    position: absolute;
+    top: 26%;
+    left: 24%;
+}
+h3{
+    font-size: 1rem;
+    font-style:normal;
+    color: #ffffff;
+    position: absolute;
+    top: 37%;
+    left: 24%;
+}
+/*#sort{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+    padding: 0%;
+    list-style: none;
+    display: none;
+    overflow: hidden;
+    text-transform: capitalize;
+    box-shadow: 10px 10px 10px black;
+}*/
+
