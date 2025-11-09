@@ -27,6 +27,10 @@ def create_app(test_config=None):
     app.register_blueprint(auth_bp)
     app.register_blueprint(expensebp)
 
+    @app.route('/')
+    def index():
+        return render_template('font/font.html')
+
     @app.before_request
     def load_user_id():
         user_id = session.get('user_id')

@@ -7,52 +7,52 @@ auth_bp = Blueprint('auth', __name__,url_prefix='/auth')
 
 @auth_bp.route('/register',methods=['POST'])
 def register():
-    data = request.get_json()
-    email = data.get('email')
-    phone = data.get('phone')
-    name = data.get('name')
-    password= data.get('password')
-    if not email or not name:
-        return jsonify({"message":"please provide email and password to be able to login"}), 422
+    email=request.form.get('email')
+    username=request.form.get('username')
+    password=request.form.get('password')
+    if not email or not password:
+        flash('you need to provide atleast email and password!!','danger')
+        return render_template('Register/register.html')
     try:
-        newuser = User(email=email,name=name,phonenumber=phone,password=password)
+        newuser = User(email=email,username=username,password=password)
         db.session.add(newuser)
         db.session.commit()
-        return jsonify({"message":"user stored to db successfully"}), 201
+        flash('you registered successfully pleas login!!','success')
+        return redirect(url_for('auth.login'))
     except IntegrityError:
         db.session.rollback()
-        return jsonify({"message":"user already exist"}),500
+        flash('user already exits login instead!!','danger')
+        return redirect(url_for('auth.login'))
     except Exception as e:
         db.session.rollback()
-        return jsonify({"message":f"unexpected error occured {e}"}),500
+        flash(f'unexpected error occured: {e}','danger')
+        return render_template('Register/register.html')
     
 @auth_bp.route('/login',methods=['POST','GET'])
 def login():
     if request.method=='POST':
-        data = request.get_json()
-        email=data.get('email')
-        password=data.get('password')
+        username=request.form.get('username')
+        password=request.form.get('password')
 
-        if not email and not password:
-            #flash('please provide your email and password before proceeding!!','info')
-            #return render_template('login.html')
-            return jsonify({"message":"please provide email and password"})
-        user = db.session.query(User).filter_by(email=email).first()
+        if not username and not password:
+            flash('please provide your username and password before proceeding!!','info')
+            return render_template('Login/login.html')
+            
+        user = db.session.query(User).filter_by(username=username).first()
         if user and user.check_password(password):
             session['user_id'] = user.userid
-            session['email']=user.email
-            #flash(f'logged in successfully as {user.email}', 'success')
-            #return redirect(url_for('talent.display_all'))
-            return jsonify({"message":f"logged in succefully as {email}"})
-        #flash('invalid email or password!! please check and try again!!','danger')
-        #return render_template('login.html')
-        return jsonify({"message":"please provide correct credentials"})
-    #return render_template('login.html')
-    return jsonify({"message":"welcome to login page"})
+            session['username']=user.username
+            flash(f'logged in successfully as {user.username}', 'success')
+            return render_template('additional_info.html')
+        flash('invalid email or password!! please check and try again!!','danger')
+        return render_template('login.html')
+        
+    return render_template('Login/login.html')
+    
 @auth_bp.route('/logout')
 def logout():
     session.pop('user_id',None)
     session.pop('email',None)
-    #flash('you have been logout successfully, you might want to login again','success')
-    #return render_template('home.html')
-    return jsonify({"message":"logged out successfully"})
+    flash('you have been logout successfully, you might want to login again','success')
+    return render_template('font/font.html')
+    
