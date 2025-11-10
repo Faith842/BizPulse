@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #000000;
+    background-color: #000000;
+}
+
+.image-gradient{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+.layer-blur {
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px #ffffffc4;
+    rotate: -30deg;
+    z-index: -1;
+}
+.robot-3d{
+    position: absolute;
+    top: 22%;
+    left: 40%;
+}
+
+
+
+
+
+.wrapper {
+    position: relative;
+    width: 700px;
+    height: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(25px);
+    box-shadow: 0 0 30px rgba(48, 17, 105, 0.692);
+    display: flex;
+    transition: 0.6s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(45, 212, 191, 0.15));
+}
+
+
+.bg-animate,
+.bg-animate2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(45, 212, 191, 0.15));
+    transition: 0.8s ease;
+    z-index: 1;
+    backdrop-filter: blur(25px);
+}
+
+.wrapper.active .bg-animate {
+    backdrop-filter: blur(25px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(45, 212, 191, 0.15));
+    right: 50%;
+}
+
+.wrapper.active .bg-animate2 {
+    backdrop-filter: blur(25px);
+    right: 50%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(45, 212, 191, 0.15));
+}
+
+
+.wrapper .form-box {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+    transition: all 0.8s ease;
+    z-index: 2;
+
+}
+
+.form-box.login {
+    left: 0;
+    opacity: 1;
+}
+
+/* Ensure signup form shows correctly on signup page */
+.form-box.register {
+    left: 0 !important;
+    opacity: 1 !important;
+}
+
+.form-box {
+    position: relative;
+    z-index: 10;
+}
+
+
+.wrapper.active .form-box.login {
+    left: -100%;
+    opacity: 0;
+}
+
+.wrapper.active .form-box.register {
+    left: 0;
+    opacity: 1;
+}
+
+
+.form-box h2 {
+    font-size: 2em;
+    color: #2DD4BF;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.form-box p {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 25px;
+    font-size: 0.9em;
+}
+
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: #ffffff;
+    outline: none;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.input-box input:focus {
+    border-bottom: 1px solid #2DD4BF;
+}
+
+.input-box label {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: rgba(255, 255, 255, 0.87);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -10px;
+    font-size: 0.8em;
+    color: #2DD4BF;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #2DD4BF, #A259FF);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.3);
+}
+
+
+.logreg-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.logreg-link a {
+    color: #2DD4BF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.logreg-link a:hover {
+    text-decoration: underline;
+}
+
+

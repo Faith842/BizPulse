@@ -3,7 +3,7 @@ from ..extentions import db
 from datetime import datetime
 from ..models import Expenses
 
-dash_bp=Blueprint('dashboard',__name__,url_prefix='dashboard')
+dash_bp=Blueprint('dashboard',__name__,url_prefix='/dashboard')
 
 @dash_bp.route('/dashboard',methods=['GET'])
 def dashboard():

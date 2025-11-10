@@ -1,8 +1,8 @@
-"""contriants added on expenses
+"""initial db
 
-Revision ID: 154827014980
+Revision ID: 337ac9301abe
 Revises: 
-Create Date: 2025-11-03 17:58:25.436819
+Create Date: 2025-11-10 09:34:34.973859
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '154827014980'
+revision = '337ac9301abe'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,9 +21,8 @@ def upgrade():
     op.create_table('users',
     sa.Column('userid', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('email', sa.String(length=50), nullable=True),
-    sa.Column('name', sa.String(length=255), nullable=True),
-    sa.Column('phonenumber', sa.Integer(), nullable=True),
-    sa.Column('password', sa.String(length=50), nullable=True),
+    sa.Column('username', sa.String(length=255), nullable=True),
+    sa.Column('password', sa.String(length=255), nullable=True),
     sa.PrimaryKeyConstraint('userid'),
     sa.UniqueConstraint('email')
     )

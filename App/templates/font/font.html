@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BizPulse</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='CSS/font.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/font.css')}}" />
 </head>
 <body>
     <div class="cursor"></div>
     <nav class="navbar">
         <div class="logo">BizPulse</div>
-        <a href="#" class="login-btn">Login</a>
+        <a href="{{url_for('auth.login')}}" class="login-btn">Login</a>
     </nav>
     <section class="hero">
         <div>
-            <img class="image-gradient" src="../images/image.png" alt="gradient">
+            <img class="image-gradient" src="{{url_for('static', filename='images/image.png')}}" alt="gradient">
             <div class="layer-blur"></div>
             <spline-viewer id="robot-3d" url="https://prod.spline.design/EGxPnBmenc-JZji6/scene.splinecode"></spline-viewer>
         </div>
@@ -22,8 +22,8 @@
         <p>Tired of losing time on manual bookkeepieng?</p>
         <p class="big-text">Track sales, manage stock, and make smarter decisions with BizPulse</p>
         <div class="buttons">
-            <a href="#" class="btn-primary">I'm In!</a>
-            <a href="#" class="btn-secondary">Count Me In</a>
+            <a href="{{url_for('auth.login')}}" class="btn-primary">I'm In!</a>
+            <a href="{{url_for('auth.login')}}" class="btn-secondary">Count Me In</a>
         </div>
     </section>
     <section class="features">
@@ -45,7 +45,7 @@
     </section>
     <section class="call-to-action">
         <h2>Ready to get started?</h2>
-        <a href="#" class="btn-primary">Join Now</a><br/>
+        <a href="{{url_for('auth.login')}}" class="btn-primary">Join Now</a><br/>
     </section>
     <h1>We got you</h1>
     

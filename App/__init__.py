@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 from .routes.auth import auth_bp
+from .routes.dashboard import dash_bp
 
 
 # app.py
@@ -26,6 +27,7 @@ def create_app(test_config=None):
         #db.create_all()
     app.register_blueprint(auth_bp)
     app.register_blueprint(expensebp)
+    app.register_blueprint(dash_bp)
 
     @app.route('/')
     def index():
