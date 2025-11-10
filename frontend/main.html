@@ -35,7 +35,7 @@
             </ul>
         </nav>
         <div class="dashboard">
-            <div class="info">
+            <div class="info" id="Dashboard">
                 <h2>Total Balance</h2>
                 <div class="numbers">24,194,000 RWF</div>
                 <h3>October’s Revenue</h3>
@@ -50,27 +50,58 @@
                 </div>
             </div>
 
-            <div class="bottom-section">
+<!--Expenses section -->
+
+
+            <div class="bottom-section" id="Expenses">
+                <div class="card expenses-info">
+                    <!--<div class="choose-timeline">
+                        <h3> You want to view Expenses per?</h3>
+                        <select id="choose-timeline">
+                            <option value="">Select timeline</option>
+                            <option value="daily">Daily</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="yearly">Yearly</option>
+                        </select>
+                    </div>-->
+                </div>
                 <div class="card expenses">
                     <h3></h3>
                     <p></p>
-                    <div id="bar-chart"></div>
+                    <div id="expenses-graph"></div>
                 </div>
-                <div class="card expenses-info">
+            </div>
+
+
+<!--Sales section-->
+
+
+            <div class="bottom-section" id="Sales">
+                <div class="card sales-info">
                     <h3></h3>
                     <p></p>
-                    <div id="bar-chart"></div>
                 </div>
-            <div class="bottom-section">
+                <div class="card sales">
+                    <h3></h3>
+                    <p></p>
+                    <div id="sales-graph"></div>
+                </div>
+
+            </div>
+
+
+
+<!--stock section-->
+
+            <div class="bottom-section" id="Stock">
+                <div class="card stock-info">
+                    <p></p>
+                </div>
                 <div class="card stock">
                     <h3></h3>
                     <p></p>
-                    <div id="bar-chart"></div>
+                    <div id="stock-graph"></div>
                 </div>
-            <div class="card stock-info">
-                <h3></h3>
-                <p></p>
-                <div id="bar-chart"></div>
             </div>
         </div>
         <script src="https://unpkg.com/feather-icons"></script>
@@ -78,6 +109,7 @@
             feather.replace();
         </script>
         <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="mainscript.js"></script>
     </body>
 </html>
