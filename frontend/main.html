@@ -3,90 +3,113 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Business Dashboard</title>
+        <title>BIZPULSE Dashboard</title>
+
         <link rel="stylesheet" href="mainstyle.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
     <body>
+        <header class="topbar">
+            <div class="search">
+                <i class="fa fa-search search-icon"></i>
+                <input type="text" placeholder="Search something here..." />
+            </div>
+            <div class="user-profile">
+                <span class="user-initials">NP</span>
+            </div>
+        </header>
         <nav>
             <ul>
                 <li>
                     <a href="" class="logo">
-                        <img src="./resources/logo (2).png" alt="logo">
-                        <span></span>
-                        <h1>BIZPULSE</h1>
+                    <h1>BIZPULSE</h1>
                     </a>
                 </li>
-                <li>
-                    <a href="#Dashboard">
-                    <i data-feather="home" class="icon"></i>
-                    <span class="nav-item">Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#Expenses">
-                        <i data-feather="dollar-sign" class="icon"></i>
-                        <span class="nav-item">Expenses</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#Sales">
-                        <i data-feather="shopping-cart" class="icon"></i>
-                        <span class="nav-item">Sales</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#Stock Management">
-                        <i data-feather="trending-up" class="icon"></i>
-                        <span class="nav-item">Stock Management</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#Visuals">
-                        <i data-feather="bar-chart-2" class="icon"></i>
-                        <span class="nav-item">Visuals</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#Log Out">
-                    <i data-feather="log-out" class="icon"></i>
-                    <span class="nav-item">Log Out</span>
-                    </a>
-                </li>
+                <li><a href="#Dashboard"><i data-feather="home" class="icon"></i><span class="nav-item">Dashboard</span></a></li>
+                <li><a href="#Expenses"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">Expenses</span></a></li>
+                <li><a href="#Sales"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">Sales</span></a></li>
+                <li><a href="#Stock"><i data-feather="trending-up" class="icon"></i><span class="nav-item">Stock</span></a></li>
+                <li><a href="#Visuals"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">Visuals</span></a></li>
+                <li><a href="#Logout"><i data-feather="log-out" class="icon"></i><span class="nav-item">Log Out</span></a></li>
             </ul>
         </nav>
-        <div class="container">
-            <form action="">
-                <input type="search" class="search-bar" placeholder="Search here..." />
-                <i class ="fa fa-search"></i>
-            </form>
-            <div id="search-bar" class="search-grid"></div>
-        </div>
-        <div id="bar-chart" class="chart-container">
-        </div>
+        <div class="dashboard">
+            <div class="info" id="Dashboard">
+                <h2>Total Balance</h2>
+                <div class="numbers">24,194,000 RWF</div>
+                <h3>October’s Revenue</h3>
+            </div>
+            <div class="card main-chart">
+                <h2>Revenue vs Time</h2>
+                <div id="bar-chart"></div>
+                <div class="card expenses-info">
+                    <h3></h3>
+                    <p></p>
+                    <div id="bar-chart"></div>
+                </div>
+            </div>
 
-        <!--<label for="sort">when</label>
-        <select id="sort-id">
-            <option value="option1">Monthly</option>
-            <option value="option2">Weekly</option>
-            <option value="option3">Daily</option>
-        </select>-->
-        <div>
-            <img class="image-gradient" src="../resources/gradient.png" alt="gradient">
-            <div class="layer-blur"></div>
-            <spline-viewer class="background" url="https://prod.spline.design/95S8W3FhWE2V-zjQ/scene.splinecode"></spline-viewer>
-        </div>
-        <div class="info">
-            <h2 class="animate__heartBeat animate_animated animate_infinite">Total Balance</h2>
-            <div class="numbers">24,194,000 RWF</div>
-            <h3>October's Revenue </h3>
+<!--Expenses section -->
+
+
+            <div class="bottom-section" id="Expenses">
+                <div class="card expenses-info">
+                    <!--<div class="choose-timeline">
+                        <h3> You want to view Expenses per?</h3>
+                        <select id="choose-timeline">
+                            <option value="">Select timeline</option>
+                            <option value="daily">Daily</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="yearly">Yearly</option>
+                        </select>
+                    </div>-->
+                </div>
+                <div class="card expenses">
+                    <h3></h3>
+                    <p></p>
+                    <div id="expenses-graph"></div>
+                </div>
+            </div>
+
+
+<!--Sales section-->
+
+
+            <div class="bottom-section" id="Sales">
+                <div class="card sales-info">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="card sales">
+                    <h3></h3>
+                    <p></p>
+                    <div id="sales-graph"></div>
+                </div>
+
+            </div>
+
+
+
+<!--stock section-->
+
+            <div class="bottom-section" id="Stock">
+                <div class="card stock-info">
+                    <p></p>
+                </div>
+                <div class="card stock">
+                    <h3></h3>
+                    <p></p>
+                    <div id="stock-graph"></div>
+                </div>
+            </div>
         </div>
         <script src="https://unpkg.com/feather-icons"></script>
         <script>
             feather.replace();
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="mainscript.js"></script>
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-    <script src="mainscript.js"></script>
 </html>
