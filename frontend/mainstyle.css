@@ -314,3 +314,11 @@ th {
     text-decoration: underline;
 }
 
+#expensechart {
+    width: 100%;
+    height: 400px;
+}
+
+.expenses {
+    min-height: 350px;
+}
