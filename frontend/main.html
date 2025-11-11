@@ -55,18 +55,39 @@
 
             <div class="bottom-section" id="Expenses">
                 <div class="card expenses-info">
-                    <!--<div class="choose-timeline">
-                        <h3> You want to view Expenses per?</h3>
-                        <select id="choose-timeline">
-                            <option value="">Select timeline</option>
-                            <option value="daily">Daily</option>
-                            <option value="monthly">Monthly</option>
-                            <option value="yearly">Yearly</option>
+                    <h3></h3>
+                    <form id="expenseform">
+                        <select id="category" required>Category
+                            <option>Fixed Expenses</option>
+                            <option>Variable Expenses</option>
                         </select>
-                    </div>-->
+                        <input type="text" id="product-name" placeholder="Product name: " required />
+                        <input type="text" id="description" placeholder="Description: " />
+                        <input type="date" id="date" placeholder="Date: " required />
+                        <input type="number" id="amount" placeholder="Amount: " required />
+                        <select id="payment-method" required >Payment method
+                            <option>Mobile Money</option>
+                            <option>Airtel Money</option>
+                            <option>Cash</option>
+                            <option>Bank</option>
+                        </select>
+                        <button type="submit">Submit</button>
+                        </form>
+                        <table id="expensetable">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Product name</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Payment method</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        </table>
                 </div>
                 <div class="card expenses">
-                    <h3></h3>
                     <p></p>
                     <div id="expenses-graph"></div>
                 </div>
@@ -86,7 +107,6 @@
                     <p></p>
                     <div id="sales-graph"></div>
                 </div>
-
             </div>
 
 
@@ -110,6 +130,7 @@
         </script>
         <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="mainscript.js"></script>
+        <script src="chart.js"></script>
+        <script src="table.js"></script>
     </body>
 </html>
