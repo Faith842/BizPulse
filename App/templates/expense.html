@@ -26,7 +26,7 @@
                     <h1>BIZPULSE</h1>
                     </a>
                 </li>
-                <li><a href="./dashboard.html"><i data-feather="home" class="icon"></i><span class="nav-item">Dashboard</span></a></li>
+                <li><a href="{{url_for('dashboard.dashboard')}}"><i data-feather="home" class="icon"></i><span class="nav-item">Dashboard</span></a></li>
                 <li><a href="#Expenses"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">Expenses</span></a></li>
                 <li><a href="./sales.html"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">Sales</span></a></li>
                 <li><a href="./stock.html"><i data-feather="trending-up" class="icon"></i><span class="nav-item">Stock</span></a></li>
@@ -43,9 +43,20 @@
         
             <ul class="flashes">
               {% for category, message in messages %}
-                  <span class="alert alert-{{ category }}" role="alert">
+                {%if category == 'success'%}
+
+                  <span style="color: blue;">
                   {{ message }}
                   </span>
+                {%elif category == 'danger'%}
+                  <span style="color: red;">
+                  {{ message }}
+                  </span>
+                {%elif category == 'info'%}
+                  <span style="color: #00ff66;">
+                  {{ message }}
+                  </span>
+                {% endif %}
               {% endfor %}
             </ul>
         {% endif %}
@@ -91,6 +102,7 @@
                                     <th>Amount</th>
                                     <th>Credit</th>
                                     <th>Payment method</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                         

@@ -2,6 +2,7 @@ from flask import flash,session,jsonify,render_template, redirect, url_for, Blue
 from ..extentions import db
 from datetime import datetime
 from ..models import Expenses
+from flask_babel import Babel, _, get_locale
 
 expensebp = Blueprint('expense',__name__,url_prefix='/record')
 
@@ -21,10 +22,10 @@ def add_record():
         try:
             parse_date = datetime.strptime(date, '%Y-%m-%d').date()
         except ValueError:
-            flash('invalid format!!','danger')
+            flash(_('invalid format!!','danger'))
             
         if not [productname ,cost_per_unit,credit,quantity,amount]:
-            flash("please provide atleast productname, cost_per_unit,amount, or qauntity",'info')
+            flash(_("please provide atleast productname, cost_per_unit,amount, or qauntity"),'info')
             return redirect(url_for('expense.display_all'))
         
         try:
@@ -33,11 +34,11 @@ def add_record():
             newexpense.userid= g.user_id
             db.session.add(newexpense)
             db.session.commit()
-            flash('record added successfully', 'success')
+            flash(_('record added successfully'), 'success')
             return redirect(url_for('expense.display_all'))
         except Exception as e:
             db.session.rollback()
-            flash(f'unexpected error occured as {e}','danger')
+            flash(_(f'unexpected error occured as {e}'),'danger')
             return redirect(url_for('expense.display_all'))
     return redirect(url_for('expense.display_all'))
 @expensebp.route('/editrecord/<int:id>', methods=['POST'])
@@ -46,7 +47,7 @@ def edit_record(id):
     expense = db.session.query(Expenses).filter_by(expenseid=id).first()
 
     if not changes:
-        flash('no changes detected','info')
+        flash(_('no changes detected','info'))
         return redirect(url_for('expense.display_all'))
     try:
         changes_made = False
@@ -58,7 +59,7 @@ def edit_record(id):
                 try:
                     parse_date = datetime.strptime(v, '%Y-%m-%d').date()
                 except ValueError:
-                    flash('invalid format!!','danger')
+                    flash(_('invalid format!!'),'danger')
                 setattr(expense, k, parse_date)
                 changes_made = True
             
@@ -66,40 +67,40 @@ def edit_record(id):
                 setattr(expense, k, v)
                 changes_made = True
             else:
-                flash(f'Unknown field: {k}', 'danger')
+                flash(_(f'Unknown field: {k}'), 'danger')
                 return redirect(url_for('expense.display_all'))
                 
 
         if changes_made:
             db.session.commit()
-            flash('competition updated successfully!', 'success')
+            flash(_('expense updated successfully!'), 'success')
             return redirect(url_for('expense.display_all'))
             
         else:
-            flash('No valid changes detected', 'info')
+            flash(_('No valid changes detected'), 'info')
             return redirect(url_for('expense.display_all'))
             
 
     except Exception as e:
         db.session.rollback()
-        flash(f'Unexpected error occurred: {e}', 'danger')
+        flash(_(f'Unexpected error occurred: {e}'), 'danger')
         return redirect(url_for('expense.display_all'))
         
 @expensebp.route('/removerecord/<int:id>',methods=['DELETE'])
 def remove_record(id):
     record = db.session.query(Expenses).filter_by(expenseid=id).first()
     if not record:
-        flash('record no longer exists','info')
+        flash(_('record no longer exists'),'info')
         return redirect(url_for('expense.display_all'))
     
     try:
         db.session.delete(record)
         db.session.commit()
-        flash('record deleted successfully','success')
+        flash(_('record deleted successfully'),'success')
         return redirect(url_for('expense.display_all'))
     except Exception as e:
         db.session.rollback()
-        flash(f"unexpected error occured: {e}")
+        flash(_(f"unexpected error occured: {e}"),'danger')
         return redirect(url_for('expense.display_all'))
 @expensebp.route('/displayall',methods=['GET'])
 def display_all():

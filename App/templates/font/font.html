@@ -5,55 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BizPulse</title>
     <link rel="stylesheet" href="{{url_for('static', filename='CSS/font.css')}}" />
+    
 </head>
 <body>
     <div class="cursor"></div>
     <nav class="navbar">
         <div class="logo">BizPulse</div>
+
+        <!-- Language Toggle -->
+        <div class="lang-toggle">
+            <label class="switch">
+                <input type="checkbox" id="langSwitch"
+                    {% if session.get('lang') == 'rw' %}checked{% endif %}
+                    onchange="toggleLanguage(this)">
+                <span class="slider"></span>
+            </label>
+            <span id="langLabel">
+                {% if session.get('lang') == 'rw' %}
+                    Kinyarwanda
+                {% else %}
+                    English
+                {% endif %}
+            </span>
+        </div>
+
         <a href="{{url_for('auth.login')}}" class="login-btn">Login</a>
     </nav>
+
     <section class="hero">
         <div>
             <img class="image-gradient" src="{{url_for('static', filename='images/image.png')}}" alt="gradient">
             <div class="layer-blur"></div>
             <spline-viewer id="robot-3d" url="https://prod.spline.design/EGxPnBmenc-JZji6/scene.splinecode"></spline-viewer>
         </div>
-        <h1>Hey! Yes, You.</h1>
-        <p>Tired of losing time on manual bookkeepieng?</p>
-        <p class="big-text">Track sales, manage stock, and make smarter decisions with BizPulse</p>
+        <h1>{{_("Hey! Yes, You.")}}</h1>
+        <p>{{_('Tired of losing time on manual bookkeepieng?')}}</p>
+        <p class="big-text">{{_("Track sales, manage stock, and make smarter decisions with BizPulse")}}</p>
         <div class="buttons">
-            <a href="{{url_for('auth.login')}}" class="btn-primary">I'm In!</a>
-            <a href="{{url_for('auth.login')}}" class="btn-secondary">Count Me In</a>
+            <a href="{{url_for('auth.login')}}" class="btn-primary">{{_("I'm In!")}}</a>
+            <a href="{{url_for('auth.login')}}" class="btn-secondary">{{_("Count Me In")}}</a>
         </div>
     </section>
     <section class="features">
-        <h2>Why use it?</h2>
+        <h2>{{_("Why use it?")}}</h2>
         <div class="feature-grid">
             <div class="feature">
-                <h3>Easy to use</h3>
-                <p>Manage your accounts and stock without any confusion</p>
+                <h3>{{_("Easy to use")}}</h3>
+                <p>{{_("Manage your accounts and stock without any confusion")}}</p>
             </div>
             <div class="feature">
-                <h3>Everything in one place</h3>
-                <p>Track sales, stock, profits, and investments <br/> everything in a single app</p>
+                <h3>{{_("Everything in one place")}}</h3>
+                <p>{{_("Track sales, stock, profits, and investments")}} <br/> {{_("everything in a single app")}}</p>
             </div>
             <div class="feature">
-                <h3>Secure</h3>
-                <p>Your data is protected, giving you peace of mind while running your business</p>
+                <h3>{{_("Secure")}}</h3>
+                <p>{{_("Your data is protected, giving you peace of mind while running your business")}}</p>
             </div>
         </div>
     </section>
     <section class="call-to-action">
-        <h2>Ready to get started?</h2>
-        <a href="{{url_for('auth.login')}}" class="btn-primary">Join Now</a><br/>
+        <h2>{{_("Ready to get started?")}}</h2>
+        <a href="{{url_for('auth.login')}}" class="btn-primary">{{_("Join Now")}}</a><br/>
     </section>
-    <h1>We got you</h1>
+    <h1>{{_("We got you")}}</h1>
     
 
     <footer>
-        <p>&copy; 2024 BizPulse. All rights reserved.</p>
+        <p>&copy; {{_("2024 BizPulse. All rights reserved.")}}</p>
+
     </footer>
+
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.90/build/spline-viewer.js"></script>
     <script src="{{url_for('static',filename='JS/font.js')}}"></script>
+    <script>
+        function toggleLanguage(checkbox) {
+            const lang = checkbox.checked ? 'rw' : 'en';
+            window.location.href = `/set_language/${lang}`;
+        }
+    </script>
+
 </body>
 </html>

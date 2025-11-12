@@ -2,6 +2,7 @@ from flask import jsonify,request, Blueprint,render_template,session,flash,redir
 from ..models import User
 from sqlalchemy.exc import IntegrityError
 from ..extentions import db
+from flask_babel import Babel, _, get_locale
 
 auth_bp = Blueprint('auth', __name__,url_prefix='/auth')
 
@@ -13,7 +14,7 @@ def register():
         username=request.form.get('username')
         password=request.form.get('password')
         if not email or not password:
-            flash('you need to provide atleast email and password!!','danger')
+            flash(_('you need to provide atleast email and password!!'),'danger')
             return render_template('signup.html')
         try:
             newuser = User(email=email,username=username)
@@ -21,15 +22,15 @@ def register():
             db.session.add(newuser)
 
             db.session.commit()
-            flash('you registered successfully pleas login!!','success')
+            flash(_('you registered successfully pleas login!!'),'success')
             return redirect(url_for('auth.login'))
         except IntegrityError:
             db.session.rollback()
-            flash('user already exits login instead!!','danger')
+            flash(_('user already exits login instead!!'),'danger')
             return redirect(url_for('auth.login'))
         except Exception as e:
             db.session.rollback()
-            flash(f'unexpected error occured: {e}','danger')
+            flash(_(f'unexpected error occured: {e}'),'danger')
             return render_template('signup.html')
     return render_template('signup.html')
 @auth_bp.route('/login',methods=['POST','GET'])
@@ -39,16 +40,16 @@ def login():
         password=request.form.get('password')
 
         if not username and not password:
-            flash('please provide your username and password before proceeding!!','info')
+            flash(_('please provide your username and password before proceeding!!'),'info')
             return render_template('login.html')
             
         user = db.session.query(User).filter_by(username=username).first()
         if user and user.check_password(password):
             session['user_id'] = user.userid
             session['username']=user.username
-            flash(f'logged in successfully as {user.username}', 'success')
+            flash(_(f'logged in successfully as {user.username}'), 'success')
             return render_template('additional_info.html')
-        flash('invalid email or password!! please check and try again!!','danger')
+        flash(_('invalid email or password!! please check and try again!!'),'danger')
         return render_template('login.html')
         
     return render_template('login.html')
@@ -57,6 +58,6 @@ def login():
 def logout():
     session.pop('user_id',None)
     session.pop('email',None)
-    flash('you have been logout successfully, you might want to login again','success')
+    flash(_('you have been logout successfully, you might want to login again'),'success')
     return render_template('font/font.html')
     

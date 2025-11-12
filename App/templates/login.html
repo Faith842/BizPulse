@@ -27,9 +27,20 @@
         
             <ul class="flashes">
               {% for category, message in messages %}
-                  <span class="alert alert-{{ category }}" role="alert">
+                {%if category == 'success'%}
+
+                  <span style="color: blue;">
                   {{ message }}
                   </span>
+                {%elif category == 'danger'%}
+                  <span style="color: red;">
+                  {{ message }}
+                  </span>
+                {%elif category == 'info'%}
+                  <span style="color: #00ff66;">
+                  {{ message }}
+                  </span>
+                {% endif %}
               {% endfor %}
             </ul>
         {% endif %}

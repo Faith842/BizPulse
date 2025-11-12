@@ -1,0 +1,145 @@
+# Translations template for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-11-12 19:59+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: App/routes/auth.py:17
+msgid "you need to provide atleast email and password!!"
+msgstr ""
+
+#: App/routes/auth.py:25
+msgid "you registered successfully pleas login!!"
+msgstr ""
+
+#: App/routes/auth.py:29
+msgid "user already exits login instead!!"
+msgstr ""
+
+#: App/routes/auth.py:43
+msgid "please provide your username and password before proceeding!!"
+msgstr ""
+
+#: App/routes/auth.py:52
+msgid "invalid email or password!! please check and try again!!"
+msgstr ""
+
+#: App/routes/auth.py:61
+msgid "you have been logout successfully, you might want to login again"
+msgstr ""
+
+#: App/routes/expensesAPI.py:25 App/routes/expensesAPI.py:62
+msgid "invalid format!!"
+msgstr ""
+
+#: App/routes/expensesAPI.py:28
+msgid "please provide atleast productname, cost_per_unit,amount, or qauntity"
+msgstr ""
+
+#: App/routes/expensesAPI.py:37
+msgid "record added successfully"
+msgstr ""
+
+#: App/routes/expensesAPI.py:50
+msgid "no changes detected"
+msgstr ""
+
+#: App/routes/expensesAPI.py:76
+msgid "expense updated successfully!"
+msgstr ""
+
+#: App/routes/expensesAPI.py:80
+msgid "No valid changes detected"
+msgstr ""
+
+#: App/routes/expensesAPI.py:93
+msgid "record no longer exists"
+msgstr ""
+
+#: App/routes/expensesAPI.py:99
+msgid "record deleted successfully"
+msgstr ""
+
+#: App/templates/font/font.html:41
+msgid "Hey! Yes, You."
+msgstr ""
+
+#: App/templates/font/font.html:42
+msgid "Tired of losing time on manual bookkeepieng?"
+msgstr ""
+
+#: App/templates/font/font.html:43
+msgid "Track sales, manage stock, and make smarter decisions with BizPulse"
+msgstr ""
+
+#: App/templates/font/font.html:45
+msgid "I'm In!"
+msgstr ""
+
+#: App/templates/font/font.html:46
+msgid "Count Me In"
+msgstr ""
+
+#: App/templates/font/font.html:50
+msgid "Why use it?"
+msgstr ""
+
+#: App/templates/font/font.html:53
+msgid "Easy to use"
+msgstr ""
+
+#: App/templates/font/font.html:54
+msgid "Manage your accounts and stock without any confusion"
+msgstr ""
+
+#: App/templates/font/font.html:57
+msgid "Everything in one place"
+msgstr ""
+
+#: App/templates/font/font.html:58
+msgid "Track sales, stock, profits, and investments"
+msgstr ""
+
+#: App/templates/font/font.html:58
+msgid "everything in a single app"
+msgstr ""
+
+#: App/templates/font/font.html:61
+msgid "Secure"
+msgstr ""
+
+#: App/templates/font/font.html:62
+msgid ""
+"Your data is protected, giving you peace of mind while running your "
+"business"
+msgstr ""
+
+#: App/templates/font/font.html:67
+msgid "Ready to get started?"
+msgstr ""
+
+#: App/templates/font/font.html:68
+msgid "Join Now"
+msgstr ""
+
+#: App/templates/font/font.html:70
+msgid "We got you"
+msgstr ""
+
+#: App/templates/font/font.html:74
+msgid "2024 BizPulse. All rights reserved."
+msgstr ""
+

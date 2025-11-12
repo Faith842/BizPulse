@@ -1,0 +1,156 @@
+# Kinyarwanda translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-11-12 19:59+0200\n"
+"PO-Revision-Date: 2025-11-12 17:49+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: rw\n"
+"Language-Team: rw <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: App/routes/auth.py:17
+msgid "you need to provide atleast email and password!!"
+msgstr "Ukeneye gutanga byibuze imeyili n'ijambo ry'ibanga!"
+
+#: App/routes/auth.py:25
+#, fuzzy
+msgid "you registered successfully pleas login!!"
+msgstr "Wiyandikishije neza, shyiramo amakuru yawe winjire!"
+
+#: App/routes/auth.py:29
+msgid "user already exits login instead!!"
+msgstr "Uwo muntu asanzwe ahari, injira (cyangwa shyiramo undi)!"
+
+#: App/routes/auth.py:43
+msgid "please provide your username and password before proceeding!!"
+msgstr ""
+"Nyamuneka, shyiramo izina ryawe ukoresha n'ijambo ry'ibanga mbere yo "
+"gukomeza!"
+
+#: App/routes/auth.py:52
+msgid "invalid email or password!! please check and try again!!"
+msgstr ""
+"Imeyili cyangwa ijambo ry'ibanga ntibyemewe! Nyamuneka, reba neza wongere"
+" ugerageze!"
+
+#: App/routes/auth.py:61
+msgid "you have been logout successfully, you might want to login again"
+msgstr "Wasohotse neza, ushobora gushaka kongera kwinjira"
+
+#: App/routes/expensesAPI.py:25 App/routes/expensesAPI.py:62
+msgid "invalid format!!"
+msgstr "Uburyo bw'imiterere ntibwemewe!"
+
+#: App/routes/expensesAPI.py:28
+msgid "please provide atleast productname, cost_per_unit,amount, or qauntity"
+msgstr ""
+"Nyamuneka, tanga byibuze izina ry'igicuruzwa, igiciro ku kigero, "
+"igiteranyo (cyangwa umubare), cyangwa ubwinshi!"
+
+#: App/routes/expensesAPI.py:37
+msgid "record added successfully"
+msgstr "Ibyo wanditse byongeyweho neza"
+
+#: App/routes/expensesAPI.py:50
+#, fuzzy
+msgid "no changes detected"
+msgstr "Ntampinduka zigaragaye"
+
+#: App/routes/expensesAPI.py:76
+#, fuzzy
+msgid "expense updated successfully!"
+msgstr "Ibyo uhinduye byahinduwe neza"
+
+#: App/routes/expensesAPI.py:80
+msgid "No valid changes detected"
+msgstr "Ntampinduka zigaragaye"
+
+#: App/routes/expensesAPI.py:93
+msgid "record no longer exists"
+msgstr "igicuruzwa nticyicyibaho"
+
+#: App/routes/expensesAPI.py:99
+msgid "record deleted successfully"
+msgstr "igicuruzwa cyirasibwe neza"
+
+#: App/templates/font/font.html:41
+msgid "Hey! Yes, You."
+msgstr "Hallo! Yego, WEho"
+
+#: App/templates/font/font.html:42
+msgid "Tired of losing time on manual bookkeepieng?"
+msgstr "Unaniwe no gutakaza igihe ukora ibikorwa byo kubika inyandiko ku buryo bwa gakondo?"
+
+#: App/templates/font/font.html:43
+msgid "Track sales, manage stock, and make smarter decisions with BizPulse"
+msgstr "Kurikirana ibicuruzwa, tegeka ububiko, kandi ufate ibyemezo byubaka ukoresheje BizPulse"
+
+#: App/templates/font/font.html:45
+msgid "I'm In!"
+msgstr "Ndimo!"
+
+#: App/templates/font/font.html:46
+msgid "Count Me In"
+msgstr "Mumbaremo Nange"
+
+#: App/templates/font/font.html:50
+msgid "Why use it?"
+msgstr "Kubericyi wakoresha BizPulse"
+
+#: App/templates/font/font.html:53
+msgid "Easy to use"
+msgstr "Biroroshye kuyikoresha"
+
+#: App/templates/font/font.html:54
+msgid "Manage your accounts and stock without any confusion"
+msgstr "Tegura konti n’ububiko bwawe utagira urujijo"
+
+#: App/templates/font/font.html:57
+msgid "Everything in one place"
+msgstr "Byose hamwe ahantu hamwe"
+
+#: App/templates/font/font.html:58
+msgid "Track sales, stock, profits, and investments"
+msgstr "Kurikirana ibicuruzwa, ububiko, inyungu, n’ishoramari"
+
+#: App/templates/font/font.html:58
+msgid "everything in a single app"
+msgstr "Byose muri porogaramu imwe"
+
+#: App/templates/font/font.html:61
+msgid "Secure"
+msgstr "Bifite umutekano"
+
+#: App/templates/font/font.html:62
+msgid "Your data is protected, giving you peace of mind while running your" 
+"business"
+
+msgstr "Amakuru yawe arinzwe, bikaguha ituze mu mutima igihe uri mu bikorwa "
+"by’ubucuruzi bwawe."
+
+#: App/templates/font/font.html:67
+msgid "Ready to get started?"
+msgstr "Witeguye gutangira?"
+
+#: App/templates/font/font.html:68
+msgid "Join Now"
+msgstr "Injira Ubu"
+
+#: App/templates/font/font.html:70
+msgid "We got you"
+msgstr "Turagufasha"
+
+#: App/templates/font/font.html:74
+msgid "2024 BizPulse. All rights reserved."
+msgstr "2024 BizPulse. Uburenganzira bwose burabitswe"
+

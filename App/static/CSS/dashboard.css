@@ -16,7 +16,7 @@ body {
 
 .topbar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: left;
     padding: 10px 0;
     gap: 20px;
@@ -331,3 +331,33 @@ th {
 .visuals {
     min-height: 350px;
 }
+
+.flex-container {
+    /* 1. Turns the container into a flex container */
+    display: flex;
+    
+    /* Optional: Sets the height of the container */
+    height: 150px; 
+    
+    /* Optional: Adds a border for visualization */
+    /*border: 2px solid #7c3aed; */
+    /*padding: 10px;*/
+}
+
+.box {
+    /* Optional: Styles for both child divs */
+    padding: 20px;
+    margin: 5px;
+    /*background-color: #35045e;*/
+    color: white;
+    text-align: center;
+}
+
+/* Optional: Sets the width for each child */
+.box-left, .box-right {
+    /* Flex-grow: 1 makes both divs take up equal width */
+    flex-grow: 1; 
+}
+
+
+

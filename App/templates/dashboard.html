@@ -27,7 +27,7 @@
                     </a>
                 </li>
                 <li><a href="#Dashboard"><i data-feather="home" class="icon"></i><span class="nav-item">Dashboard</span></a></li>
-                <li><a href="./expense.html"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">Expenses</span></a></li>
+                <li><a href="{{url_for('expense.display_all')}}"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">Expenses</span></a></li>
                 <li><a href="./sales.html"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">Sales</span></a></li>
                 <li><a href="./stock.html"><i data-feather="trending-up" class="icon"></i><span class="nav-item">Stock</span></a></li>
                 <li><a href="./visuals.html"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">Visuals</span></a></li>
@@ -47,7 +47,19 @@
                 <div class="card expenses-info">
                     <h3></h3>
                     <p></p>
-                    <div id="bar-chart"></div>
+                    <div class="flex-container">
+                        <div class="box box-left">
+                            <h2>Top Five expenses</h2><br>
+                            {%for data in top_five%}
+                                
+                                <p> <span style="color: blue;">{{data.productname}}  </span>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      {{data.total_amount}} Rwf </p>
+                              
+                            {%endfor%}
+                        </div>
+                        <div class="box box-right">
+                            <h2>Top Five expenses</h2>
+                        </div>
+                    </div>
                 </div>
             </div>  
         </div>

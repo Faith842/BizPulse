@@ -99,7 +99,7 @@ if (expenseChartDom) {
         containLabel: true,
         left: '3%',
         right: '10%',
-        top: '10%',
+        top: '15%',
         bottom: 70,      //  INCREASE BOTTOM MARGIN (e.g., 70px) to prevent overlap with the visualMap and X-axis labels.
         },
         // X-axis is the numeric value (amount)
