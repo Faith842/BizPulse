@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BIZPULSE Dashboard</title>
+
+        <link rel="stylesheet" href="../static/CSS/dashboard.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="search">
+                <i class="fa fa-search search-icon"></i>
+                <input type="text" placeholder="Search something here..." />
+            </div>
+            <div class="user-profile">
+                <span class="user-initials">NP</span>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="" class="logo">
+                    <h1>BIZPULSE</h1>
+                    </a>
+                </li>
+                <li><a href="./dashboard.html"><i data-feather="home" class="icon"></i><span class="nav-item">Dashboard</span></a></li>
+                <li><a href="#Expenses"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">Expenses</span></a></li>
+                <li><a href="./sales.html"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">Sales</span></a></li>
+                <li><a href="./stock.html"><i data-feather="trending-up" class="icon"></i><span class="nav-item">Stock</span></a></li>
+                <li><a href="./visuals.html"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">Visuals</span></a></li>
+                <li><a href="{{url_for('auth.logout')}}"><i data-feather="log-out" class="icon"></i><span class="nav-item">Log Out</span></a></li>
+            </ul>
+        </nav>
+
+<!--Expenses section -->
+        <div class="dashboard">
+
+            <div class="bottom-section" id="Expenses">
+                <div class="card expenses-info">
+                    <h3>Expenses Overview</h3>
+                    <form id="expenseform">
+                        <select id="category" required>Category
+                            <option>Fixed Expenses</option>
+                            <option>Variable Expenses</option>
+                        </select>
+                        <input type="text" name="productname" id="product-name" placeholder="Product name: " required />
+                        <input type="text" name="description" id="description" placeholder="Description: " />
+                        <input type="date" name="date" id="date" placeholder="Date: " required />
+                        <input type="text" name="price" id="price" placeholder="cost-per-unit: "  />
+                        <input type="number" name="amount" id="amount" placeholder="Amount: " required />
+                        <select id="credit" name="credit" required >credit
+                            <option>Yes</option>
+                            <option>Not</option>
+                        </select>
+                        <select id="payment-method" name="payment" required >Payment method
+                            <option>Mobile Money</option>
+                            <option>Airtel Money</option>
+                            <option>Cash</option>
+                            <option>Bank</option>
+                        </select>
+                        <button type="submit">Save Record</button>
+                        </form>
+                        <table id="expensetable">
+                            <thead>
+                                <tr>
+                                    <th>expenseid</th>
+                                    <th>Category</th>
+                                    <th>Product name</th>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Price-per-unit</th>
+                                    <th>Amount</th>
+                                    <th>Credit</th>
+                                    <th>Payment method</th>
+                                </tr>
+                        </thead>
+                        <tbody></tbody>
+                        </table>
+                    </form>
+                </div>
+                <div class="card expenses">
+                    <p>A visual summary of your recorded business expenses to help you monitor spending and improve financial decisions.</p>
+                    <div id="expensechart"></div>
+                </div>
+            </div>
+
+        </div>
+  
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script>
+            feather.replace();
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="../static/JS/chart.js"></script>
+      
+        
+    </body>
+</html>

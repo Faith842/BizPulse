@@ -8,18 +8,16 @@ expensebp = Blueprint('expense',__name__,url_prefix='/record')
 @expensebp.route('/addrecord',methods=['POST','GET'])
 def add_record():
     if request.method =='POST':
-        data = request.get_json()
-        if not data:
-            return jsonify({"message":"please provide data"}),500
-        productname=data.get('productname')
-        amount=data.get('amount')
-        quantity=data.get('quantity')
-        cost_per_unit=data.get('cost_per_unit')
-        credit =data.get('credit')
-        category = data.get('category')
-        date=data.get('date')
-        paymentmethod=data.get('paymentmethod')
-        description=data.get('description')
+
+        productname= request.form.get('productname')
+        amount=request.form.get('amount')
+        quantity=request.form.get('quantity')
+        cost_per_unit=request.form.get('price')
+        credit =request.form.get('credit')
+        category = request.form.get('category')
+        date=request.form.get('date')
+        paymentmethod=request.form.get('payment')
+        description=request.form.get('description')
         try:
             parse_date = datetime.strptime(date, '%Y-%m-%d').date()
         except ValueError:

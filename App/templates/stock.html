@@ -26,30 +26,29 @@
                     <h1>BIZPULSE</h1>
                     </a>
                 </li>
-                <li><a href="#Dashboard"><i data-feather="home" class="icon"></i><span class="nav-item">Dashboard</span></a></li>
+                <li><a href="./dashboard.html"><i data-feather="home" class="icon"></i><span class="nav-item">Dashboard</span></a></li>
                 <li><a href="./expense.html"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">Expenses</span></a></li>
                 <li><a href="./sales.html"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">Sales</span></a></li>
-                <li><a href="./stock.html"><i data-feather="trending-up" class="icon"></i><span class="nav-item">Stock</span></a></li>
+                <li><a href="#Stock"><i data-feather="trending-up" class="icon"></i><span class="nav-item">Stock</span></a></li>
                 <li><a href="./visuals.html"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">Visuals</span></a></li>
                 <li><a href="{{url_for('auth.logout')}}"><i data-feather="log-out" class="icon"></i><span class="nav-item">Log Out</span></a></li>
             </ul>
         </nav>
         
         <div class="dashboard">
-            <div class="info" id="Dashboard">
-                <h2>Total Balance</h2>
-                <div class="numbers">24,194,000 RWF</div>
-                <h3>October’s Revenue</h3>
-            </div>
-            <div class="card main-chart">
-                <h2>Revenue vs Time</h2>
-                <div id="bar-chart"></div>
-                <div class="card expenses-info">
-                    <h3></h3>
-                    <p></p>
-                    <div id="bar-chart"></div>
+            <!--stock section-->
+
+            <div class="bottom-section" id="Stock">
+                <div class="card stock-info">
+                    <p>Monitor and manage your inventory levels efficiently to reduce shortages and support smooth business operations.</p>
                 </div>
-            </div>  
+                <div class="card stock">
+                    <h3>Stock Analysis</h3>
+                    <p>An overview of your current inventory status to help you make informed restocking and supply decisions.</p>
+                    <div id="stock-graph"></div>
+                </div>
+            </div>
+            
         </div>
         <script src="https://unpkg.com/feather-icons"></script>
         <script>
@@ -58,6 +57,7 @@
         <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="../static/JS/chart.js"></script>
-        
+      
+      
     </body>
 </html>
