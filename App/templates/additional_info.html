@@ -3,68 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome | BizPulse</title>
-  <link rel="stylesheet" href="{{url_for('static', filename='CSS/welcome.css')}}" />
+  <title>{{ _('Welcome') }} | BizPulse</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/welcome.css') }}" />
   <script src="welcome.js" defer></script>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Welcome to <span class="brand">BizPulse</span></h1>
-      <p>Let’s get to know your business better.</p>
+      <h1>{{ _('Welcome to') }} <span class="brand">BizPulse</span></h1>
+      <p>{{ _('Let’s get to know your business better.') }}</p>
     </header>
 
     <form id="bizForm">
       <div class="form-group">
-        <label for="fullName">Your Name</label>
-        <input type="text" id="fullName" placeholder="Enter your name" required />
+        <label for="fullName">{{ _('Your Name') }}</label>
+        <input type="text" id="fullName" placeholder="{{ _('Enter your name') }}" required />
       </div>
 
       <div class="form-group">
-        <label for="companyName">Company Name</label>
-        <input type="text" id="companyName" placeholder="Enter your company name" required />
+        <label for="companyName">{{ _('Company Name') }}</label>
+        <input type="text" id="companyName" placeholder="{{ _('Enter your company name') }}" required />
       </div>
 
       <div class="form-group">
-        <label for="yearsActive">Years of Operation</label>
-        <input type="number" id="yearsActive" min="0" placeholder="e.g., 2" required />
+        <label for="yearsActive">{{ _('Years of Operation') }}</label>
+        <input type="number" id="yearsActive" min="0" placeholder="{{ _('e.g., 2') }}" required />
       </div>
 
       <div class="form-group">
-        <label for="currency">Preferred Currency</label>
+        <label for="currency">{{ _('Preferred Currency') }}</label>
         <select id="currency" required>
-          <option value="">Select Currency</option>
-          <option value="RWF">Rwandan Francs (RWF)</option>
-          <option value="USD">US Dollars (USD)</option>
+          <option value="">{{ _('Select Currency') }}</option>
+          <option value="RWF">{{ _('Rwandan Francs (RWF)') }}</option>
+          <option value="USD">{{ _('US Dollars (USD)') }}</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="income">Total Income (Last 2 Years)</label>
-        <input type="number" id="income" min="0" placeholder="Enter amount" required />
+        <label for="income">{{ _('Total Income (Last 2 Years)') }}</label>
+        <input type="number" id="income" min="0" placeholder="{{ _('Enter amount') }}" required />
       </div>
 
       <div class="form-group">
-        <label for="expenses">Total Expenses (Last 2 Years)</label>
-        <input type="number" id="expenses" min="0" placeholder="Enter amount" required />
+        <label for="expenses">{{ _('Total Expenses (Last 2 Years)') }}</label>
+        <input type="number" id="expenses" min="0" placeholder="{{ _('Enter amount') }}" required />
       </div>
 
-      <button type="submit" class="btn">Submit</button>
+      <button type="submit" class="btn">{{ _('Submit') }}</button>
     </form>
 
     <section id="results" class="hidden">
-      <h2>Business Summary</h2>
-      <p><strong>Name:</strong> <span id="displayName"></span></p>
-      <p><strong>Company:</strong> <span id="displayCompany"></span></p>
-      <p><strong>Years Active:</strong> <span id="displayYears"></span></p>
-      <p><strong>Currency:</strong> <span id="displayCurrency"></span></p>
-      <p><strong>Total Income:</strong> <span id="displayIncome"></span></p>
-      <p><strong>Total Expenses:</strong> <span id="displayExpenses"></span></p>
-      <p><strong>Profit:</strong> <span id="displayProfit"></span></p>
+      <h2>{{ _('Business Summary') }}</h2>
+      <p><strong>{{ _('Name:') }}</strong> <span id="displayName"></span></p>
+      <p><strong>{{ _('Company:') }}</strong> <span id="displayCompany"></span></p>
+      <p><strong>{{ _('Years Active:') }}</strong> <span id="displayYears"></span></p>
+      <p><strong>{{ _('Currency:') }}</strong> <span id="displayCurrency"></span></p>
+      <p><strong>{{ _('Total Income:') }}</strong> <span id="displayIncome"></span></p>
+      <p><strong>{{ _('Total Expenses:') }}</strong> <span id="displayExpenses"></span></p>
+      <p><strong>{{ _('Profit:') }}</strong> <span id="displayProfit"></span></p>
     </section>
-    <a href="{{url_for('dashboard.dashboard')}}" class="btn-secondary">← Back to Home</a>
+
+    <a href="{{ url_for('dashboard.dashboard') }}" class="btn-secondary">← {{ _('Back to Home') }}</a>
   </div>
 
-  <script src="{{url_for('static', filename='JS/welcome.js')}}"></script>
+  <script src="{{ url_for('static', filename='JS/welcome.js') }}"></script>
 </body>
 </html>

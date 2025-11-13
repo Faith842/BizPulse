@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-11-12 19:59+0200\n"
+"POT-Creation-Date: 2025-11-13 09:17+0200\n"
 "PO-Revision-Date: 2025-11-12 17:49+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: rw\n"
@@ -83,17 +83,444 @@ msgstr "igicuruzwa nticyicyibaho"
 msgid "record deleted successfully"
 msgstr "igicuruzwa cyirasibwe neza"
 
+#: App/templates/additional_info.html:6
+msgid "Welcome"
+msgstr "Murakaza Neza"
+
+#: App/templates/additional_info.html:13
+msgid "Welcome to"
+msgstr "Murakaza Neza Kuri"
+
+#: App/templates/additional_info.html:14
+msgid "Let’s get to know your business better."
+msgstr "Reka tumenye Business yawe neza"
+
+#: App/templates/additional_info.html:19
+msgid "Your Name"
+msgstr "Izina ryawe"
+
+#: App/templates/additional_info.html:20
+msgid "Enter your name"
+msgstr "shyiramo izina ryawe"
+
+#: App/templates/additional_info.html:24
+msgid "Company Name"
+msgstr "Izina rya business yawe"
+
+#: App/templates/additional_info.html:25
+msgid "Enter your company name"
+msgstr "izina ryabusiness yawe"
+
+#: App/templates/additional_info.html:29
+msgid "Years of Operation"
+msgstr "Imwaka business imaze ikora"
+
+#: App/templates/additional_info.html:30
+msgid "e.g., 2"
+msgstr "urugero: 2"
+
+#: App/templates/additional_info.html:34
+msgid "Preferred Currency"
+msgstr "ifaranga ushaka gukoresha"
+
+#: App/templates/additional_info.html:36
+msgid "Select Currency"
+msgstr "hitamo ifaranga"
+
+#: App/templates/additional_info.html:37
+msgid "Rwandan Francs (RWF)"
+msgstr "amafaranga"
+
+#: App/templates/additional_info.html:38
+msgid "US Dollars (USD)"
+msgstr "amadolari"
+
+#: App/templates/additional_info.html:43
+msgid "Total Income (Last 2 Years)"
+msgstr "inyungu murirusange (imyaka ibiri ishyize)"
+
+#: App/templates/additional_info.html:44 App/templates/additional_info.html:49
+msgid "Enter amount"
+msgstr "shyiramo amafranga"
+
+#: App/templates/additional_info.html:48
+msgid "Total Expenses (Last 2 Years)"
+msgstr "Ibyo wasohoye mumyaka ibiri ishyize"
+
+#: App/templates/additional_info.html:52
+msgid "Submit"
+msgstr "Ohereza"
+
+#: App/templates/additional_info.html:56
+msgid "Business Summary"
+msgstr "Incamake ya business"
+
+#: App/templates/additional_info.html:57
+msgid "Name:"
+msgstr "Izina"
+
+#: App/templates/additional_info.html:58
+msgid "Company:"
+msgstr "Business"
+
+#: App/templates/additional_info.html:59
+msgid "Years Active:"
+msgstr "Imyaka Imaze ikora"
+
+#: App/templates/additional_info.html:60
+msgid "Currency:"
+msgstr "ifaranga"
+
+#: App/templates/additional_info.html:61
+msgid "Total Income:"
+msgstr "inyungu murirusange"
+
+#: App/templates/additional_info.html:62
+msgid "Total Expenses:"
+msgstr "Ibyasohotse muri rusange"
+
+#: App/templates/additional_info.html:63
+msgid "Profit:"
+msgstr "inyungu"
+
+#: App/templates/additional_info.html:66
+msgid "Back to Home"
+msgstr "Subira Inyuma"
+
+#: App/templates/dashboard.html:40
+msgid "Total Balance"
+msgstr "amafaranga yose"
+
+#: App/templates/dashboard.html:42
+msgid "October’s Revenue"
+msgstr "Ibyinjiye muri Nyakanga"
+
+#: App/templates/dashboard.html:45
+msgid "Revenue vs Time"
+msgstr "Ibyinjiye ku gihe"
+
+#: App/templates/dashboard.html:52
+msgid "Top Five expenses"
+msgstr "Bitanubyambere byasohotse "
+
+#: App/templates/dashboard.html:60
+#, fuzzy
+msgid "Top Five sales"
+msgstr "Bitanubyambere byasohotse "
+
+#: App/templates/expense.html:6 App/templates/sales.html:6
+#: App/templates/stock.html:6 App/templates/visuals.html:6
+msgid "BIZPULSE Dashboard"
+msgstr "BIZPULSE Dashboard"
+
+#: App/templates/expense.html:16 App/templates/sales.html:16
+#: App/templates/stock.html:16 App/templates/visuals.html:16
+msgid "Search something here..."
+msgstr "shaka Icyintu hano"
+
+#: App/templates/expense.html:30 App/templates/sales.html:30
+#: App/templates/stock.html:33 App/templates/visuals.html:30
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: App/templates/expense.html:31 App/templates/sales.html:31
+#: App/templates/stock.html:39 App/templates/visuals.html:31
+msgid "Expenses"
+msgstr "Ibyasohotse"
+
+#: App/templates/expense.html:32 App/templates/sales.html:32
+#: App/templates/stock.html:45 App/templates/visuals.html:32
+msgid "Sales"
+msgstr "Ibyinjiye"
+
+#: App/templates/expense.html:33 App/templates/sales.html:33
+#: App/templates/stock.html:51 App/templates/visuals.html:33
+msgid "Stock"
+msgstr "Sitoke"
+
+#: App/templates/expense.html:34 App/templates/sales.html:34
+#: App/templates/stock.html:57 App/templates/visuals.html:34
+msgid "Visuals"
+msgstr "Amashusho"
+
+#: App/templates/expense.html:35 App/templates/sales.html:35
+#: App/templates/stock.html:63 App/templates/visuals.html:35
+msgid "Log Out"
+msgstr "Sohoka"
+
+#: App/templates/expense.html:59
+msgid "Expenses Overview"
+msgstr "Isuzuma ry'Imikoreshereze y'Amafaranga"
+
+#: App/templates/expense.html:63 App/templates/expense.html:96
+msgid "Category"
+msgstr "Icyiciro"
+
+#: App/templates/expense.html:64
+msgid "Fixed Expenses"
+msgstr "Imikoreshereze Ihoraho"
+
+#: App/templates/expense.html:65
+msgid "Variable Expenses"
+msgstr "Imikoreshereze Ihindagurika"
+
+#: App/templates/expense.html:68 App/templates/sales.html:48
+msgid "Product name:"
+msgstr "Izina ry'Igicuruzwa:"
+
+#: App/templates/expense.html:69 App/templates/sales.html:50
+msgid "Quantity:"
+msgstr "Umubare:"
+
+#: App/templates/expense.html:70 App/templates/sales.html:49
+msgid "Description:"
+msgstr "Ibisobanuro:"
+
+#: App/templates/expense.html:71 App/templates/sales.html:47
+msgid "Date:"
+msgstr "Itariki:"
+
+#: App/templates/expense.html:72
+msgid "Cost per unit:"
+msgstr "Igiciro kuri buri kimwe:"
+
+#: App/templates/expense.html:73 App/templates/sales.html:61
+msgid "Amount:"
+msgstr "Umubare w'amafaranga:"
+
+#: App/templates/expense.html:75 App/templates/expense.html:103
+msgid "Credit"
+msgstr "Kirediti"
+
+#: App/templates/expense.html:77
+msgid "Yes"
+msgstr "Yego"
+
+#: App/templates/expense.html:78
+msgid "Not"
+msgstr "Oya"
+
+#: App/templates/expense.html:81 App/templates/expense.html:104
+#: App/templates/sales.html:54 App/templates/sales.html:73
+msgid "Payment method"
+msgstr "Uburyo bwo Kwishyura"
+
+#: App/templates/expense.html:83 App/templates/sales.html:55
+msgid "Mobile Money"
+msgstr "Mobi-Money"
+
+#: App/templates/expense.html:84 App/templates/sales.html:56
+msgid "Airtel Money"
+msgstr "Airtel-Money"
+
+#: App/templates/expense.html:85 App/templates/sales.html:57
+msgid "Cash"
+msgstr "Amafaranga"
+
+#: App/templates/expense.html:86 App/templates/sales.html:58
+msgid "Bank"
+msgstr "Banki"
+
+#: App/templates/expense.html:89
+msgid "Save Record"
+msgstr "Bika Ibyanditswe"
+
+#: App/templates/expense.html:95
+msgid "ID"
+msgstr "Nimero"
+
+#: App/templates/expense.html:97 App/templates/sales.html:69
+msgid "Product name"
+msgstr "Izina ry'Igicuruzwa"
+
+#: App/templates/expense.html:98 App/templates/sales.html:71
+msgid "Quantity"
+msgstr "Umubare"
+
+#: App/templates/expense.html:99 App/templates/sales.html:70
+msgid "Description"
+msgstr "Ibisobanuro"
+
+#: App/templates/expense.html:100 App/templates/sales.html:68
+msgid "Date"
+msgstr "Itariki"
+
+#: App/templates/expense.html:101
+msgid "Price per unit"
+msgstr "Igiciro kuri buri kimwe"
+
+#: App/templates/expense.html:102 App/templates/sales.html:74
+msgid "Amount"
+msgstr "Umubare w'amafaranga"
+
+#: App/templates/expense.html:105
+msgid "Actions"
+msgstr "Ibikorwa"
+
+#: App/templates/expense.html:124
+msgid "Edit"
+msgstr "Hindura"
+
+#: App/templates/expense.html:127
+msgid "Remove"
+msgstr "Siba"
+
+#: App/templates/expense.html:137
+msgid ""
+"A visual summary of your recorded business expenses to help you monitor "
+"spending and improve financial decisions."
+msgstr ""
+"Isuzuma ry'ibishushanyo by'imikoreshereze y'amafaranga yawe kugirango "
+"ukurikirane uko amafaranga akoreshwa kandi wunguke mu byemezo by’imari."
+
+#: App/templates/login.html:6
+msgid "BizPulse - Login"
+msgstr "BizPulse - Kwinjira"
+
+#: App/templates/login.html:12 App/templates/signup.html:23
+msgid "gradient"
+msgstr "Gradienti"
+
+#: App/templates/login.html:22
+msgid "Welcome!"
+msgstr "Murakaza neza!"
+
+#: App/templates/login.html:23
+msgid "We’re delighted to have you here."
+msgstr "Turishimye kubakira hano."
+
+#: App/templates/login.html:44 App/templates/signup.html:41
+msgid "Username"
+msgstr "Izina ry'umukoresha"
+
+#: App/templates/login.html:49 App/templates/signup.html:51
+msgid "Password"
+msgstr "Ijambo ry'ibanga"
+
+#: App/templates/font/font.html:32 App/templates/login.html:54
+#: App/templates/signup.html:58
+msgid "Login"
+msgstr "Injira"
+
+#: App/templates/login.html:57
+msgid "Don’t have an account?"
+msgstr "Nta konte ufite?"
+
+#: App/templates/login.html:58 App/templates/signup.html:36
+#: App/templates/signup.html:54
+msgid "Sign Up"
+msgstr "Iyandikishe"
+
+#: App/templates/sales.html:27 App/templates/stock.html:27
+#: App/templates/visuals.html:27
+msgid "BIZPULSE"
+msgstr "BIZPULSE"
+
+#: App/templates/sales.html:43
+msgid "Sales Records"
+msgstr "Ibyanditswe by'Ubucuruzi"
+
+#: App/templates/sales.html:44
+msgid ""
+"Add and track all sales transactions to maintain accurate and up-to-date "
+"business performance data."
+msgstr ""
+"Ongeramo kandi ukurikirane ibikorwa byose by'ubucuruzi kugirango ube "
+"ufite amakuru y'ukuri kandi agezweho."
+
+#: App/templates/sales.html:51
+msgid "Price:"
+msgstr "Igiciro:"
+
+#: App/templates/sales.html:62
+msgid "Save record"
+msgstr "Bika Ibyanditswe"
+
+#: App/templates/sales.html:72
+msgid "Price"
+msgstr "Igiciro"
+
+#: App/templates/sales.html:82
+msgid "Sales Performance Overview"
+msgstr "Isuzuma ry'Uko Ubucuruzi Bukora"
+
+#: App/templates/sales.html:83
+msgid ""
+"A graphical view of your sales trends to help you analyze growth, demand,"
+" and revenue patterns."
+msgstr ""
+"Ishusho yerekana uko ubucuruzi bukora kugirango ufate ibyemezo byiza ku "
+"mikurire, ubusabe n’inyungu."
+
+#: App/templates/signup.html:6
+msgid "BizPulse - Sign Up"
+msgstr "BizPulse - Iyandikishe"
+
+#: App/templates/signup.html:46
+msgid "Email"
+msgstr "Imeli"
+
+#: App/templates/signup.html:57
+msgid "Already have an account?"
+msgstr "Usanzwe ufite konte?"
+
+#: App/templates/stock.html:73
+msgid ""
+"Monitor and manage your inventory levels efficiently to reduce shortages "
+"and support smooth business operations."
+msgstr ""
+"Kurikirana no gucunga ibicuruzwa byawe neza kugirango wirinde kubura "
+"nogushyigikira imikorere myiza y'ubucuruzi."
+
+#: App/templates/stock.html:76
+msgid "Stock Analysis"
+msgstr "Isuzuma ry'Ibicuruzwa"
+
+#: App/templates/stock.html:77
+#, fuzzy
+msgid ""
+"An overview of your current inventory status to help you make informed "
+"restocking and supply decisions."
+msgstr ""
+"Isuzuma rusange ry'ibicuruzwa byawe kugirango ufate ibyemezo byiza "
+"byokongera no gutanga ibicuruzwa."
+
+#: App/templates/visuals.html:43
+#, fuzzy
+msgid ""
+"Explore visual insights that help you understand your business "
+"performance at a glance."
+msgstr ""
+"Sura ibishushanyo bigufasha gusobanukirwa uko ubucuruzibukora mu buryo "
+"bwihuse."
+
+#: App/templates/visuals.html:46
+msgid "Business Visual Insights"
+msgstr "Ibishushanyo by'Uko Ubucuruzi Bukora"
+
+#: App/templates/visuals.html:47
+msgid ""
+"A clear side-by-side view of your sales and expenses to highlight "
+"performance trends."
+msgstr ""
+"Ishusho isobanutse y'ubucuruzi n'imikoreshereze y'amafaranga kugirango "
+"ugaragazeimigendekere y'ubucuruzi."
+
 #: App/templates/font/font.html:41
 msgid "Hey! Yes, You."
 msgstr "Hallo! Yego, WEho"
 
 #: App/templates/font/font.html:42
 msgid "Tired of losing time on manual bookkeepieng?"
-msgstr "Unaniwe no gutakaza igihe ukora ibikorwa byo kubika inyandiko ku buryo bwa gakondo?"
+msgstr ""
+"Unanijwe no gutakaza igihe ukora ibikorwa byo kubika inyandiko ku buryo "
+"bwa gakondo?"
 
 #: App/templates/font/font.html:43
 msgid "Track sales, manage stock, and make smarter decisions with BizPulse"
-msgstr "Kurikirana ibicuruzwa, tegeka ububiko, kandi ufate ibyemezo byubaka ukoresheje BizPulse"
+msgstr ""
+"Kurikirana ibicuruzwa, tegeka ububiko, kandi ufate ibyemezo byubaka "
+"ukoresheje BizPulse"
 
 #: App/templates/font/font.html:45
 msgid "I'm In!"
@@ -132,10 +559,12 @@ msgid "Secure"
 msgstr "Bifite umutekano"
 
 #: App/templates/font/font.html:62
-msgid "Your data is protected, giving you peace of mind while running your" 
+#, fuzzy
+msgid ""
+"Your data is protected, giving you peace of mind while running your "
 "business"
-
-msgstr "Amakuru yawe arinzwe, bikaguha ituze mu mutima igihe uri mu bikorwa "
+msgstr ""
+"Amakuru yawe arinzwe, bikaguha ituze mu mutima igihe uri mu bikorwa "
 "by’ubucuruzi bwawe."
 
 #: App/templates/font/font.html:67

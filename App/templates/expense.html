@@ -1,161 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>BIZPULSE Dashboard</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ _('BIZPULSE Dashboard') }}</title>
 
-        <link rel="stylesheet" href="../static/CSS/dashboard.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    </head>
-    <body>
-        <header class="topbar">
-            <div class="search">
-                <i class="fa fa-search search-icon"></i>
-                <input type="text" placeholder="Search something here..." />
-            </div>
-            <div class="user-profile">
-                <span class="user-initials">NP</span>
-            </div>
-        </header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="" class="logo">
-                    <h1>BIZPULSE</h1>
-                    </a>
-                </li>
-                <li><a href="{{url_for('dashboard.dashboard')}}"><i data-feather="home" class="icon"></i><span class="nav-item">Dashboard</span></a></li>
-                <li><a href="#Expenses"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">Expenses</span></a></li>
-                <li><a href="./sales.html"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">Sales</span></a></li>
-                <li><a href="./stock.html"><i data-feather="trending-up" class="icon"></i><span class="nav-item">Stock</span></a></li>
-                <li><a href="./visuals.html"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">Visuals</span></a></li>
-                <li><a href="{{url_for('auth.logout')}}"><i data-feather="log-out" class="icon"></i><span class="nav-item">Log Out</span></a></li>
-            </ul>
-        </nav>
-
-<!--Expenses section -->
-        <div class="dashboard">
-    {% with messages = get_flashed_messages(with_categories=true) %}
-
-        {% if messages %}
-        
-            <ul class="flashes">
-              {% for category, message in messages %}
-                {%if category == 'success'%}
-
-                  <span style="color: blue;">
-                  {{ message }}
-                  </span>
-                {%elif category == 'danger'%}
-                  <span style="color: red;">
-                  {{ message }}
-                  </span>
-                {%elif category == 'info'%}
-                  <span style="color: #00ff66;">
-                  {{ message }}
-                  </span>
-                {% endif %}
-              {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
-
-            <div class="bottom-section" id="Expenses">
-                <div class="card expenses-info">
-                    <h3>Expenses Overview</h3>
-                    <form id="expenseform" action="{{url_for('expense.add_record')}}" method="POST">
-                        <select id="category" name="category" required>Category
-                            <option>Fixed Expenses</option>
-                            <option>Variable Expenses</option>
-                        </select>
-                        <input type="text" name="productname" id="productname" placeholder="Product name: " required />
-                        <input type="text" name="quantity" id="quantity" placeholder="quantity: " required />
-                        <input type="text" name="description" id="description" placeholder="Description: " />
-                        <input type="date" name="date" id="date" placeholder="Date: " required />
-                        <input type="text" name="cost_per_unit" id="price" placeholder="cost-per-unit: "  />
-                        <input type="number" name="amount" id="amount" placeholder="Amount: " required />
-                        <label for="credit">Credit</label>
-                        <select id="credit" name="credit" required >credit
-                            <option>Yes</option>
-                            <option>Not</option>
-                        </select>
-                        <select id="paymentmethod" name="paymentmethod" required >Payment method
-                            <option>Mobile Money</option>
-                            <option>Airtel Money</option>
-                            <option>Cash</option>
-                            <option>Bank</option>
-                        </select>
-                        <button type="submit">Save Record</button>
-                    </form>
-                        <table id="expensetable">
-                            <thead>
-                                <tr>
-                                    <th>id</th>
-                                    <th>Category</th>
-                                    <th>Product name</th>
-                                    <th>quantity</th>
-                                    <th>Description</th>
-                                    <th>Date</th>
-                                    <th>Price_per_unit</th>
-                                    <th>Amount</th>
-                                    <th>Credit</th>
-                                    <th>Payment method</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                        
-                            <tbody>
-                                {%for data in all_records%}
-                                    <tr>
-                                        <td>{{data.expenseid}}</td>
-                                        <td>{{data.category}}</td>
-                                        <td>{{data.productname}}</td>
-                                        <td>{{data.quantity}}</td>
-                                        <td>{{data.description}}</td>
-                                        <td>{{data.date}}</td>
-                                        <td>{{data.cost_per_unit}}</td>
-                                        <td>{{data.amount}}</td>
-                                        <td>{{data.credit}}</td>
-                                        <td>{{data.paymentmethod}}</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary me-2 edit-expense-btn" data-bs-toggle="modal" data-sponsor-id="{{data.expenseid}}"><i class="bi bi-pencil"></i> Edit</button>
-                                            <button class="btn btn-sm btn-outline-danger delete-talent-btn" data-sponsor-id="{{data.expenseid}}"><i class="bi bi-trash"></i> Remove</button>
-                                        </td>
-                                    </tr>
-                                {%endfor%}
-                            </tbody>
-                        
-                        </table>
-                    
-                </div>
-                <div class="card expenses">
-                    <p>A visual summary of your recorded business expenses to help you monitor spending and improve financial decisions.</p>
-                    <div id="expensechart"></div>
-                </div>
-            </div>
-
+    <link rel="stylesheet" href="../static/CSS/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <header class="topbar">
+        <div class="search">
+            <i class="fa fa-search search-icon"></i>
+            <input type="text" placeholder="{{ _('Search something here...') }}" />
         </div>
-  
-        <script src="https://unpkg.com/feather-icons"></script>
-        <script>
-            feather.replace();
-        </script>
-        <script>
-            // Define the base URL for editing a record using Jinja
-            // We use a placeholder '0' for the ID which JS will replace
-            const EDIT_URL_BASE = "{{ url_for('expense.edit_record', id=0) }}";
-            
-            // Original URL for adding a new record
-            const ADD_URL = "{{ url_for('expense.add_record') }}";
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="{{url_for('static',filename='JS/removeexpense.js')}}"></script>
-        <script src="{{url_for('static',filename='JS/editexpense.js')}}"></script>
-        <script src="../static/JS/expense.js"></script>
-      
-        
-    </body>
+        <div class="user-profile">
+            <span class="user-initials">NP</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="" class="logo">
+                    <h1>BIZPULSE</h1>
+                </a>
+            </li>
+            <li><a href="{{ url_for('dashboard.dashboard') }}"><i data-feather="home" class="icon"></i><span class="nav-item">{{ _('Dashboard') }}</span></a></li>
+            <li><a href="#Expenses"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">{{ _('Expenses') }}</span></a></li>
+            <li><a href="./sales.html"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">{{ _('Sales') }}</span></a></li>
+            <li><a href="./stock.html"><i data-feather="trending-up" class="icon"></i><span class="nav-item">{{ _('Stock') }}</span></a></li>
+            <li><a href="./visuals.html"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">{{ _('Visuals') }}</span></a></li>
+            <li><a href="{{ url_for('auth.logout') }}"><i data-feather="log-out" class="icon"></i><span class="nav-item">{{ _('Log Out') }}</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Expenses section -->
+    <div class="dashboard">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        {% if category == 'success' %}
+                            <span style="color: blue;">{{ message }}</span>
+                        {% elif category == 'danger' %}
+                            <span style="color: red;">{{ message }}</span>
+                        {% elif category == 'info' %}
+                            <span style="color: #00ff66;">{{ message }}</span>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <div class="bottom-section" id="Expenses">
+            <div class="card expenses-info">
+                <h3>{{ _('Expenses Overview') }}</h3>
+
+                <form id="expenseform" action="{{ url_for('expense.add_record') }}" method="POST">
+                    <select id="category" name="category" required>
+                        <option disabled selected>{{ _('Category') }}</option>
+                        <option>{{ _('Fixed Expenses') }}</option>
+                        <option>{{ _('Variable Expenses') }}</option>
+                    </select>
+
+                    <input type="text" name="productname" id="productname" placeholder="{{ _('Product name:') }}" required />
+                    <input type="text" name="quantity" id="quantity" placeholder="{{ _('Quantity:') }}" required />
+                    <input type="text" name="description" id="description" placeholder="{{ _('Description:') }}" />
+                    <input type="date" name="date" id="date" placeholder="{{ _('Date:') }}" required />
+                    <input type="text" name="cost_per_unit" id="price" placeholder="{{ _('Cost per unit:') }}" />
+                    <input type="number" name="amount" id="amount" placeholder="{{ _('Amount:') }}" required />
+
+                    <label for="credit">{{ _('Credit') }}</label>
+                    <select id="credit" name="credit" required>
+                        <option>{{ _('Yes') }}</option>
+                        <option>{{ _('Not') }}</option>
+                    </select>
+
+                    <label for="paymentmethod">{{ _('Payment method') }}</label>
+                    <select id="paymentmethod" name="paymentmethod" required>
+                        <option>{{ _('Mobile Money') }}</option>
+                        <option>{{ _('Airtel Money') }}</option>
+                        <option>{{ _('Cash') }}</option>
+                        <option>{{ _('Bank') }}</option>
+                    </select>
+
+                    <button type="submit">{{ _('Save Record') }}</button>
+                </form>
+
+                <table id="expensetable">
+                    <thead>
+                        <tr>
+                            <th>{{ _('ID') }}</th>
+                            <th>{{ _('Category') }}</th>
+                            <th>{{ _('Product name') }}</th>
+                            <th>{{ _('Quantity') }}</th>
+                            <th>{{ _('Description') }}</th>
+                            <th>{{ _('Date') }}</th>
+                            <th>{{ _('Price per unit') }}</th>
+                            <th>{{ _('Amount') }}</th>
+                            <th>{{ _('Credit') }}</th>
+                            <th>{{ _('Payment method') }}</th>
+                            <th>{{ _('Actions') }}</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for data in all_records %}
+                        <tr>
+                            <td>{{ data.expenseid }}</td>
+                            <td>{{ data.category }}</td>
+                            <td>{{ data.productname }}</td>
+                            <td>{{ data.quantity }}</td>
+                            <td>{{ data.description }}</td>
+                            <td>{{ data.date }}</td>
+                            <td>{{ data.cost_per_unit }}</td>
+                            <td>{{ data.amount }}</td>
+                            <td>{{ data.credit }}</td>
+                            <td>{{ data.paymentmethod }}</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary me-2 edit-expense-btn" data-bs-toggle="modal" data-sponsor-id="{{ data.expenseid }}">
+                                    <i class="bi bi-pencil"></i> {{ _('Edit') }}
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger delete-talent-btn" data-sponsor-id="{{ data.expenseid }}">
+                                    <i class="bi bi-trash"></i> {{ _('Remove') }}
+                                </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card expenses">
+                <p>{{ _('A visual summary of your recorded business expenses to help you monitor spending and improve financial decisions.') }}</p>
+                <div id="expensechart"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>feather.replace();</script>
+
+    <script>
+        const EDIT_URL_BASE = "{{ url_for('expense.edit_record', id=0) }}";
+        const ADD_URL = "{{ url_for('expense.add_record') }}";
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{{ url_for('static', filename='JS/removeexpense.js') }}"></script>
+    <script src="{{ url_for('static', filename='JS/editexpense.js') }}"></script>
+    <script src="../static/JS/expense.js"></script>
+</body>
 </html>

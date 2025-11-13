@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BizPulse - Login</title>
+    <title>{{ _('BizPulse - Login') }}</title>
     <link rel="stylesheet" href="../static/CSS/auth.css" />
 </head>
 <body>
 
     <div>
-        <img class="image-gradient" src="../images/image.png" alt="gradient">
+        <img class="image-gradient" src="../images/image.png" alt="{{ _('gradient') }}">
         <div class="layer-blur"></div>
         <spline-viewer class="robot-3d" url="https://prod.spline.design/95S8W3FhWE2V-zjQ/scene.splinecode"></spline-viewer>
     </div>
@@ -19,50 +19,44 @@
         <span class="bg-animate2"></span>
 
         <div class="form-box login">
-            <h2>Welcome!</h2>
-            <p>We’re delighted to have you here.</p>
-    {% with messages = get_flashed_messages(with_categories=true) %}
+            <h2>{{ _('Welcome!') }}</h2>
+            <p>{{ _('We’re delighted to have you here.') }}</p>
 
-        {% if messages %}
-        
-            <ul class="flashes">
-              {% for category, message in messages %}
-                {%if category == 'success'%}
-
-                  <span style="color: blue;">
-                  {{ message }}
-                  </span>
-                {%elif category == 'danger'%}
-                  <span style="color: red;">
-                  {{ message }}
-                  </span>
-                {%elif category == 'info'%}
-                  <span style="color: #00ff66;">
-                  {{ message }}
-                  </span>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                            {% if category == 'success' %}
+                                <span style="color: blue;">{{ message }}</span>
+                            {% elif category == 'danger' %}
+                                <span style="color: red;">{{ message }}</span>
+                            {% elif category == 'info' %}
+                                <span style="color: #00ff66;">{{ message }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
                 {% endif %}
-              {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}
+            {% endwith %}
 
-            <form action="{{url_for('auth.login')}}" method="POST">
+            <form action="{{ url_for('auth.login') }}" method="POST">
                 <div class="input-box">
                     <input type="text" name="username" required />
-                    <label>Username</label>
+                    <label>{{ _('Username') }}</label>
                 </div>
 
                 <div class="input-box">
                     <input type="password" name="password" required />
-                    <label>Password</label>
+                    <label>{{ _('Password') }}</label>
                 </div>
 
                 <div class="forgot-password"></div>
 
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn">{{ _('Login') }}</button>
 
                 <div class="logreg-link">
-                    <p>Don’t have an account? <a href="{{url_for('auth.register')}}" class="register-link">Sign Up</a></p>
+                    <p>{{ _('Don’t have an account?') }} 
+                        <a href="{{ url_for('auth.register') }}" class="register-link">{{ _('Sign Up') }}</a>
+                    </p>
                 </div>
             </form>
         </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-11-12 19:59+0200\n"
+"POT-Creation-Date: 2025-11-13 09:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,6 +71,412 @@ msgstr ""
 
 #: App/routes/expensesAPI.py:99
 msgid "record deleted successfully"
+msgstr ""
+
+#: App/templates/additional_info.html:6
+msgid "Welcome"
+msgstr ""
+
+#: App/templates/additional_info.html:13
+msgid "Welcome to"
+msgstr ""
+
+#: App/templates/additional_info.html:14
+msgid "Let’s get to know your business better."
+msgstr ""
+
+#: App/templates/additional_info.html:19
+msgid "Your Name"
+msgstr ""
+
+#: App/templates/additional_info.html:20
+msgid "Enter your name"
+msgstr ""
+
+#: App/templates/additional_info.html:24
+msgid "Company Name"
+msgstr ""
+
+#: App/templates/additional_info.html:25
+msgid "Enter your company name"
+msgstr ""
+
+#: App/templates/additional_info.html:29
+msgid "Years of Operation"
+msgstr ""
+
+#: App/templates/additional_info.html:30
+msgid "e.g., 2"
+msgstr ""
+
+#: App/templates/additional_info.html:34
+msgid "Preferred Currency"
+msgstr ""
+
+#: App/templates/additional_info.html:36
+msgid "Select Currency"
+msgstr ""
+
+#: App/templates/additional_info.html:37
+msgid "Rwandan Francs (RWF)"
+msgstr ""
+
+#: App/templates/additional_info.html:38
+msgid "US Dollars (USD)"
+msgstr ""
+
+#: App/templates/additional_info.html:43
+msgid "Total Income (Last 2 Years)"
+msgstr ""
+
+#: App/templates/additional_info.html:44 App/templates/additional_info.html:49
+msgid "Enter amount"
+msgstr ""
+
+#: App/templates/additional_info.html:48
+msgid "Total Expenses (Last 2 Years)"
+msgstr ""
+
+#: App/templates/additional_info.html:52
+msgid "Submit"
+msgstr ""
+
+#: App/templates/additional_info.html:56
+msgid "Business Summary"
+msgstr ""
+
+#: App/templates/additional_info.html:57
+msgid "Name:"
+msgstr ""
+
+#: App/templates/additional_info.html:58
+msgid "Company:"
+msgstr ""
+
+#: App/templates/additional_info.html:59
+msgid "Years Active:"
+msgstr ""
+
+#: App/templates/additional_info.html:60
+msgid "Currency:"
+msgstr ""
+
+#: App/templates/additional_info.html:61
+msgid "Total Income:"
+msgstr ""
+
+#: App/templates/additional_info.html:62
+msgid "Total Expenses:"
+msgstr ""
+
+#: App/templates/additional_info.html:63
+msgid "Profit:"
+msgstr ""
+
+#: App/templates/additional_info.html:66
+msgid "Back to Home"
+msgstr ""
+
+#: App/templates/dashboard.html:40
+msgid "Total Balance"
+msgstr ""
+
+#: App/templates/dashboard.html:42
+msgid "October’s Revenue"
+msgstr ""
+
+#: App/templates/dashboard.html:45
+msgid "Revenue vs Time"
+msgstr ""
+
+#: App/templates/dashboard.html:52
+msgid "Top Five expenses"
+msgstr ""
+
+#: App/templates/dashboard.html:60
+msgid "Top Five sales"
+msgstr ""
+
+#: App/templates/expense.html:6 App/templates/sales.html:6
+#: App/templates/stock.html:6 App/templates/visuals.html:6
+msgid "BIZPULSE Dashboard"
+msgstr ""
+
+#: App/templates/expense.html:16 App/templates/sales.html:16
+#: App/templates/stock.html:16 App/templates/visuals.html:16
+msgid "Search something here..."
+msgstr ""
+
+#: App/templates/expense.html:30 App/templates/sales.html:30
+#: App/templates/stock.html:33 App/templates/visuals.html:30
+msgid "Dashboard"
+msgstr ""
+
+#: App/templates/expense.html:31 App/templates/sales.html:31
+#: App/templates/stock.html:39 App/templates/visuals.html:31
+msgid "Expenses"
+msgstr ""
+
+#: App/templates/expense.html:32 App/templates/sales.html:32
+#: App/templates/stock.html:45 App/templates/visuals.html:32
+msgid "Sales"
+msgstr ""
+
+#: App/templates/expense.html:33 App/templates/sales.html:33
+#: App/templates/stock.html:51 App/templates/visuals.html:33
+msgid "Stock"
+msgstr ""
+
+#: App/templates/expense.html:34 App/templates/sales.html:34
+#: App/templates/stock.html:57 App/templates/visuals.html:34
+msgid "Visuals"
+msgstr ""
+
+#: App/templates/expense.html:35 App/templates/sales.html:35
+#: App/templates/stock.html:63 App/templates/visuals.html:35
+msgid "Log Out"
+msgstr ""
+
+#: App/templates/expense.html:59
+msgid "Expenses Overview"
+msgstr ""
+
+#: App/templates/expense.html:63 App/templates/expense.html:96
+msgid "Category"
+msgstr ""
+
+#: App/templates/expense.html:64
+msgid "Fixed Expenses"
+msgstr ""
+
+#: App/templates/expense.html:65
+msgid "Variable Expenses"
+msgstr ""
+
+#: App/templates/expense.html:68 App/templates/sales.html:48
+msgid "Product name:"
+msgstr ""
+
+#: App/templates/expense.html:69 App/templates/sales.html:50
+msgid "Quantity:"
+msgstr ""
+
+#: App/templates/expense.html:70 App/templates/sales.html:49
+msgid "Description:"
+msgstr ""
+
+#: App/templates/expense.html:71 App/templates/sales.html:47
+msgid "Date:"
+msgstr ""
+
+#: App/templates/expense.html:72
+msgid "Cost per unit:"
+msgstr ""
+
+#: App/templates/expense.html:73 App/templates/sales.html:61
+msgid "Amount:"
+msgstr ""
+
+#: App/templates/expense.html:75 App/templates/expense.html:103
+msgid "Credit"
+msgstr ""
+
+#: App/templates/expense.html:77
+msgid "Yes"
+msgstr ""
+
+#: App/templates/expense.html:78
+msgid "Not"
+msgstr ""
+
+#: App/templates/expense.html:81 App/templates/expense.html:104
+#: App/templates/sales.html:54 App/templates/sales.html:73
+msgid "Payment method"
+msgstr ""
+
+#: App/templates/expense.html:83 App/templates/sales.html:55
+msgid "Mobile Money"
+msgstr ""
+
+#: App/templates/expense.html:84 App/templates/sales.html:56
+msgid "Airtel Money"
+msgstr ""
+
+#: App/templates/expense.html:85 App/templates/sales.html:57
+msgid "Cash"
+msgstr ""
+
+#: App/templates/expense.html:86 App/templates/sales.html:58
+msgid "Bank"
+msgstr ""
+
+#: App/templates/expense.html:89
+msgid "Save Record"
+msgstr ""
+
+#: App/templates/expense.html:95
+msgid "ID"
+msgstr ""
+
+#: App/templates/expense.html:97 App/templates/sales.html:69
+msgid "Product name"
+msgstr ""
+
+#: App/templates/expense.html:98 App/templates/sales.html:71
+msgid "Quantity"
+msgstr ""
+
+#: App/templates/expense.html:99 App/templates/sales.html:70
+msgid "Description"
+msgstr ""
+
+#: App/templates/expense.html:100 App/templates/sales.html:68
+msgid "Date"
+msgstr ""
+
+#: App/templates/expense.html:101
+msgid "Price per unit"
+msgstr ""
+
+#: App/templates/expense.html:102 App/templates/sales.html:74
+msgid "Amount"
+msgstr ""
+
+#: App/templates/expense.html:105
+msgid "Actions"
+msgstr ""
+
+#: App/templates/expense.html:124
+msgid "Edit"
+msgstr ""
+
+#: App/templates/expense.html:127
+msgid "Remove"
+msgstr ""
+
+#: App/templates/expense.html:137
+msgid ""
+"A visual summary of your recorded business expenses to help you monitor "
+"spending and improve financial decisions."
+msgstr ""
+
+#: App/templates/login.html:6
+msgid "BizPulse - Login"
+msgstr ""
+
+#: App/templates/login.html:12 App/templates/signup.html:23
+msgid "gradient"
+msgstr ""
+
+#: App/templates/login.html:22
+msgid "Welcome!"
+msgstr ""
+
+#: App/templates/login.html:23
+msgid "We’re delighted to have you here."
+msgstr ""
+
+#: App/templates/login.html:44 App/templates/signup.html:41
+msgid "Username"
+msgstr ""
+
+#: App/templates/login.html:49 App/templates/signup.html:51
+msgid "Password"
+msgstr ""
+
+#: App/templates/font/font.html:32 App/templates/login.html:54
+#: App/templates/signup.html:58
+msgid "Login"
+msgstr ""
+
+#: App/templates/login.html:57
+msgid "Don’t have an account?"
+msgstr ""
+
+#: App/templates/login.html:58 App/templates/signup.html:36
+#: App/templates/signup.html:54
+msgid "Sign Up"
+msgstr ""
+
+#: App/templates/sales.html:27 App/templates/stock.html:27
+#: App/templates/visuals.html:27
+msgid "BIZPULSE"
+msgstr ""
+
+#: App/templates/sales.html:43
+msgid "Sales Records"
+msgstr ""
+
+#: App/templates/sales.html:44
+msgid ""
+"Add and track all sales transactions to maintain accurate and up-to-date "
+"business performance data."
+msgstr ""
+
+#: App/templates/sales.html:51
+msgid "Price:"
+msgstr ""
+
+#: App/templates/sales.html:62
+msgid "Save record"
+msgstr ""
+
+#: App/templates/sales.html:72
+msgid "Price"
+msgstr ""
+
+#: App/templates/sales.html:82
+msgid "Sales Performance Overview"
+msgstr ""
+
+#: App/templates/sales.html:83
+msgid ""
+"A graphical view of your sales trends to help you analyze growth, demand,"
+" and revenue patterns."
+msgstr ""
+
+#: App/templates/signup.html:6
+msgid "BizPulse - Sign Up"
+msgstr ""
+
+#: App/templates/signup.html:46
+msgid "Email"
+msgstr ""
+
+#: App/templates/signup.html:57
+msgid "Already have an account?"
+msgstr ""
+
+#: App/templates/stock.html:73
+msgid ""
+"Monitor and manage your inventory levels efficiently to reduce shortages "
+"and support smooth business operations."
+msgstr ""
+
+#: App/templates/stock.html:76
+msgid "Stock Analysis"
+msgstr ""
+
+#: App/templates/stock.html:77
+msgid ""
+"An overview of your current inventory status to help you make informed "
+"restocking and supply decisions."
+msgstr ""
+
+#: App/templates/visuals.html:43
+msgid ""
+"Explore visual insights that help you understand your business "
+"performance at a glance."
+msgstr ""
+
+#: App/templates/visuals.html:46
+msgid "Business Visual Insights"
+msgstr ""
+
+#: App/templates/visuals.html:47
+msgid ""
+"A clear side-by-side view of your sales and expenses to highlight "
+"performance trends."
 msgstr ""
 
 #: App/templates/font/font.html:41
