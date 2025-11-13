@@ -1,4 +1,3 @@
-// ------------------ expense form ------------------
 const expenseform = document.getElementById('expenseform')
 const expensetablebody = document.querySelector('#expensetable tbody')
 let expenseeditindex = null
@@ -67,7 +66,6 @@ window.deleteexpenserow = function (button) {
   expensetablebody.removeChild(row)
 }
 
-// ------------------ sales form ------------------
 const salesform = document.getElementById('salesform')
 const salestablebody = document.querySelector('#salestable tbody')
 let saleseditindex = null
