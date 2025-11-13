@@ -272,10 +272,12 @@ input, select, button {
     border-radius: 5px;
     border: none;
     outline: none;
+    background: #1c1c1c;
+    color: white;
 }
 
 button {
-    background: #6c63ff;
+    background:#a259ff;
     color: white;
     cursor: pointer;
 }
@@ -293,19 +295,21 @@ th, td {
     border-bottom: 1px solid #444;
     padding: 0.75rem;
     text-align: left;
+    
 }
 
 th {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 30px rgba(88, 8, 8, 0.3);
+    
 }
 
 .actions button {
     background: transparent;
     border: none;
     cursor: pointer;
-    color: #6c63ff;
+    color: #a259ff;
     font-weight: bold;
     margin-right: 8px;
 }
@@ -330,4 +334,10 @@ th {
 
 .visuals {
     min-height: 350px;
+}
+
+p{
+    text-indent: 50px;
+    line-height: 1.8;
+    gap: ;
 }

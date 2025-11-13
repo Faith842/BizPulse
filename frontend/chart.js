@@ -309,3 +309,5 @@ visualsoption = {
 };
 
 myChart.setOption(visualsoption);
+
+

@@ -34,6 +34,7 @@
                 <li><a href="#Logout"><i data-feather="log-out" class="icon"></i><span class="nav-item">Log Out</span></a></li>
             </ul>
         </nav>
+        
         <div class="dashboard">
             <div class="info" id="Dashboard">
                 <h2>Total Balance</h2>
@@ -92,29 +93,26 @@
                     <div id="expensechart"></div>
                 </div>
             </div>
-
-
 <!--Sales section-->
-
 
             <div class="bottom-section" id="Sales">
                 <div class="card sales-info">
                     <h3>Sales Records</h3>
                     <p>Add and track all sales transactions to maintain accurate and up-to-date business performance data.</p>
-                     <form id="salesform">
-                        <input type="date" id="date" placeholder="Date: " required />
-                        <input type="text" id="Product-name" placeholder="Product-name: " required />
-                        <input type="text" id="description" placeholder="Description: " />
-                        <input type="number" id="quantity" placeholder="Quantity: " required />
-                        <input type="number" id="price" placeholder="Price: " required/>
-                        <select id="payment-method" required >Payment method
-                            <option>Mobile Money</option>
-                            <option>Airtel Money</option>
-                            <option>Cash</option>
-                            <option>Bank</option>
-                        </select>
-                        <input type="number" id="amount" placeholder="Amount: " required />
-                        <button type="submit">Save record</button>
+                        <form id="salesform">
+                            <input type="date" id="date" placeholder="Date: " required />
+                            <input type="text" id="product-name" placeholder="Product-name: " required />
+                            <input type="text" id="description" placeholder="Description: " />
+                            <input type="number" id="quantity" placeholder="Quantity: " required />
+                            <input type="number" id="price" placeholder="Price: " required/>
+                            <select id="payment-method" required >
+                                <option>Mobile Money</option>
+                                <option>Airtel Money</option>
+                                <option>Cash</option>
+                                <option>Bank</option>
+                            </select>
+                            <input type="number" id="amount" placeholder="Amount: " required />
+                            <button type="submit">Save record</button>
                         </form>
                         <table id="salestable">
                         <thead>
@@ -137,7 +135,6 @@
                     <div id="sales-graph"></div>
                 </div>
             </div>
-<
 
 
 <!--stock section-->
@@ -145,6 +142,35 @@
             <div class="bottom-section" id="Stock">
                 <div class="card stock-info">
                     <p>Monitor and manage your inventory levels efficiently to reduce shortages and support smooth business operations.</p>
+                    <form id="stockform">
+                        <input type="text" id="product-name" placeholder="Product name: " required />
+                        <select id="credit" placeholder="credit " required >
+                            <option>Credit?</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                        <input type="number" id="cp" placeholder="Cost Price: " />
+                        <input type="number" id="sp" placeholder="Selling Price: " required />
+                        <input type="number" id="quantity" placeholder="Quantity: " required/>
+                        <input type="number" id="profit-margin" placeholder="Profit margin: " required />
+                        <button type="submit">Save record</button>
+                    </form>
+                    <table id="stocktable">
+                        <thead>
+                            <tr>
+                                <th>Product name</th>
+                                <th>Credit</th>
+                                <th>Cost Price (RWF)</th>
+                                <th>Selling Price (RWF)</th>
+                                <th>Quantity</th>
+                                <th>Profit margin</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        </table>
+
+
+
                 </div>
                 <div class="card stock">
                     <h3>Stock Analysis</h3>
