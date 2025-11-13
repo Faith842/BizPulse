@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BIZPULSE Dashboard</title>
+
+        <link rel="stylesheet" href="mainstyle.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="search">
+                <i class="fa fa-search search-icon"></i>
+                <input type="text" placeholder="Search something here..." />
+            </div>
+            <div class="user-profile">
+                <span class="user-initials">NP</span>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="" class="logo">
+                    <h1>BIZPULSE</h1>
+                    </a>
+                </li>
+                <li><a href="#Dashboard"><i data-feather="home" class="icon"></i><span class="nav-item">Dashboard</span></a></li>
+                <li><a href="#Expenses"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">Expenses</span></a></li>
+                <li><a href="#Sales"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">Sales</span></a></li>
+                <li><a href="#Stock"><i data-feather="trending-up" class="icon"></i><span class="nav-item">Stock</span></a></li>
+                <li><a href="#Visuals"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">Visuals</span></a></li>
+                <li><a href="#Logout"><i data-feather="log-out" class="icon"></i><span class="nav-item">Log Out</span></a></li>
+            </ul>
+        </nav>
+        
+        <div class="dashboard">
+            <div class="info" id="Dashboard">
+                <h2>Total Balance</h2>
+                <div class="numbers">24,194,000 RWF</div>
+                <h3>October’s Revenue</h3>
+            </div>
+            <div class="card main-chart">
+                <h2>Revenue vs Time</h2>
+                <div id="bar-chart"></div>
+                <div class="card expenses-info">
+                    <h3></h3>
+                    <p></p>
+                    <div id="bar-chart"></div>
+                </div>
+            </div>
+
+<!--Expenses section -->
+
+
+            <div class="bottom-section" id="Expenses">
+                <div class="card expenses-info">
+                    <h3>Expenses Overview</h3>
+                    <form id="expenseform">
+                        <select id="category" required>Category
+                            <option>Fixed Expenses</option>
+                            <option>Variable Expenses</option>
+                        </select>
+                        <input type="text" id="product-name" placeholder="Product name: " required />
+                        <input type="text" id="description" placeholder="Description: " />
+                        <input type="date" id="date" placeholder="Date: " required />
+                        <input type="number" id="amount" placeholder="Amount: " required />
+                        <select id="payment-method" required >Payment method
+                            <option>Mobile Money</option>
+                            <option>Airtel Money</option>
+                            <option>Cash</option>
+                            <option>Bank</option>
+                        </select>
+                        <button type="submit">Submit</button>
+                        </form>
+                        <table id="expensetable">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Product name</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Payment method</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        </table>
+                </div>
+                <div class="card expenses">
+                    <p>A visual summary of your recorded business expenses to help you monitor spending and improve financial decisions.</p>
+                    <div id="expensechart"></div>
+                </div>
+            </div>
+<!--Sales section-->
+
+            <div class="bottom-section" id="Sales">
+                <div class="card sales-info">
+                    <h3>Sales Records</h3>
+                    <p>Add and track all sales transactions to maintain accurate and up-to-date business performance data.</p>
+                        <form id="salesform">
+                            <input type="date" id="date" placeholder="Date: " required />
+                            <input type="text" id="product-name" placeholder="Product-name: " required />
+                            <input type="text" id="description" placeholder="Description: " />
+                            <input type="number" id="quantity" placeholder="Quantity: " required />
+                            <input type="number" id="price" placeholder="Price: " required/>
+                            <select id="payment-method" required >
+                                <option>Mobile Money</option>
+                                <option>Airtel Money</option>
+                                <option>Cash</option>
+                                <option>Bank</option>
+                            </select>
+                            <input type="number" id="amount" placeholder="Amount: " required />
+                            <button type="submit">Save record</button>
+                        </form>
+                        <table id="salestable">
+                        <thead>
+                            <tr>
+                                <th>date</th>
+                                <th>Product name</th>
+                                
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Payment method</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        </table>
+                </div>
+                <div class="card sales">
+                    <h3>Sales Performance Overview</h3>
+                    <p>A graphical view of your sales trends to help you analyze growth, demand, and revenue patterns.</p>
+                    <div id="sales-graph"></div>
+                </div>
+            </div>
+
+
+<!--stock section-->
+
+            <div class="bottom-section" id="Stock">
+                <div class="card stock-info">
+                    <p>Monitor and manage your inventory levels efficiently to reduce shortages and support smooth business operations.</p>
+                    <form id="stockform">
+                        <input type="text" id="product-name" placeholder="Product name: " required />
+                        <select id="credit" placeholder="credit " required >
+                            <option>Credit?</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                        <input type="number" id="cp" placeholder="Cost Price: " />
+                        <input type="number" id="sp" placeholder="Selling Price: " required />
+                        <input type="number" id="quantity" placeholder="Quantity: " required/>
+                        <input type="number" id="profit-margin" placeholder="Profit margin: " required />
+                        <button type="submit">Save record</button>
+                    </form>
+                    <table id="stocktable">
+                        <thead>
+                            <tr>
+                                <th>Product name</th>
+                                <th>Credit</th>
+                                <th>Cost Price (RWF)</th>
+                                <th>Selling Price (RWF)</th>
+                                <th>Quantity</th>
+                                <th>Profit margin</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        </table>
+
+
+
+                </div>
+                <div class="card stock">
+                    <h3>Stock Analysis</h3>
+                    <p>An overview of your current inventory status to help you make informed restocking and supply decisions.</p>
+                    <div id="stock-graph"></div>
+                </div>
+            </div>
+            
+<!--visuals section-->
+            <div class="bottom-section" id="Visuals">
+                <div class="card visuals-info">
+                    <p>Explore visual insights that help you understand your business performance at a glance.</p>
+                </div>
+                <div class="card visuals">
+                    <h3>Business Visual Insights</h3>
+                    <p>A clear side-by-side view of your sales and expenses to highlight performance trends.</p>
+                    <div id="visualschart"></div>
+                </div>
+            </div>         
+        </div>   
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script>
+            feather.replace();
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="chart.js"></script>
+        <script src="table.js"></script>
+    </body>
+</html>
