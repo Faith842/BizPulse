@@ -8,6 +8,7 @@ from flask_babel import Babel, _, get_locale
 
 from .routes.auth import auth_bp
 from .routes.dashboard import dash_bp
+from .routes.salesAPI import salesbp
 
 
 # app.py
@@ -56,6 +57,7 @@ def create_app(test_config=None):
     app.register_blueprint(auth_bp)
     app.register_blueprint(expensebp)
     app.register_blueprint(dash_bp)
+    app.register_blueprint(salesbp)
 
     @app.route('/')
     def index():
