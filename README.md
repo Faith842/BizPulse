@@ -143,22 +143,7 @@ Contributions are welcome!
 3. Add tests where applicable
 4. Open a PR with a clear description
 
-Include a CONTRIBUTING.md if you want contribution guidelines and code style rules.
 
----
-
-## 📄 License
-
-Add your license (e.g., MIT, Apache-2.0) in a LICENSE file and update this section.
-
----
-
-## 📬 Contact
-
-Maintainer: YOUR NAME — email@example.com  
-GitHub: https://github.com/aziza20-ux
-
----
 
 ## 📝 Notes & Tips
 
