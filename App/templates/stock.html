@@ -71,6 +71,38 @@
             <div class="bottom-section" id="Stock">
                 <div class="card stock-info">
                     <p>{{ _('Monitor and manage your inventory levels efficiently to reduce shortages and support smooth business operations.') }}</p>
+                
+                <div class="bottom-section" id="Expenses">
+                <div class="card expenses-info">
+                    <h3>Stock Overview</h3>
+                    <form id="expenseform">
+                        <input type="text" id="product-name" name="productname" placeholder="Product name: " required />
+                        <input type="text" id="description" name="description" placeholder="Description: " />
+                        <input type="date" id="date" name="date" placeholder="Date: " required />
+                        <input type="number" id="buyingprice" name="buyingprice" placeholder="buyingprice: " required />
+                        <input type="number" id="quantity" name="quantity" placeholder="quantity: " required />
+                        <select id="credit" name="credit" required >
+                            <option disabled selected>Credit</option>
+                            <option>Debit</option>
+
+                        </select>
+                        <button type="submit">save record</button>
+                    </form>
+                    <table id="stocktable">
+                        <thead>
+                            <tr>
+                                <th>stock status</th>
+                                <th>Product name</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>quantity</th>
+                                <th>buying price</th>
+                                <th>quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
                 </div>
                 <div class="card stock">
                     <h3>{{ _('Stock Analysis') }}</h3>

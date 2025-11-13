@@ -74,5 +74,8 @@ def dashboard():
     except Exception as e:
         flash(_(f"Error fetching top five product expenses: {e}"))
         return render_template('dashboard.html')
+@dash_bp.route('/stock',methods=['GET'])
+def stock():
+    return render_template('stock.html')
 
         
