@@ -335,3 +335,9 @@ th {
 .visuals {
     min-height: 350px;
 }
+
+p{
+    text-indent: 50px;
+    line-height: 1.8;
+    gap: ;
+}
