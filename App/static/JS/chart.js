@@ -6,7 +6,6 @@ if (barChartDom) {
     let baroption = {
         title: {
             text: 'Revenue vs Time',
-            subtext: 'Fake Data'
         },
         tooltip: { trigger: 'axis' },
         legend: { data: ['Positive Revenue', 'Negative Revenue'] },
