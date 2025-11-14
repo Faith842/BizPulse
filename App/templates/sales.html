@@ -27,30 +27,52 @@
                     <h1>{{ _('BIZPULSE') }}</h1>
                 </a>
             </li>
-            <li><a href="./dashboard.html"><i data-feather="home" class="icon"></i><span class="nav-item">{{ _('Dashboard') }}</span></a></li>
-            <li><a href="./expense.html"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">{{ _('Expenses') }}</span></a></li>
+            <li><a href="{{ url_for('dashboard.dashboard') }}"><i data-feather="home" class="icon"></i><span class="nav-item">{{ _('Dashboard') }}</span></a></li>
+            <li><a href="{{ url_for('expense.display_all') }}"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">{{ _('Expenses') }}</span></a></li>
             <li><a href="#Sales"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">{{ _('Sales') }}</span></a></li>
-            <li><a href="./stock.html"><i data-feather="trending-up" class="icon"></i><span class="nav-item">{{ _('Stock') }}</span></a></li>
+            <li><a href=""><i data-feather="trending-up" class="icon"></i><span class="nav-item">{{ _('Stock') }}</span></a></li>
             <li><a href="./visuals.html"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">{{ _('Visuals') }}</span></a></li>
             <li><a href="{{ url_for('auth.logout') }}"><i data-feather="log-out" class="icon"></i><span class="nav-item">{{ _('Log Out') }}</span></a></li>
         </ul>
     </nav>
 
+
     <div class="dashboard">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        {% if category == 'success' %}
+                            <span style="color: blue;">{{ message }}</span>
+                        {% elif category == 'danger' %}
+                            <span style="color: red;">{{ message }}</span>
+                        {% elif category == 'info' %}
+                            <span style="color: #00ff66;">{{ message }}</span>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
         <!-- Sales section -->
         <div class="bottom-section" id="Sales">
             <div class="card sales-info">
                 <h3>{{ _('Sales Records') }}</h3>
                 <p>{{ _('Add and track all sales transactions to maintain accurate and up-to-date business performance data.') }}</p>
                 
-                <form id="salesform">
-                    <input type="date" id="date" placeholder="{{ _('Date:') }}" required />
-                    <input type="text" id="Product-name" placeholder="{{ _('Product name:') }}" required />
-                    <input type="text" id="description" placeholder="{{ _('Description:') }}" />
-                    <input type="number" id="quantity" placeholder="{{ _('Quantity:') }}" required />
-                    <input type="number" id="price" placeholder="{{ _('Price:') }}" required/>
+                <form id="salesform" action="{{url_for('sale.add_record')}}" method="POST">
+                    <input type="date" id="date" name="date" placeholder="{{ _('Date:') }}" required />
+                    <input type="text" id="Productname" name="productname" placeholder="{{ _('Product name:') }}" required />
+                    <input type="text" id="description" name="description" placeholder="{{ _('Description:') }}" />
+                    <input type="number" id="quantity" name="quantity" placeholder="{{ _('Quantity:') }}" required />
+                    <input type="number" id="price" name="price_per_unit" placeholder="{{ _('Price_per_unit:') }}" required/>
+                    <select id="debit" name="debi" required>
+                        <option disabled  selected>{{ _('debit') }}</option>
+                        <option>{{ _('yes') }}</option>
+                        <option>{{ _('Not') }}</option>
+                    </select>
                     
-                    <select id="payment-method" required>
+                    
+                    <select id="paymentmethod" name="paymentmethod" required>
                         <option disabled selected>{{ _('Payment method') }}</option>
                         <option>{{ _('Mobile Money') }}</option>
                         <option>{{ _('Airtel Money') }}</option>
@@ -58,23 +80,48 @@
                         <option>{{ _('Bank') }}</option>
                     </select>
 
-                    <input type="number" id="amount" placeholder="{{ _('Amount:') }}" required />
+                    <input type="number" id="amount" name="amount" placeholder="{{ _('Amount:') }}" required />
                     <button type="submit">{{ _('Save record') }}</button>
                 </form>
 
                 <table id="salestable">
                     <thead>
                         <tr>
+                            <th>{{ _('id') }}</th>
                             <th>{{ _('Date') }}</th>
                             <th>{{ _('Product name') }}</th>
                             <th>{{ _('Description') }}</th>
                             <th>{{ _('Quantity') }}</th>
-                            <th>{{ _('Price') }}</th>
+                            <th>{{ _('Price_per_unit') }}</th>
+                            <th>{{ _('debit') }}</th>
                             <th>{{ _('Payment method') }}</th>
                             <th>{{ _('Amount') }}</th>
+                            <th>{{ _('Actions') }}</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                    {% for data in all_record %}
+                        <tr>
+                            <td>{{ data.salesid }}</td>
+                            <td>{{ data.date }}</td>
+                            <td>{{ data.productname }}</td>
+                            <td>{{ data.description }}</td>
+                            <td>{{ data.quantity }}</td>
+                            <td>{{ data.price_per_unit }}</td>
+                            <td>{{ data.debi}}</td>
+                            <td>{{ data.paymentmethod }}</td>
+                            <td>{{ data.amount }}</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary me-2 edit-sale-btn" data-bs-toggle="modal" data-sponsor-id="{{ data.salesid }}">
+                                    <i class="bi bi-pencil"></i> {{ _('Edit') }}
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger delete-sale-btn" data-sponsor-id="{{ data.salesid }}">
+                                    <i class="bi bi-trash"></i> {{ _('Remove') }}
+                                </button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
                 </table>
             </div>
 
@@ -85,11 +132,17 @@
             </div>
         </div>
     </div>
+    <script>
+        const EDIT_URL_BASE = "{{ url_for('sale.edit_record', id=0) }}";
+        const ADD_URL = "{{ url_for('sale.add_record') }}";
+    </script>
 
     <script src="https://unpkg.com/feather-icons"></script>
     <script> feather.replace(); </script>
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="../static/JS/chart.js"></script>
+    <script src="../static/JS/editsale.js"></script>
+    <script src="../static/JS/sale.js"></script>
+    <script src="../static/JS/removesale.js"></script>
 </body>
 </html>

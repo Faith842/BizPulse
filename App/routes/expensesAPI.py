@@ -104,7 +104,7 @@ def remove_record(id):
         return redirect(url_for('expense.display_all'))
 @expensebp.route('/displayall',methods=['GET'])
 def display_all():
-    all_records = db.session.query(Expenses).all()
+    all_records = db.session.query(Expenses).filter_by(userid=g.user_id).all()
     #data =[expense.to_dict() for expense in all_records]
     return render_template('expense.html',all_records=all_records)
 

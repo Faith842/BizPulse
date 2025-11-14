@@ -52,7 +52,7 @@ class Sales(db.Model):
     quantity = db.Column(db.String(50))
     price_per_unit = db.Column(db.String(50))
     productname = db.Column(db.String(255))
-    debit = db.Column(db.Boolean)
+    debi = db.Column(db.String(50))
     paymentmethod= db.Column(db.String(50))
     userid= db.Column(db.Integer, db.ForeignKey('users.userid'))
     date = db.Column(db.DateTime)

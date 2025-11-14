@@ -29,9 +29,9 @@
             </li>
             <li><a href="{{ url_for('dashboard.dashboard') }}"><i data-feather="home" class="icon"></i><span class="nav-item">{{ _('Dashboard') }}</span></a></li>
             <li><a href="#Expenses"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">{{ _('Expenses') }}</span></a></li>
-            <li><a href="./sales.html"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">{{ _('Sales') }}</span></a></li>
-            <li><a href="./stock.html"><i data-feather="trending-up" class="icon"></i><span class="nav-item">{{ _('Stock') }}</span></a></li>
-            <li><a href="./visuals.html"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">{{ _('Visuals') }}</span></a></li>
+            <li><a href="{{ url_for('sale.displayall') }}"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">{{ _('Sales') }}</span></a></li>
+            <li><a href=""><i data-feather="trending-up" class="icon"></i><span class="nav-item">{{ _('Stock') }}</span></a></li>
+            <li><a href=""><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">{{ _('Visuals') }}</span></a></li>
             <li><a href="{{ url_for('auth.logout') }}"><i data-feather="log-out" class="icon"></i><span class="nav-item">{{ _('Log Out') }}</span></a></li>
         </ul>
     </nav>
@@ -72,14 +72,15 @@
                     <input type="text" name="cost_per_unit" id="price" placeholder="{{ _('Cost per unit:') }}" />
                     <input type="number" name="amount" id="amount" placeholder="{{ _('Amount:') }}" required />
 
-                    <label for="credit">{{ _('Credit') }}</label>
                     <select id="credit" name="credit" required>
+                        <option disabled  selected>{{ _('credit') }}</option>
                         <option>{{ _('Yes') }}</option>
                         <option>{{ _('Not') }}</option>
                     </select>
 
-                    <label for="paymentmethod">{{ _('Payment method') }}</label>
+                    
                     <select id="paymentmethod" name="paymentmethod" required>
+                        <option disabled  selected>{{ _('payment-method') }}</option>
                         <option>{{ _('Mobile Money') }}</option>
                         <option>{{ _('Airtel Money') }}</option>
                         <option>{{ _('Cash') }}</option>
