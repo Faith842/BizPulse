@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ _('BizPulse - Sign Up') }}</title>
+    <link rel="stylesheet" href="../static/CSS/auth.css" />
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <span class="alert alert-{{ category }}" role="alert">
+                        {{ message }}
+                    </span>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <div>
+        <img class="image-gradient" src="../images/image.png" alt="{{ _('gradient') }}">
+        <div class="layer-blur"></div>
+        <spline-viewer 
+            class="robot-3d" 
+            url="https://prod.spline.design/95S8W3FhWE2V-zjQ/scene.splinecode">
+        </spline-viewer>
+    </div>
+
+    <div class="wrapper">
+        <span class="bg-animate"></span>
+        <span class="bg-animate2"></span>
+
+        <div class="form-box register">
+            <h2>{{ _('Sign Up') }}</h2>
+
+            <form action="{{ url_for('auth.register') }}" method="POST">
+                <div class="input-box">
+                    <input type="text" name="username" required />
+                    <label>{{ _('Username') }}</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="email" name="email" required />
+                    <label>{{ _('Email') }}</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" name="password" required />
+                    <label>{{ _('Password') }}</label>
+                </div>
+
+                <button type="submit" class="btn">{{ _('Sign Up') }}</button>
+
+                <div class="logreg-link">
+                    <p>{{ _('Already have an account?') }} 
+                        <a href="{{ url_for('auth.login') }}" class="login-link">{{ _('Login') }}</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.90/build/spline-viewer.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

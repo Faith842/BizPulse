@@ -5,8 +5,9 @@ class User(db.Model):
     __tablename__='users'
     userid = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(50),unique=True)
-    name = db.Column(db.String(255))
-    phonenumber = db.Column(db.Integer)
+    username = db.Column(db.String(255))
+    #phonenumber = db.Column(db.Integer)
+    password=db.Column(db.String(255))
 
     def set_hashpassword(self, password):
         self.password = generate_password_hash(password)
@@ -21,10 +22,25 @@ class Expenses(db.Model):
     quantity = db.Column(db.String(50))
     cost_per_unit = db.Column(db.String(50))
     productname = db.Column(db.String(255))
-    credit = db.Column(db.Boolean)
+    credit = db.Column(db.String(50))
     paymentmethod= db.Column(db.String(50))
-    userid= db.column(db.Integer, db.ForeignKey('users.userid'))
+    userid= db.Column(db.Integer, db.ForeignKey('users.userid'))
     date = db.Column(db.DateTime)
+
+    def to_dict(self):
+
+        return {
+            'expenseid': self.expenseid,
+            'category':self.category,
+            'description':self.description,
+            'amount':self.amount,
+            'quantity':self.quantity,
+            'cost_per_unit':self.cost_per_unit,
+            'productname':self.productname,
+            'credit':self.credit,
+            'paymentmethod':self.paymentmethod,
+            'date':self.date
+        }
 
     user = db.relationship('User',backref='expenses',lazy=True)
 
@@ -36,9 +52,9 @@ class Sales(db.Model):
     quantity = db.Column(db.String(50))
     price_per_unit = db.Column(db.String(50))
     productname = db.Column(db.String(255))
-    debit = db.Column(db.Boolean)
+    debi = db.Column(db.String(50))
     paymentmethod= db.Column(db.String(50))
-    userid= db.column(db.Integer, db.ForeignKey('users.userid'))
+    userid= db.Column(db.Integer, db.ForeignKey('users.userid'))
     date = db.Column(db.DateTime)
 
     user = db.relationship('User',backref='sales',lazy=True)
@@ -49,13 +65,10 @@ class Stock(db.Model):
     description = db.Column(db.String(255))
     productname = db.Column(db.String(255))
     quantity = db.Column(db.String(50))
-    costprice = db.Column(db.String(50))
-    sellingprice= db.Column(db.String(255))
-    debit = db.Column(db.Boolean)
-    credit=db.column(db.Boolean)
-    Stockstatus=db.Column(db.String(50))
-    userid= db.column(db.Integer, db.ForeignKey('users.userid'))
-    expectedprofit=db.Column(db.String(50))
+    buyingprice = db.Column(db.String(50))
+    debit_credit=db.Column(db.String(50))
+    stockstatus=db.Column(db.String(50))
+    userid= db.Column(db.Integer, db.ForeignKey('users.userid'))
     date = db.Column(db.DateTime)
 
     user = db.relationship('User',backref='stock',lazy=True)
