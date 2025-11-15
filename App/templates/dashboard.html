@@ -1,5 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIZPULSE Dashboard</title>
+    <link rel="stylesheet" href="../static/CSS/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <header class="topbar">
+        <div class="user-profile">
+            <span class="user-initials">NP</span>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="" class="logo">
+                <h1>BIZPULSE</h1>
+                </a>
+            </li>
+            <li><a href="#Dashboard"><i data-feather="home" class="icon"></i><span class="nav-item">Dashboard</span></a></li>
+            <li><a href="{{url_for('expense.display_all')}}"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">Expenses</span></a></li>
+            <li><a href="{{ url_for('sale.displayall') }}"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">Sales</span></a></li>
+            <li><a href="{{ url_for('dashboard.stock') }}"><i data-feather="trending-up" class="icon"></i><span class="nav-item">Stock</span></a></li>
+            <li><a href="./visuals.html"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">Visuals</span></a></li>
+            <li><a href="{{url_for('auth.logout')}}"><i data-feather="log-out" class="icon"></i><span class="nav-item">Log Out</span></a></li>
+        </ul>
+    </nav>
+    
+    <div class="dashboard">
+        <!-- Date Filter -->
+        <div class="date-filter card">
+            <h2>Filter by Date Range</h2>
+            <div class="filter-controls">
+                <select id="period-select">
+                    <option value="current_month">Current Month</option>
+                    <option value="last_month">Last Month</option>
+                    <option value="last_3_months">Last 3 Months</option>
+                    <option value="last_6_months">Last 6 Months</option>
+                    <option value="current_year">Current Year</option>
+                    <option value="custom">Custom Range</option>
+                </select>
+                
+                <div id="custom-range" class="custom-range">
+                    <input type="date" id="start-date" />
+                    <span>to</span>
+                    <input type="date" id="end-date" />
+                </div>
+                
+                <button id="apply-filter" class="btn-primary">Apply Filter</button>
+                <button id="reset-filter" class="btn-secondary">Reset</button>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Total Balance</h3>
+                <div class="stat-value" id="total-balance">0 RWF</div>
+                <div class="stat-period" id="balance-period">Current Period</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Total Revenue</h3>
+                <div class="stat-value" id="total-revenue">0 RWF</div>
+                <div class="stat-period" id="revenue-period">Current Period</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Total Expenses</h3>
+                <div class="stat-value" id="total-expenses">0 RWF</div>
+                <div class="stat-period" id="expenses-period">Current Period</div>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Net Profit</h3>
+                <div class="stat-value" id="net-profit">0 RWF</div>
+                <div class="stat-period" id="profit-period">Current Period</div>
+            </div>
+        </div>
+
+        <!-- Main Chart -->
+        <div class="card main-chart">
+            <h2>Revenue vs Expenses Over Time</h2>
+            <div id="bar-chart"></div>
+        </div>
+
+        <!-- Top Lists -->
+        <div class="flex-container">
+            <div class="box box-left card">
+                <h2>Top Five Expenses</h2>
+                <div id="expenses-loading" class="loading">Loading...</div>
+                <ul class="top-list" id="top-expenses"></ul>
+            </div>
+
+            <div class="box box-right card">
+                <h2>Top Five Sales</h2>
+                <div id="sales-loading" class="loading">Loading...</div>
+                <ul class="top-list" id="top-sales"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../static/JS/dashboard.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -81,4 +203,4 @@
         <script src="../static/JS/chart.js"></script>
         
     </body>
-</html>
+</html> -->
