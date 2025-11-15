@@ -1,0 +1,13 @@
+[
+    { "Year": 2018, "Country": "France", "Income": 35000 },
+    { "Year": 2019, "Country": "France", "Income": 37000 },
+    { "Year": 2020, "Country": "France", "Income": 32000 },
+    { "Year": 2021, "Country": "France", "Income": 39000 },
+    { "Year": 2022, "Country": "France", "Income": 41000 },
+
+    { "Year": 2018, "Country": "Germany", "Income": 40000 },
+    { "Year": 2019, "Country": "Germany", "Income": 42000 },
+    { "Year": 2020, "Country": "Germany", "Income": 38000 },
+    { "Year": 2021, "Country": "Germany", "Income": 45000 },
+    { "Year": 2022, "Country": "Germany", "Income": 47000 }
+]
