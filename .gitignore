@@ -2,4 +2,8 @@ venv/
 instance/
 *.db
 __pycache__/
-*.pycgit
+*.pyc
+App/__pycache__/
+*.pyc
+routes/__pycache__/
+*.pyc
