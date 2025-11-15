@@ -62,19 +62,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Environment variables
-
-Copy the example and edit as needed:
-
-```bash
-cp .env.example .env
-# Edit .env:
-# FLASK_APP=app.py
-# FLASK_ENV=development
-# DATABASE_URL=sqlite:///instance/bizpulse.db   # default example
-# SECRET_KEY=your-secret-key
-```
-
 5. Initialize database (first time only)
 
 ```bash
