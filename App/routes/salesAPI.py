@@ -21,7 +21,7 @@ def add_record():
         try:
             parse_date = datetime.strptime(date, '%Y-%m-%d').date()
         except ValueError:
-            flash(_('invalid format!!','danger'))
+            flash(_('invalid format!!'),'danger')
             
         if not [productname ,price_per_unit,debi,quantity,amount]:
             flash(_("please provide atleast productname, cost_per_unit,amount, or qauntity"),'info')
@@ -46,7 +46,7 @@ def edit_record(id):
     expense = db.session.query(Sales).filter_by(salesid=id).first()
 
     if not changes:
-        flash(_('no changes detected','info'))
+        flash(_('no changes detected'),'info')
         return redirect(url_for('sale.displayall'))
     try:
         changes_made = False

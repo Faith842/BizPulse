@@ -22,7 +22,7 @@ def add_record():
         try:
             parse_date = datetime.strptime(date, '%Y-%m-%d').date()
         except ValueError:
-            flash(_('invalid format!!','danger'))
+            flash(_('invalid format!!'),'danger')
             
         if not [productname ,cost_per_unit,credit,quantity,amount]:
             flash(_("please provide atleast productname, cost_per_unit,amount, or qauntity"),'info')

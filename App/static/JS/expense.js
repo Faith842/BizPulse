@@ -23,10 +23,10 @@ function calculateProductTotalsFromTable() {
         const cells = row.querySelectorAll('td');
         
         // Product name is at index 2, Amount is at index 7.
-        if (cells.length < 10) { return; } 
+        if (cells.length < 11) { return; } 
 
         const productName = cells[2].textContent.trim();
-        let amountText = cells[7].textContent.trim();
+        let amountText = cells[9].textContent.trim();
         const amount = cleanAmountToFloat(amountText);
         
         if (productName && amount > 0) {
