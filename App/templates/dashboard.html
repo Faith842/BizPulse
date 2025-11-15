@@ -11,10 +11,6 @@
     </head>
     <body>
         <header class="topbar">
-            <div class="search">
-                <i class="fa fa-search search-icon"></i>
-                <input type="text" placeholder="Search something here..." />
-            </div>
             <div class="user-profile">
                 <span class="user-initials">NP</span>
             </div>
@@ -63,7 +59,7 @@
                         <div class="box box-right card">
                             <h2>{{_("Top Five Sales")}}</h2>
                             <ul class="top-list">
-                                {% for sale in top_sales %}
+                                {% for sale in top_fiv %}
                                     <li>
                                         <span class="product-name">{{sale.productname}}</span>
                                         <span class="amount">{{sale.total_amount}} Rwf</span>

@@ -13,7 +13,7 @@
     <header class="topbar">
         <div class="search">
             <i class="fa fa-search search-icon"></i>
-            <input type="text" placeholder="{{ _('Search something here...') }}" />
+            <input type="text" id="search-input" placeholder="{{ _('search by values eg:cocacola, yes for credit...') }}" />
         </div>
         <div class="user-profile">
             <span class="user-initials">NP</span>
@@ -30,7 +30,7 @@
             <li><a href="{{ url_for('dashboard.dashboard') }}"><i data-feather="home" class="icon"></i><span class="nav-item">{{ _('Dashboard') }}</span></a></li>
             <li><a href="#Expenses"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">{{ _('Expenses') }}</span></a></li>
             <li><a href="{{ url_for('sale.displayall') }}"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">{{ _('Sales') }}</span></a></li>
-            <li><a href=""><i data-feather="trending-up" class="icon"></i><span class="nav-item">{{ _('Stock') }}</span></a></li>
+            <li><a href="{{ url_for('dashboard.stock') }}"><i data-feather="trending-up" class="icon"></i><span class="nav-item">{{ _('Stock') }}</span></a></li>
             <li><a href=""><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">{{ _('Visuals') }}</span></a></li>
             <li><a href="{{ url_for('auth.logout') }}"><i data-feather="log-out" class="icon"></i><span class="nav-item">{{ _('Log Out') }}</span></a></li>
         </ul>
@@ -90,7 +90,7 @@
                     <button type="submit">{{ _('Save Record') }}</button>
                 </form>
 
-                <table id="expensetable">
+                <table id="expensetable" class="data-table">
                     <thead>
                         <tr>
                             <th>{{ _('ID') }}</th>
@@ -99,10 +99,10 @@
                             <th>{{ _('Quantity') }}</th>
                             <th>{{ _('Description') }}</th>
                             <th>{{ _('Date') }}</th>
-                            <th>{{ _('Price per unit') }}</th>
-                            <th>{{ _('Amount') }}</th>
                             <th>{{ _('Credit') }}</th>
                             <th>{{ _('Payment method') }}</th>
+                            <th>{{ _('Price per unit') }}</th> 
+                            <th>{{ _('Amount') }}</th> 
                             <th>{{ _('Actions') }}</th>
                         </tr>
                     </thead>
@@ -116,10 +116,12 @@
                             <td>{{ data.quantity }}</td>
                             <td>{{ data.description }}</td>
                             <td>{{ data.date }}</td>
-                            <td>{{ data.cost_per_unit }}</td>
-                            <td>{{ data.amount }}</td>
                             <td>{{ data.credit }}</td>
                             <td>{{ data.paymentmethod }}</td>
+                            <td>{{ data.cost_per_unit }}</td>
+                            <td>{{ data.amount }}</td>
+                            
+                            
                             <td>
                                 <button class="btn btn-sm btn-outline-primary me-2 edit-expense-btn" data-bs-toggle="modal" data-sponsor-id="{{ data.expenseid }}">
                                     <i class="bi bi-pencil"></i> {{ _('Edit') }}
@@ -132,8 +134,12 @@
                         {% endfor %}
                     </tbody>
                 </table>
+                <button class="toggle-rows-btn" data-table="expensetable">View All</button>
             </div>
 
+            <div id="no-results" style="display:none; text-align:center; margin-top:15px; color:#ff4545; font-weight:bold;">
+                No results found.
+            </div>
             <div class="card expenses">
                 <p>{{ _('A visual summary of your recorded business expenses to help you monitor spending and improve financial decisions.') }}</p>
                 <div id="expensechart"></div>
@@ -153,6 +159,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="{{ url_for('static', filename='JS/removeexpense.js') }}"></script>
     <script src="{{ url_for('static', filename='JS/editexpense.js') }}"></script>
+    <script src="../static/JS/smartsearch.js"></script>
+    <script src="../static/JS/viewall.js"></script>
     <script src="../static/JS/expense.js"></script>
 </body>
 </html>

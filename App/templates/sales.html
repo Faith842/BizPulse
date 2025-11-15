@@ -13,7 +13,7 @@
     <header class="topbar">
         <div class="search">
             <i class="fa fa-search search-icon"></i>
-            <input type="text" placeholder="{{ _('Search something here...') }}" />
+            <input type="text" id="search-input" placeholder="{{ _('search by values eg:cocacola, yes for credit...') }}" />
         </div>
         <div class="user-profile">
             <span class="user-initials">NP</span>
@@ -84,7 +84,7 @@
                     <button type="submit">{{ _('Save record') }}</button>
                 </form>
 
-                <table id="salestable">
+                <table id="salestable" class="data-table">
                     <thead>
                         <tr>
                             <th>{{ _('id') }}</th>
@@ -123,6 +123,11 @@
                     {% endfor %}
                     </tbody>
                 </table>
+                <button class="toggle-rows-btn" data-table="salestable">View All</button>
+
+            </div>
+            <div id="no-results" style="display:none; text-align:center; margin-top:15px; color:#ff4545; font-weight:bold;">
+                No results found.
             </div>
 
             <div class="card sales">
@@ -143,6 +148,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../static/JS/editsale.js"></script>
     <script src="../static/JS/sale.js"></script>
+    <script src="../static/JS/smartsearch.js"></script>
     <script src="../static/JS/removesale.js"></script>
+     <script src="../static/JS/viewall.js"></script>
 </body>
 </html>
