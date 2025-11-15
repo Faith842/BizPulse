@@ -1,8 +1,8 @@
-"""initial db
+"""updating new structure
 
-Revision ID: 337ac9301abe
+Revision ID: 4f3238c374ec
 Revises: 
-Create Date: 2025-11-10 09:34:34.973859
+Create Date: 2025-11-15 15:57:02.988387
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '337ac9301abe'
+revision = '4f3238c374ec'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -48,7 +48,7 @@ def upgrade():
     sa.Column('quantity', sa.String(length=50), nullable=True),
     sa.Column('price_per_unit', sa.String(length=50), nullable=True),
     sa.Column('productname', sa.String(length=255), nullable=True),
-    sa.Column('debit', sa.Boolean(), nullable=True),
+    sa.Column('debi', sa.String(length=50), nullable=True),
     sa.Column('paymentmethod', sa.String(length=50), nullable=True),
     sa.Column('userid', sa.Integer(), nullable=True),
     sa.Column('date', sa.DateTime(), nullable=True),
@@ -60,13 +60,10 @@ def upgrade():
     sa.Column('description', sa.String(length=255), nullable=True),
     sa.Column('productname', sa.String(length=255), nullable=True),
     sa.Column('quantity', sa.String(length=50), nullable=True),
-    sa.Column('costprice', sa.String(length=50), nullable=True),
-    sa.Column('sellingprice', sa.String(length=255), nullable=True),
-    sa.Column('debit', sa.Boolean(), nullable=True),
-    sa.Column('credit', sa.Boolean(), nullable=True),
-    sa.Column('Stockstatus', sa.String(length=50), nullable=True),
+    sa.Column('buyingprice', sa.String(length=50), nullable=True),
+    sa.Column('debit_credit', sa.String(length=50), nullable=True),
+    sa.Column('stockstatus', sa.String(length=50), nullable=True),
     sa.Column('userid', sa.Integer(), nullable=True),
-    sa.Column('expectedprofit', sa.String(length=50), nullable=True),
     sa.Column('date', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['userid'], ['users.userid'], ),
     sa.PrimaryKeyConstraint('stockid')
