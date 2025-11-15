@@ -3,3 +3,7 @@ instance/
 *.db
 __pycache__/
 *.pyc
+App/__pycache__/
+*.pyc
+routes/__pycache__/
+*.pyc
