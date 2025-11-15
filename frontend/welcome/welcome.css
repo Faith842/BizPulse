@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Optional: Add background effects like the other files */
+.layer-blur {
+  height: 0;
+  width: 30rem;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  box-shadow: 0 0 700px 15px #ffffffc4;
+  rotate: -30deg;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(45, 212, 191, 0.15));
+  backdrop-filter: blur(25px);
+  margin-top: 80px;
+  padding: 40px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(48, 17, 105, 0.692);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 2;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2em;
+  color: #2DD4BF;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.brand {
+  color: #2DD4BF;
+  font-weight: 600;
+  font-size: 2em;
+  letter-spacing: 0.5px;
+}
+
+header p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+form .form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 0.95em;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  outline: none;
+  font-size: 1em;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+input:focus, select:focus {
+  border-bottom: 1px solid #2DD4BF;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+select {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.2);
+  padding-right: 30px;
+}
+
+select option {
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #2DD4BF, #A259FF);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.3);
+  transform: translateY(-2px);
+}
+
+#results {
+  margin-top: 30px;
+  padding: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+}
+
+#results h2 {
+  font-size: 1.8em;
+  color: #2DD4BF;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#results h3 {
+  color: #A259FF;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+#results p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+h2 {
+  color: #2DD4BF;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 25px;
+    margin-top: 60px;
+    width: 95%;
+  }
+  
+  header h1,
+  .brand {
+    font-size: 1.6em;
+  }
+
+  #results {
+    padding: 20px;
+  }
+}

@@ -8,28 +8,54 @@
 }
 
 body {
-    background: radial-gradient(circle at center, #1C1C1C, #0E0E0E);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    color: #FFFFFF;
+    color: #000000;
+    background-color: #000000;
 }
+
+.image-gradient{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+.layer-blur {
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px #ffffffc4;
+    rotate: -30deg;
+    z-index: -1;
+}
+.robot-3d{
+    position: absolute;
+    top: 22%;
+    left: 40%;
+}
+
+
+
 
 
 .wrapper {
     position: relative;
     width: 700px;
     height: 420px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     overflow: hidden;
-    background: rgba(28, 28, 28, 0.85);
+    background: rgb(255, 255, 255);
     backdrop-filter: blur(25px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 30px rgba(48, 17, 105, 0.692);
     display: flex;
     transition: 0.6s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(45, 212, 191, 0.15));
 }
 
 
@@ -40,16 +66,20 @@ body {
     right: 0;
     width: 50%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(45, 212, 191, 0.15), rgba(255, 255, 255, 0.05));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(45, 212, 191, 0.15));
     transition: 0.8s ease;
     z-index: 1;
+    backdrop-filter: blur(25px);
 }
 
 .wrapper.active .bg-animate {
+    backdrop-filter: blur(25px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(45, 212, 191, 0.15));
     right: 50%;
 }
 
 .wrapper.active .bg-animate2 {
+    backdrop-filter: blur(25px);
     right: 50%;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(45, 212, 191, 0.15));
 }
@@ -66,6 +96,7 @@ body {
     padding: 0 40px;
     transition: all 0.8s ease;
     z-index: 2;
+
 }
 
 .form-box.login {
@@ -99,7 +130,7 @@ body {
 
 .form-box p {
     text-align: center;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgb(255, 255, 255);
     margin-bottom: 25px;
     font-size: 0.9em;
 }
@@ -116,8 +147,8 @@ body {
     padding: 12px;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    color: #ffffff;
     outline: none;
     font-size: 1em;
     transition: 0.3s;
@@ -131,7 +162,7 @@ body {
     position: absolute;
     left: 10px;
     top: 12px;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.87);
     pointer-events: none;
     transition: 0.3s;
 }
