@@ -14,7 +14,7 @@ def add_record():
         amount=request.form.get('amount')
         quantity=request.form.get('quantity')
         price_per_unit=request.form.get('price_per_unit')
-        debi =request.form.get('debit')
+        debi =request.form.get('debi')
         date=request.form.get('date')
         paymentmethod=request.form.get('paymentmethod')
         description=request.form.get('description')

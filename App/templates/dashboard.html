@@ -33,72 +33,72 @@
     <div class="dashboard">
         <!-- Date Filter -->
         <div class="date-filter card">
-            <h2>Filter by Date Range</h2>
+            <h2>{{_("Filter by Date Range")}}</h2>
             <div class="filter-controls">
                 <select id="period-select">
-                    <option value="current_month">Current Month</option>
-                    <option value="last_month">Last Month</option>
-                    <option value="last_3_months">Last 3 Months</option>
-                    <option value="last_6_months">Last 6 Months</option>
-                    <option value="current_year">Current Year</option>
-                    <option value="custom">Custom Range</option>
+                    <option value="current_month">{{_("Current Month")}}</option>
+                    <option value="last_month">{{_("Last Month")}}</option>
+                    <option value="last_3_months">{{_("Last 3 Months")}}</option>
+                    <option value="last_6_months">{{_("Last 6 Months")}}</option>
+                    <option value="current_year">{{_("Current Yea")}}r</option>
+                    <option value="custom">{{_("Custom Range")}}</option>
                 </select>
                 
                 <div id="custom-range" class="custom-range">
                     <input type="date" id="start-date" />
-                    <span>to</span>
+                    <span>{{_("to")}}</span>
                     <input type="date" id="end-date" />
                 </div>
                 
-                <button id="apply-filter" class="btn-primary">Apply Filter</button>
-                <button id="reset-filter" class="btn-secondary">Reset</button>
+                <button id="apply-filter" class="btn-primary">{{_("Apply Filter")}}</button>
+                <button id="reset-filter" class="btn-secondary">{{_("Reset")}}</button>
             </div>
         </div>
 
         <!-- Stats Cards -->
         <div class="stats-container">
             <div class="stat-card">
-                <h3>Total Balance</h3>
+                <h3>{{_("Total Balance")}}</h3>
                 <div class="stat-value" id="total-balance">0 RWF</div>
-                <div class="stat-period" id="balance-period">Current Period</div>
+                <div class="stat-period" id="balance-period">{{_("Current Period")}}</div>
             </div>
             
             <div class="stat-card">
-                <h3>Total Revenue</h3>
+                <h3>{{_("Total Revenue")}}</h3>
                 <div class="stat-value" id="total-revenue">0 RWF</div>
-                <div class="stat-period" id="revenue-period">Current Period</div>
+                <div class="stat-period" id="revenue-period">{{_("Current Period")}}</div>
             </div>
             
             <div class="stat-card">
-                <h3>Total Expenses</h3>
+                <h3>{{_("Total Expenses")}}</h3>
                 <div class="stat-value" id="total-expenses">0 RWF</div>
-                <div class="stat-period" id="expenses-period">Current Period</div>
+                <div class="stat-period" id="expenses-period">{{_("Current Period")}}</div>
             </div>
             
             <div class="stat-card">
-                <h3>Net Profit</h3>
+                <h3>{{_("Net Profit")}}</h3>
                 <div class="stat-value" id="net-profit">0 RWF</div>
-                <div class="stat-period" id="profit-period">Current Period</div>
+                <div class="stat-period" id="profit-period">{{_("Current Period")}}</div>
             </div>
         </div>
 
         <!-- Main Chart -->
         <div class="card main-chart">
-            <h2>Revenue vs Expenses Over Time</h2>
+            <h2>{{_("Revenue vs Expenses Over Time")}}</h2>
             <div id="bar-chart"></div>
         </div>
 
         <!-- Top Lists -->
         <div class="flex-container">
             <div class="box box-left card">
-                <h2>Top Five Expenses</h2>
-                <div id="expenses-loading" class="loading">Loading...</div>
+                <h2>{{_("Top Five Expenses")}}</h2>
+                <div id="expenses-loading" class="loading">{{_("Loading...")}}</div>
                 <ul class="top-list" id="top-expenses"></ul>
             </div>
 
             <div class="box box-right card">
-                <h2>Top Five Sales</h2>
-                <div id="sales-loading" class="loading">Loading...</div>
+                <h2>{{_("Top Five Sales")}}</h2>
+                <div id="sales-loading" class="loading">{{_("Loading...")}}</div>
                 <ul class="top-list" id="top-sales"></ul>
             </div>
         </div>
