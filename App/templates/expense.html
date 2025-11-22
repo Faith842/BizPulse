@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ _('BIZPULSE - Expenses') }}</title>
+    <link rel="stylesheet" href="../static/CSS/dashboard.css">
     <link rel="stylesheet" href="../static/CSS/expense.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -38,7 +39,7 @@
             <li><a href="#Expenses" class="active"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">{{ _('Expenses') }}</span></a></li>
             <li><a href="{{ url_for('sale.displayall') }}"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">{{ _('Sales') }}</span></a></li>
             <li><a href="{{url_for('stock.displayall')}}"><i data-feather="trending-up" class="icon"></i><span class="nav-item">{{ _('Stock') }}</span></a></li>
-            <li><a href=""><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">{{ _('Visuals') }}</span></a></li>
+            <li><a href="{{url_for('dashboard.visuals')}}"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">{{ _('Visuals') }}</span></a></li>
             <li><a href="{{ url_for('auth.logout') }}"><i data-feather="log-out" class="icon"></i><span class="nav-item">{{ _('Log Out') }}</span></a></li>
         </ul>
     </nav>

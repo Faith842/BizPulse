@@ -13,7 +13,10 @@ body {
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+
+    padding-left: 100px; /* FIX: shift content from sidebar */
 }
+
 
 /* Topbar */
 .topbar {
@@ -678,3 +681,9 @@ body {
 .neutral {
     color: #9ca3af !important;
 }
+@media (max-width: 768px) {
+    body {
+        padding-left: 0;
+    }
+}
+
