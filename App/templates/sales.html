@@ -65,85 +65,111 @@
         
         <!-- Sales section -->
         <div class="bottom-section" id="Sales">
-            <div class="card sales-info">
-                <h3>{{ _('Sales Records') }}</h3>
-                <p>{{ _('Add and track all sales transactions to maintain accurate and up-to-date business performance data.') }}</p>
-                
-                <form id="salesform" action="{{url_for('sale.add_record')}}" method="POST">
-                    <input type="date" id="date" name="date" required />
-                    <input type="text" id="Productname" name="productname" placeholder="{{ _('Product name') }}" required />
-                    <input type="text" id="description" name="description" placeholder="{{ _('Description') }}" />
-                    <input type="number" id="quantity" name="quantity" placeholder="{{ _('Quantity') }}" required />
-                    <input type="number" id="price" name="price_per_unit" placeholder="{{ _('Price per unit') }}" required/>
+            <!-- Sales Main Section -->
+            <div class="sales-main-section">
+                <div class="card sales-info">
+                    <h3>{{ _('Sales Records') }}</h3>
+                    <p>{{ _('Add and track all sales transactions to maintain accurate and up-to-date business performance data.') }}</p>
                     
-                    <select id="debit" name="debi" required>
-                        <option value="" disabled selected>{{ _('Debit') }}</option>
-                        <option value="yes">{{ _('Yes') }}</option>
-                        <option value="Not">{{ _('Not') }}</option>
-                    </select>
-                    
-                    <select id="paymentmethod" name="paymentmethod" required>
-                        <option value="" disabled selected>{{ _('Payment Method') }}</option>
-                        <option value="Mobile Money">{{ _('Mobile Money') }}</option>
-                        <option value="Airtel Money">{{ _('Airtel Money') }}</option>
-                        <option value="Cash">{{ _('Cash') }}</option>
-                        <option value="Bank">{{ _('Bank') }}</option>
-                    </select>
+                    <form id="salesform" action="{{url_for('sale.add_record')}}" method="POST">
+                        <input type="date" id="date" name="date" required />
+                        <input type="text" id="Productname" name="productname" placeholder="{{ _('Product name') }}" required />
+                        <input type="text" id="description" name="description" placeholder="{{ _('Description') }}" />
+                        <input type="number" id="quantity" name="quantity" placeholder="{{ _('Quantity') }}" required />
+                        <input type="number" id="price" name="price_per_unit" placeholder="{{ _('Price per unit') }}" required/>
+                        
+                        <select id="debit" name="debi" required>
+                            <option value="" disabled selected>{{ _('Debit') }}</option>
+                            <option value="yes">{{ _('Yes') }}</option>
+                            <option value="Not">{{ _('Not') }}</option>
+                        </select>
+                        
+                        <select id="paymentmethod" name="paymentmethod" required>
+                            <option value="" disabled selected>{{ _('Payment Method') }}</option>
+                            <option value="Mobile Money">{{ _('Mobile Money') }}</option>
+                            <option value="Airtel Money">{{ _('Airtel Money') }}</option>
+                            <option value="Cash">{{ _('Cash') }}</option>
+                            <option value="Bank">{{ _('Bank') }}</option>
+                        </select>
 
-                    <input type="number" id="amount" name="amount" placeholder="{{ _('Amount') }}" required />
-                    <button type="submit">{{ _('Save Record') }}</button>
-                </form>
+                        <input type="number" id="amount" name="amount" placeholder="{{ _('Amount') }}" required />
+                        <button type="submit">{{ _('Save Record') }}</button>
+                    </form>
 
-                <table id="salestable" class="data-table">
-                    <thead>
-                        <tr>
-                            <th>{{ _('ID') }}</th>
-                            <th>{{ _('Date') }}</th>
-                            <th>{{ _('Product') }}</th>
-                            <th>{{ _('Description') }}</th>
-                            <th>{{ _('Qty') }}</th>
-                            <th>{{ _('Price/Unit') }}</th>
-                            <th>{{ _('Debit') }}</th>
-                            <th>{{ _('Payment') }}</th>
-                            <th>{{ _('Amount') }}</th>
-                            <th>{{ _('Actions') }}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for data in all_record %}
-                        <tr>
-                            <td>{{ data.salesid }}</td>
-                            <td>{{ data.date }}</td>
-                            <td>{{ data.productname }}</td>
-                            <td>{{ data.description }}</td>
-                            <td>{{ data.quantity }}</td>
-                            <td>{{ data.price_per_unit }}</td>
-                            <td>{{ data.debi}}</td>
-                            <td>{{ data.paymentmethod }}</td>
-                            <td>{{ data.amount }}</td>
-                            <td class="actions">
-                                <button class="btn btn-sm btn-outline-primary edit-sale-btn" data-sale-id="{{ data.salesid }}">
-                                    <i class="fas fa-edit"></i> {{ _('Edit') }}
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger delete-sale-btn" data-sale-id="{{ data.salesid }}">
-                                    <i class="fas fa-trash"></i> {{ _('Remove') }}
-                                </button>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-                <button class="toggle-rows-btn" data-table="salestable">{{_("View All")}}</button>
+                    <table id="salestable" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>{{ _('ID') }}</th>
+                                <th>{{ _('Date') }}</th>
+                                <th>{{ _('Product') }}</th>
+                                <th>{{ _('Description') }}</th>
+                                <th>{{ _('Qty') }}</th>
+                                <th>{{ _('Price/Unit') }}</th>
+                                <th>{{ _('Debit') }}</th>
+                                <th>{{ _('Payment') }}</th>
+                                <th>{{ _('Amount') }}</th>
+                                <th>{{ _('Actions') }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for data in all_record %}
+                            <tr>
+                                <td>{{ data.salesid }}</td>
+                                <td>{{ data.date }}</td>
+                                <td>{{ data.productname }}</td>
+                                <td>{{ data.description }}</td>
+                                <td>{{ data.quantity }}</td>
+                                <td>{{ data.price_per_unit }}</td>
+                                <td>{{ data.debi}}</td>
+                                <td>{{ data.paymentmethod }}</td>
+                                <td>{{ data.amount }}</td>
+                                <td class="actions">
+                                    <button class="btn btn-sm btn-outline-primary edit-sale-btn" data-sale-id="{{ data.salesid }}">
+                                        <i class="fas fa-edit"></i> {{ _('Edit') }}
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger delete-sale-btn" data-sale-id="{{ data.salesid }}">
+                                        <i class="fas fa-trash"></i> {{ _('Remove') }}
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <button class="toggle-rows-btn" data-table="salestable">{{_("View All")}}</button>
+                </div>
 
+                <div id="no-results" style="display:none;">
+                   {{_("No results found.")}}
+                </div>
             </div>
-            <div id="no-results" style="display:none;">
-               {{_("No results found.")}}
-            </div>
 
-            <div class="card sales">
-                <h3>{{ _('Sales Performance Overview') }}</h3>
-                <p>{{ _('A graphical view of your sales trends to help you analyze growth, demand, and revenue patterns.') }}</p>
-                <div id="sales-graph"></div>
+            <!-- Sales Chart Section - Now below -->
+            <div class="sales-chart-section">
+                <div class="card sales">
+                    <h3>{{ _('Sales Performance Overview') }}</h3>
+                    <p>{{ _('A graphical view of your sales trends to help you analyze growth, demand, and revenue patterns.') }}</p>
+                    <div id="sales-graph"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>{{ _('Confirm Deletion') }}</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <p id="modalMessage">{{ _('Are you sure you want to delete this sales record?') }}</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelDelete">{{ _('Cancel') }}</button>
+                <button class="btn btn-danger" id="confirmDelete">{{ _('Delete') }}</button>
             </div>
         </div>
     </div>

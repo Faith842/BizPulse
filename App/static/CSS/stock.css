@@ -724,3 +724,182 @@ mark.highlight {
       height: 550px;
   }
 }
+
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+}
+
+.modal-content {
+  background: rgba(30, 30, 46, 0.95);
+  border-radius: 20px;
+  padding: 0;
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h3 {
+  color: #9ab3ff;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.close-modal {
+  color: #9ca3af;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-modal:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 50%;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-body p {
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-outline-secondary {
+  background: transparent;
+  border: 1px solid #6b7280;
+  color: #6b7280;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-outline-secondary:hover {
+  background: #6b7280;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Chart container enhancements */
+#stock-charts-container {
+  position: relative;
+  min-height: 500px;
+}
+
+#stock-graph {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+
+/* Bottom Section - Single column grid */
+.bottom-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Stock Info */
+.stock-info {
+  grid-column: 1;
+}
+
+/* Stock Analysis - Below Stock Overview */
+.stock {
+  grid-column: 1;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stock Chart Container */
+#stock-charts-container {
+  width: 100%;
+  height: 500px;
+  flex: 1;
+}
+
+#stock-graph {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stock {
+      min-height: 400px;
+  }
+  
+  #stock-charts-container {
+      height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stock {
+      min-height: 350px;
+  }
+  
+  #stock-charts-container {
+      height: 350px;
+  }
+}

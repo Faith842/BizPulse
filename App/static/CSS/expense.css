@@ -666,3 +666,235 @@ mark.highlight {
       grid-template-columns: 1fr 450px;
   }
 }
+
+/* ===== NEW LAYOUT STYLES ===== */
+
+/* Bottom Section - Updated Layout */
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Main Expenses Section */
+.expenses-main-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Chart Section - Now below */
+.expenses-chart-section {
+  width: 100%;
+}
+
+/* Expense Chart - Updated styles */
+.expenses {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.expenses h3 {
+  color: #9ab3ff;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.expenses p {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+#expensechart {
+  width: 100%;
+  height: 400px;
+  flex: 1;
+}
+
+/* ===== RESPONSIVE UPDATES ===== */
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .expenses-main-section {
+      grid-template-columns: 1fr;
+  }
+  
+  .expenses {
+      min-height: 400px;
+  }
+  
+  #expenseform {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .expenses-main-section {
+      gap: 1rem;
+  }
+  
+  #expensechart {
+      height: 350px;
+  }
+}
+
+/* Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+  .expenses {
+      min-height: 350px;
+  }
+  
+  #expensechart {
+      height: 300px;
+  }
+}
+
+/* Large Desktops (1200px and above) */
+@media (min-width: 1200px) {
+  .expenses-main-section {
+      grid-template-columns: 1fr;
+  }
+  
+  .expenses-chart-section {
+      max-width: 100%;
+  }
+}
+
+/* Delete Confirmation Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: rgba(30, 30, 46, 0.95);
+  margin: 10% auto;
+  padding: 0;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h3 {
+  color: #9ab3ff;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.close-modal {
+  color: #9ca3af;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: #f87171;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.modal-icon {
+  font-size: 3rem;
+  color: #f87171;
+  margin-bottom: 1rem;
+}
+
+.modal-body p {
+  color: #e2e8f0;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.5rem 1.5rem;
+  justify-content: flex-end;
+}
+
+.modal-footer .btn {
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.modal-footer .btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-footer .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.modal-footer .btn-danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+}
+
+.modal-footer .btn-danger:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Responsive Modal */
+@media (max-width: 480px) {
+  .modal-content {
+      margin: 20% auto;
+      width: 95%;
+  }
+  
+  .modal-footer {
+      flex-direction: column;
+  }
+  
+  .modal-footer .btn {
+      width: 100%;
+  }
+}
