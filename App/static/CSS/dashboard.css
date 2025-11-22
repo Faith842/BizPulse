@@ -687,3 +687,34 @@ body {
     }
 }
 
+/* Search Bar Container */
+.search {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 14px;
+    padding: 8px 14px;
+    width: 100%; /* ADDED: take full available width */
+    max-width: 500px;
+    margin: 0 auto; /* ADDED: This centers the element within the topbar */
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: flex-start; /* CHANGED from space-between */
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(14, 14, 14, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 70px;
+}
+
