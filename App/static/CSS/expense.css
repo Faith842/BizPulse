@@ -323,9 +323,29 @@ body {
   transform: translateY(-2px);
 }
 
+/* Data Table Container */
+.expenses-info {
+  overflow-x: auto;
+  position: relative;
+}
+
+/* Scroll indicator for mobile */
+.expenses-info::after {
+  content: '← Scroll to see more →';
+  display: none;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.75em;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+
 /* Data Table */
 .data-table {
   width: 100%;
+  min-width: 1000px;
   border-collapse: collapse;
   margin: 1rem 0;
   background: rgba(255, 255, 255, 0.03);
@@ -343,12 +363,16 @@ body {
   font-size: 0.9em;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .data-table td {
   padding: 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   font-size: 0.9em;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .data-table tr:hover {
@@ -359,11 +383,30 @@ body {
   border-bottom: none;
 }
 
+/* Specific column widths */
+.data-table th:nth-child(1),
+.data-table td:nth-child(1) {
+  width: 60px;
+  max-width: 60px;
+}
+
+.data-table th:nth-child(2),
+.data-table td:nth-child(2) {
+  min-width: 120px;
+}
+
+.data-table th:nth-child(5),
+.data-table td:nth-child(5) {
+  min-width: 150px;
+  max-width: 250px;
+}
+
 /* Action Buttons */
 .actions {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  white-space: nowrap;
 }
 
 .btn {
@@ -470,7 +513,9 @@ mark.highlight {
 }
 
 
+/* ========================================= */
 /* RESPONSIVE DESIGN */
+/* ========================================= */
 
 /* Tablets (1024px and below) */
 @media (max-width: 1024px) {
@@ -543,10 +588,14 @@ mark.highlight {
       padding: 1rem;
   }
   
-  .data-table {
+  /* Show scroll indicator on tablet */
+  .expenses-info::after {
       display: block;
-      overflow-x: auto;
-      white-space: nowrap;
+  }
+  
+  .data-table {
+      min-width: 900px;
+      font-size: 0.85em;
   }
   
   .data-table th,
@@ -563,6 +612,8 @@ mark.highlight {
   .btn {
       padding: 6px 10px;
       font-size: 0.8em;
+      width: 100%;
+      justify-content: center;
   }
 }
 
@@ -604,10 +655,34 @@ mark.highlight {
       font-size: 0.9em;
   }
   
+  /* Show scroll indicator on mobile */
+  .expenses-info::after {
+      display: block;
+  }
+  
+  .data-table {
+      min-width: 800px;
+      font-size: 0.8em;
+  }
+  
   .data-table th,
   .data-table td {
       padding: 8px 6px;
       font-size: 0.8em;
+  }
+  
+  /* Make actions column sticky on mobile */
+  .data-table th:last-child,
+  .data-table td:last-child {
+      position: sticky;
+      right: 0;
+      background: rgba(14, 14, 14, 0.98);
+      box-shadow: -2px 0 8px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+  }
+  
+  .data-table th:last-child {
+      background: rgba(255, 255, 255, 0.12);
   }
   
   .expenses {
@@ -636,7 +711,12 @@ mark.highlight {
   }
   
   .search {
-      width: 180px;
+      width: 160px;
+      padding: 5px 8px;
+  }
+  
+  .search input {
+      font-size: 0.8em;
   }
   
   #expenseform {
@@ -644,12 +724,22 @@ mark.highlight {
   }
   
   .data-table {
+      min-width: 700px;
       font-size: 0.75em;
+  }
+  
+  .data-table th,
+  .data-table td {
+      padding: 6px 4px;
   }
   
   .btn {
       padding: 5px 8px;
       font-size: 0.75em;
+  }
+  
+  .expenses-info::after {
+      font-size: 0.7em;
   }
 }
 
@@ -665,4 +755,23 @@ mark.highlight {
   .bottom-section {
       grid-template-columns: 1fr 450px;
   }
+  
+  /* Hide scroll indicator on large screens */
+  .expenses-info::after {
+      display: none;
+  }
+}
+
+/* Animation for table updates */
+@keyframes tableUpdate {
+  0% {
+      background: rgba(99, 102, 241, 0.2);
+  }
+  100% {
+      background: transparent;
+  }
+}
+
+.data-table tr.updated {
+  animation: tableUpdate 1s ease-out;
 }
