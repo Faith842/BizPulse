@@ -8,12 +8,6 @@
   transition: all 0.3s ease;
 }
 
-body {
-  background: radial-gradient(circle at 25% 25%, #000000, #0d0e15);
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
-}
 
 /* Topbar */
 .topbar {
@@ -540,6 +534,11 @@ mark.highlight {
   .search {
       width: 300px;
   }
+  .data-table {
+        display: block;
+        overflow-x: auto; /* <--- This is the key rule */
+        white-space: nowrap;
+    }
   
   .mobile-menu-toggle {
       display: block;
@@ -902,4 +901,168 @@ mark.highlight {
   #stock-charts-container {
       height: 350px;
   }
+}
+/* ===== Minimal responsive fixes — add at end of file ===== */
+
+/* Let dashboard and children shrink correctly on small screens */
+.dashboard,
+.dashboard * {
+  min-width: 0; /* prevents overflowing flex/grid children from forcing width */
+}
+
+/* Make topbar search flexible instead of fixed width */
+.topbar {
+  gap: 12px; /* small gap between controls so flex children can shrink */
+}
+
+/* Allow search to shrink and not force layout overflow */
+.topbar .search {
+  flex: 1 1 auto;      /* grow:1 shrink:1 basis:auto */
+  min-width: 0;        /* allow the element to shrink below its content width */
+  width: auto;         /* do not force fixed width */
+  max-width: 100%;     /* ensure it never exceeds parent */
+}
+
+/* Ensure the input inside can shrink (prevents forced overflow) */
+.topbar .search input {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Make sidebar hidden by default on small screens (keeps content visible) */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%) !important; /* hide by default */
+    width: 250px;                             /* width when visible via .active */
+    will-change: transform;
+  }
+
+  /* When sidebar opens it should overlay; dashboard must not remain offset */
+  .sidebar.active {
+    transform: translateX(0) !important;
+    z-index: 1100;
+  }
+
+  /* Force dashboard to full width on small screens (override earlier rule if any) */
+  .dashboard {
+    margin-left: 0 !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Make overlay clickable/visible when active (ensure overlay blocks scroll) */
+  .overlay {
+    pointer-events: none;
+  }
+  .overlay.active {
+    pointer-events: auto;
+  }
+
+  /* Table horizontal scrolling for small screens */
+  .data-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  /* Reduce search padding a bit to gain space on tiny screens */
+  .topbar .search {
+    padding: 6px 10px;
+  }
+}
+
+/* Extra safety for very small phones */
+@media (max-width: 420px) {
+  /* shrink search further */
+  .topbar .search {
+    padding: 5px 8px;
+  }
+
+  /* Make action buttons wrap and not overflow */
+  .actions {
+    flex-wrap: wrap;
+  }
+}
+/* Center the search bar */
+.topbar {
+  justify-content: center;
+}
+
+/* Reduce width of search bar */
+.search {
+  width: 250px;
+}
+
+/* Keep right-side icons aligned */
+.topbar > *:last-child {
+  position: absolute;
+  right: 20px;
+}
+/* Fix topbar layout without changing HTML */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    gap: 10px;
+}
+
+/* Make search bar shrink on small screens */
+.topbar .search {
+    flex: 1;                 /* take available space */
+    max-width: 350px;        /* normal size */
+    display: flex;
+    align-items: center;
+    background: #1f1f1f;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+/* Search input responsive */
+.topbar .search input {
+    width: 100%;
+    background: transparent;
+    color: white;
+}
+
+/* Make icons stay fixed in size */
+.mobile-menu-toggle,
+.user-profile {
+    flex-shrink: 0;
+}
+
+/* User profile styling */
+.user-profile {
+    width: 35px;
+    height: 35px;
+    background: #4f46e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/**************  MOBILE FIXES  **************/
+
+@media (max-width: 600px) {
+    .topbar .search {
+        max-width: 220px;
+    }
+}
+
+@media (max-width: 450px) {
+    .topbar {
+        gap: 5px;
+    }
+
+    .topbar .search {
+        max-width: 160px;
+        padding: 5px 8px;
+    }
+
+    .search input {
+        font-size: 13px;
+    }
 }
