@@ -212,9 +212,9 @@ def dashboard_data():
             'error': str(e)
         }), 500
 
-@dash_bp.route('/stock', methods=['GET'])
-def stock():
-    return render_template('stock.html')
+@dash_bp.route('/visuals', methods=['GET'])
+def visuals():
+    return render_template('visuals.html')
 
 
 

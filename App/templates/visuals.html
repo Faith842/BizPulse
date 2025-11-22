@@ -27,10 +27,10 @@
                     <h1>{{ _("BIZPULSE") }}</h1>
                 </a>
             </li>
-            <li><a href="./dashboard.html"><i data-feather="home" class="icon"></i><span class="nav-item">{{ _("Dashboard") }}</span></a></li>
-            <li><a href="./expense.html"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">{{ _("Expenses") }}</span></a></li>
-            <li><a href="./sales.html"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">{{ _("Sales") }}</span></a></li>
-            <li><a href="./stock.html"><i data-feather="trending-up" class="icon"></i><span class="nav-item">{{ _("Stock") }}</span></a></li>
+            <li><a href="{{url_for('dashboard.dashboard')}}"><i data-feather="home" class="icon"></i><span class="nav-item">{{ _("Dashboard") }}</span></a></li>
+            <li><a href="{{url_for('expense.display_all')}}"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">{{ _("Expenses") }}</span></a></li>
+            <li><a href="{{url_for('sale.displayall')}}"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">{{ _("Sales") }}</span></a></li>
+            <li><a href="{{url_for('stock.displayall')}}"><i data-feather="trending-up" class="icon"></i><span class="nav-item">{{ _("Stock") }}</span></a></li>
             <li><a href="#"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">{{ _("Visuals") }}</span></a></li>
             <li><a href="{{ url_for('auth.logout') }}"><i data-feather="log-out" class="icon"></i><span class="nav-item">{{ _("Log Out") }}</span></a></li>
         </ul>
