@@ -9,18 +9,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+    <!-- Mobile Header -->
     <header class="topbar">
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
         <div class="user-profile">
             <span class="user-initials">NP</span>
         </div>
     </header>
-    <nav>
-        <ul>
-            <li>
-                <a href="" class="logo">
+
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <a href="" class="logo">
                 <h1>BIZPULSE</h1>
-                </a>
-            </li>
+            </a>
+            <div class="nav-close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <ul>
             <li><a href="#Dashboard"><i data-feather="home" class="icon"></i><span class="nav-item">Dashboard</span></a></li>
             <li><a href="{{url_for('expense.display_all')}}"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">Expenses</span></a></li>
             <li><a href="{{ url_for('sale.displayall') }}"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">Sales</span></a></li>
@@ -29,7 +38,11 @@
             <li><a href="{{url_for('auth.logout')}}"><i data-feather="log-out" class="icon"></i><span class="nav-item">Log Out</span></a></li>
         </ul>
     </nav>
+
+    <!-- Overlay for mobile -->
+    <div class="overlay"></div>
     
+    <!-- Main Content -->
     <div class="dashboard">
         <!-- Date Filter -->
         <div class="date-filter card">
@@ -110,6 +123,19 @@
     <script src="../static/JS/dashboard.js"></script>
     <script>
         feather.replace();
+        
+        // Mobile menu functionality
+        $(document).ready(function() {
+            $('.mobile-menu-toggle').click(function() {
+                $('.sidebar').addClass('active');
+                $('.overlay').addClass('active');
+            });
+            
+            $('.nav-close, .overlay').click(function() {
+                $('.sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+        });
     </script>
 </body>
 </html>
