@@ -5,7 +5,7 @@ from ..models import Expenses
 from flask_babel import Babel, _, get_locale
 
 expensebp = Blueprint('expense',__name__,url_prefix='/record')
-
+#endpoint to add expense record
 @expensebp.route('/addrecord',methods=['POST','GET'])
 def add_record():
     if request.method =='POST':
@@ -41,6 +41,7 @@ def add_record():
             flash(_(f'unexpected error occured as {e}'),'danger')
             return redirect(url_for('expense.display_all'))
     return redirect(url_for('expense.display_all'))
+#endpoint to edit expense record
 @expensebp.route('/editrecord/<int:id>', methods=['POST'])
 def edit_record(id):
     changes = request.form
@@ -85,7 +86,7 @@ def edit_record(id):
         db.session.rollback()
         flash(_(f'Unexpected error occurred: {e}'), 'danger')
         return redirect(url_for('expense.display_all'))
-        
+     #endpoint to remove expense record   
 @expensebp.route('/removerecord/<int:id>',methods=['DELETE'])
 def remove_record(id):
     record = db.session.query(Expenses).filter_by(expenseid=id).first()
@@ -102,6 +103,7 @@ def remove_record(id):
         db.session.rollback()
         flash(_(f"unexpected error occured: {e}"),'danger')
         return redirect(url_for('expense.display_all'))
+    #endpoint to display all  expense records
 @expensebp.route('/displayall',methods=['GET'])
 def display_all():
     all_records = db.session.query(Expenses).filter_by(userid=g.user_id).all()

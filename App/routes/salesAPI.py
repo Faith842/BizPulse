@@ -5,6 +5,7 @@ from ..models import Sales
 from flask_babel import _
 
 salesbp = Blueprint('sale',__name__,url_prefix='/salerecord')
+#endpoint to add sale record
 
 @salesbp.route('/addrecord',methods=['POST','GET'])
 def add_record():
@@ -49,7 +50,7 @@ def add_record():
             flash(_(f'Unexpected error occurred: {e}'),'danger')
             return redirect(url_for('sale.displayall'))
     return redirect(url_for('sale.displayall'))
-
+#endpoint to edit sale record
 @salesbp.route('/editrecord/<int:id>', methods=['POST'])
 def edit_record(id):
     changes = request.form
@@ -91,6 +92,7 @@ def edit_record(id):
         flash(_(f'Unexpected error occurred: {e}'), 'danger')
         
     return redirect(url_for('sale.displayall'))
+#endpoint to remove sale record
         
 @salesbp.route('/removerecord/<int:id>',methods=['DELETE'])
 def remove_record(id):
@@ -108,7 +110,7 @@ def remove_record(id):
         db.session.rollback()
         flash(_(f"Unexpected error occurred: {e}"),'danger')
         return redirect(url_for('sale.displayall'))
-
+#endpoint to display all sale records
 @salesbp.route('/displayall',methods=['GET'])
 def displayall():
     all_record = db.session.query(Sales).filter_by(userid=g.user_id).all()

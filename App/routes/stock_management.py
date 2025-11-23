@@ -5,7 +5,7 @@ from ..models import Stock
 from flask_babel import _
 
 stockbp = Blueprint('stock',__name__,url_prefix='/stockrecord')
-
+#endpoint to add stock record
 @stockbp.route('/addrecord',methods=['POST','GET'])
 def add_record():
     if request.method =='POST':
@@ -47,6 +47,7 @@ def add_record():
             flash(_(f'Unexpected error occurred: {e}'),'danger')
             return redirect(url_for('stock.displayall'))
     return redirect(url_for('stock.displayall'))
+#endpoint to edit stock record
 
 @stockbp.route('/editrecord/<int:id>', methods=['POST'])
 def edit_record(id):
@@ -89,6 +90,7 @@ def edit_record(id):
         flash(_(f'Unexpected error occurred: {e}'), 'danger')
         
     return redirect(url_for('stock.displayall'))
+#endpoint to remove stock record
         
 @stockbp.route('/removerecord/<int:id>',methods=['DELETE'])
 def remove_record(id):
@@ -106,7 +108,7 @@ def remove_record(id):
         db.session.rollback()
         flash(_(f"Unexpected error occurred: {e}"),'danger')
         return redirect(url_for('stock.displayall'))
-
+#endpoint to display all stock records
 @stockbp.route('/displayall',methods=['GET'])
 def displayall():
     all_recor = db.session.query(Stock).filter_by(userid=g.user_id).all()
