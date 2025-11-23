@@ -27,10 +27,10 @@ def create_app(test_config=None):
     if database_url and database_url.startswith("postgres://"):
         database_url = database_url.replace("postgres://", "postgresql://", 1)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] =  'sqlite:///my_database.db' #database_url
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_url 
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    #secret_key = os.environ.get("SECRET_KEY", "testing")
-    app.config['SECRET_KEY'] = "secret_key"
+    secret_key = os.environ.get("SECRET_KEY", "testing")
+    app.config['SECRET_KEY'] = secret_key
 
     init_extensions(app) 
     with app.app_context():
@@ -70,7 +70,8 @@ def create_app(test_config=None):
     @app.route('/')
     def index():
         return render_template('font/font.html')
-
+    
+#load user in session before any request
     @app.before_request
     def load_user_id():
         user_id = session.get('user_id')
