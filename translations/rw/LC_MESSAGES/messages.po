@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-11-23 12:45+0200\n"
+"POT-Creation-Date: 2025-11-15 16:24+0200\n"
 "PO-Revision-Date: 2025-11-12 17:49+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: rw\n"
@@ -47,6 +47,8 @@ msgid "you have been logout successfully, you might want to login again"
 msgstr "Wasohotse neza, ushobora gushaka kongera kwinjira"
 
 #: App/routes/expensesAPI.py:25 App/routes/expensesAPI.py:62
+#: App/routes/salesAPI.py:24 App/routes/salesAPI.py:61
+#: App/routes/stock_management.py:23 App/routes/stock_management.py:60
 msgid "invalid format!!"
 msgstr "Uburyo bw'imiterere ntibwemewe!"
 
@@ -56,11 +58,13 @@ msgstr ""
 "Nyamuneka, tanga byibuze izina ry'igicuruzwa, igiciro ku kigero, "
 "igiteranyo (cyangwa umubare), cyangwa ubwinshi!"
 
-#: App/routes/expensesAPI.py:37
+#: App/routes/expensesAPI.py:37 App/routes/salesAPI.py:36
+#: App/routes/stock_management.py:35
 msgid "record added successfully"
 msgstr "Ibyo wanditse byongeyweho neza"
 
-#: App/routes/expensesAPI.py:50
+#: App/routes/expensesAPI.py:50 App/routes/salesAPI.py:49
+#: App/routes/stock_management.py:48
 msgid "no changes detected"
 msgstr "Ntampinduka zigaragaye"
 
@@ -68,16 +72,18 @@ msgstr "Ntampinduka zigaragaye"
 msgid "expense updated successfully!"
 msgstr "Ibyo uhinduye byahinduwe neza"
 
-#: App/routes/expensesAPI.py:80 App/routes/salesAPI.py:87
-#: App/routes/stock_management.py:85
+#: App/routes/expensesAPI.py:80 App/routes/salesAPI.py:79
+#: App/routes/stock_management.py:78
 msgid "No valid changes detected"
 msgstr "Ntampinduka zigaragaye"
 
-#: App/routes/expensesAPI.py:93
+#: App/routes/expensesAPI.py:93 App/routes/salesAPI.py:92
+#: App/routes/stock_management.py:91
 msgid "record no longer exists"
 msgstr "igicuruzwa nticyicyibaho"
 
-#: App/routes/expensesAPI.py:99
+#: App/routes/expensesAPI.py:99 App/routes/salesAPI.py:98
+#: App/routes/stock_management.py:97
 msgid "record deleted successfully"
 msgstr "igicuruzwa cyirasibwe neza"
 
@@ -134,6 +140,18 @@ msgstr ""
 #: App/routes/stock_management.py:83
 #, fuzzy
 msgid "Stock updated successfully!"
+msgstr "Ibyo uhinduye byahinduwe neza"
+
+#: App/routes/stock_management.py:26
+#, fuzzy
+msgid "please provide atleast productname, stockstatus, or "
+msgstr ""
+"Nyamuneka, tanga byibuze izina ry'igicuruzwa, igiciro ku kigero, "
+"igiteranyo (cyangwa umubare), cyangwa ubwinshi!"
+
+#: App/routes/stock_management.py:74
+#, fuzzy
+msgid "stock updated successfully!"
 msgstr "Ibyo uhinduye byahinduwe neza"
 
 #: App/templates/additional_info.html:6
@@ -320,6 +338,10 @@ msgstr "Bitanubyambere byasohotse "
 #: App/templates/dashboard.html:192
 msgid "October’s Revenue"
 msgstr "Ibyinjiye muri Nyakanga"
+#: App/templates/expense.html:6 App/templates/sales.html:6
+#: App/templates/stock.html:6 App/templates/visuals.html:6
+msgid "BIZPULSE Dashboard"
+msgstr "BIZPULSE Dashboardi"
 
 #: App/templates/dashboard.html:195
 msgid "Revenue vs Time"
@@ -333,28 +355,33 @@ msgstr "BizPulse - Kwinjira"
 msgid "search by values eg:cocacola, yes for credit..."
 msgstr "Shakisha ukoresheje amagambo nka: cocacola, yego kuri credit..."
 
-#: App/templates/expense.html:38 App/templates/sales.html:38
-#: App/templates/stock.html:41 App/templates/stock.html:279
+#: App/templates/expense.html:30 App/templates/sales.html:30
+#: App/templates/stock.html:33 App/templates/visuals.html:30
 msgid "Dashboard"
 msgstr "Dashboardi"
 
-#: App/templates/expense.html:39 App/templates/sales.html:39
-#: App/templates/stock.html:47 App/templates/stock.html:285
+#: App/templates/expense.html:31 App/templates/sales.html:31
+#: App/templates/stock.html:39 App/templates/visuals.html:31
 msgid "Expenses"
 msgstr "Ibyasohotse"
 
-#: App/templates/expense.html:40 App/templates/sales.html:40
-#: App/templates/stock.html:53 App/templates/stock.html:291
+#: App/templates/expense.html:32 App/templates/sales.html:32
+#: App/templates/stock.html:45 App/templates/visuals.html:32
 msgid "Sales"
 msgstr "Ibyinjiye"
 
-#: App/templates/expense.html:41 App/templates/sales.html:41
-#: App/templates/stock.html:59 App/templates/stock.html:297
+#: App/templates/expense.html:33 App/templates/sales.html:33
+#: App/templates/stock.html:51 App/templates/visuals.html:33
 msgid "Stock"
 msgstr "Sitoke"
 
-#: App/templates/expense.html:42 App/templates/sales.html:42
-#: App/templates/stock.html:65 App/templates/stock.html:309
+#: App/templates/expense.html:34 App/templates/sales.html:34
+#: App/templates/stock.html:57 App/templates/visuals.html:34
+msgid "Visuals"
+msgstr "Amashusho"
+
+#: App/templates/expense.html:35 App/templates/sales.html:35
+#: App/templates/stock.html:63 App/templates/visuals.html:35
 msgid "Log Out"
 msgstr "Sohoka"
 
@@ -376,6 +403,75 @@ msgstr "Imikoreshereze Ihindagurika"
 
 #: App/templates/expense.html:80 App/templates/sales.html:76
 #: App/templates/stock.html:121 App/templates/stock.html:360
+#: App/templates/expense.html:68 App/templates/sales.html:64
+#: App/templates/stock.html:98
+msgid "Product name:"
+msgstr "Izina ry'Igicuruzwa:"
+
+#: App/templates/expense.html:69 App/templates/sales.html:66
+msgid "Quantity:"
+msgstr "Umubare:"
+
+#: App/templates/expense.html:70 App/templates/sales.html:65
+#: App/templates/stock.html:99
+msgid "Description:"
+msgstr "Ibisobanuro:"
+
+#: App/templates/expense.html:71 App/templates/sales.html:63
+msgid "Date:"
+msgstr "Itariki:"
+
+#: App/templates/expense.html:72
+msgid "Cost per unit:"
+msgstr "Igiciro kuri buri kimwe:"
+
+#: App/templates/expense.html:73 App/templates/sales.html:83
+msgid "Amount:"
+msgstr "Umubare w'amafaranga:"
+
+#: App/templates/expense.html:76
+#, fuzzy
+msgid "credit"
+msgstr "Kirediti"
+
+#: App/templates/expense.html:77
+msgid "Yes"
+msgstr "Yego"
+
+#: App/templates/expense.html:78 App/templates/sales.html:71
+msgid "Not"
+msgstr "Oya"
+
+#: App/templates/expense.html:83
+msgid "payment-method"
+msgstr "Uburyo bwo Kwishyura"
+
+#: App/templates/expense.html:84 App/templates/sales.html:77
+msgid "Mobile Money"
+msgstr "Mobayilo-Money"
+
+#: App/templates/expense.html:85 App/templates/sales.html:78
+msgid "Airtel Money"
+msgstr "Airtel-Money"
+
+#: App/templates/expense.html:86 App/templates/sales.html:79
+msgid "Cash"
+msgstr "Amafaranga"
+
+#: App/templates/expense.html:87 App/templates/sales.html:80
+msgid "Bank"
+msgstr "Banki"
+
+#: App/templates/expense.html:90
+msgid "Save Record"
+msgstr "Bika Ibyanditswe"
+
+#: App/templates/expense.html:96 App/templates/stock.html:112
+msgid "ID"
+msgstr "Nimero"
+
+#: App/templates/expense.html:98 App/templates/sales.html:92
+#: App/templates/stock.html:114
 msgid "Product name"
 msgstr "Izina ry'Igicuruzwa"
 
@@ -400,6 +496,19 @@ msgstr "Itariki"
 #: App/templates/expense.html:84
 msgid "Cost per unit"
 msgstr "Igiciro kuri buri kimwe:"
+#: App/templates/expense.html:100 App/templates/sales.html:93
+#: App/templates/stock.html:115
+msgid "Description"
+msgstr "Ibisobanuro"
+
+#: App/templates/expense.html:101 App/templates/sales.html:91
+#: App/templates/stock.html:116
+msgid "Date"
+msgstr "Itariki"
+
+#: App/templates/expense.html:102 App/templates/stock.html:104
+msgid "Credit"
+msgstr "Kirediti"
 
 #: App/templates/expense.html:85 App/templates/expense.html:116
 #: App/templates/sales.html:95 App/templates/sales.html:110
@@ -490,6 +599,30 @@ msgstr "Reba Byose"
 #: App/templates/expense.html:151 App/templates/sales.html:142
 #: App/templates/stock.html:179
 msgid "No results found."
+msgstr "ntago bibonetse"
+#: App/templates/expense.html:106 App/templates/sales.html:99
+#: App/templates/stock.html:120
+msgid "Actions"
+msgstr "Ibikorwa"
+
+#: App/templates/expense.html:127 App/templates/sales.html:116
+#: App/templates/stock.html:136
+msgid "Edit"
+msgstr "Hindura"
+
+#: App/templates/expense.html:130 App/templates/sales.html:119
+#: App/templates/stock.html:139
+msgid "Remove"
+msgstr "Siba"
+
+#: App/templates/expense.html:137 App/templates/sales.html:126
+#: App/templates/stock.html:146
+msgid "View All"
+msgstr "Reba Byose"
+
+#: App/templates/expense.html:141 App/templates/sales.html:130
+#: App/templates/stock.html:148
+msgid " No results found."
 msgstr "Ntabisubizo bibonetse"
 
 #: App/templates/expense.html:158
@@ -563,15 +696,16 @@ msgstr "Iyandikishe"
 
 #: App/templates/sales.html:6
 msgid "BIZPULSE - Sales"
-msgstr "BizPulse - Kwinjira"
+msgstr "BizPulse - Ibyagirishijwe"
 
 #: App/templates/sales.html:20
-#, fuzzy
 msgid "search by values eg:cocacola, yes for debit..."
 msgstr "Shakisha ukoresheje amagambo nka: cocacola, yego kuri credit..."
 
 #: App/templates/sales.html:31 App/templates/stock.html:31
 #: App/templates/stock.html:273
+#: App/templates/sales.html:27 App/templates/stock.html:27
+#: App/templates/visuals.html:27
 msgid "BIZPULSE"
 msgstr "BIZPULSE"
 
@@ -597,6 +731,28 @@ msgid "Debit"
 msgstr "ideni"
 
 #: App/templates/sales.html:149
+#: App/templates/sales.html:69 App/templates/sales.html:96
+
+msgid "debit"
+msgstr "debite"
+
+#: App/templates/sales.html:70
+msgid "yes"
+msgstr "Yego"
+
+#: App/templates/sales.html:84
+msgid "Save record"
+msgstr "Bika Ibyanditswe"
+
+#: App/templates/sales.html:90
+msgid "id"
+msgstr "Nimero"
+
+#: App/templates/sales.html:95
+msgid "Price_per_unit"
+msgstr "Igiciro kuri buri kimwe"
+
+#: App/templates/sales.html:134
 msgid "Sales Performance Overview"
 msgstr "Isuzuma ry'Uko Ubucuruzi Bukora"
 
@@ -630,8 +786,79 @@ msgid "BIZPULSE - Stock"
 msgstr "BizPulse - Kwinjira"
 
 #: App/templates/stock.html:20 App/templates/stock.html:262
+#: App/templates/stock.html:16 App/templates/visuals.html:16
 msgid "Search something here..."
-msgstr "shaka Icyintu hano"
+msgstr "shaka Igicuruzwa hano"
+
+#: App/templates/stock.html:88
+msgid ""
+"Monitor and manage your inventory levels efficiently to reduce shortages "
+"and support smooth business operations."
+msgstr "Kurikira kandi uyobore neza urwego rw'ibicuruzwa byawe kugira ngo ugabanye ibibura "
+"kandi ufashe imikorere myiza y'ubucuruzi."
+
+#: App/templates/stock.html:91
+
+msgid "Stock Overview"
+msgstr "Isuzuma ry'Imikoreshereze y'sitoke"
+
+#: App/templates/stock.html:94 App/templates/stock.html:113
+msgid "stock status"
+msgstr "uko sitoke ihagaze"
+
+#: App/templates/stock.html:95
+
+msgid "Stock-Out"
+msgstr "Sitoke isohotse"
+
+#: App/templates/stock.html:96
+
+msgid "Stock-In"
+msgstr "Sitoke yinjiye"
+
+#: App/templates/stock.html:101
+msgid "buyingprice: "
+msgstr "igicirobyaguzweho"
+
+#: App/templates/stock.html:102
+
+msgid "quantity: "
+msgstr "Umubare:"
+
+#: App/templates/stock.html:105
+
+msgid "Debit"
+msgstr "debite"
+
+#: App/templates/stock.html:107
+
+msgid "save record"
+msgstr "Bika Ibyanditswe"
+
+#: App/templates/stock.html:117
+#, fuzzy
+msgid "debit/credit"
+msgstr "Kirediti"
+
+#: App/templates/stock.html:118
+msgid "buying price"
+msgstr "igiciro byaguzweho"
+
+#: App/templates/stock.html:119
+
+msgid "quantity"
+msgstr "Umubare"
+
+#: App/templates/stock.html:152
+msgid "Stock Analysis"
+msgstr "Isesengura ry'Ibicuruzwa"
+
+#: App/templates/stock.html:153
+msgid ""
+"An overview of your current inventory status to help you make informed "
+"restocking and supply decisions."
+msgstr "Incamake y’urumuri rw’ibicuruzwa ufite ubu, igufasha gufata ibyemezo byizewe byo "
+"kongera ibicuruzwa no gutanga ibyo ufite."
 
 #: App/templates/stock.html:82
 msgid "Are you sure you want to delete this stock record?"
@@ -654,6 +881,14 @@ msgstr "Isuzuma ry'Imikoreshereze y'Amafaranga"
 #, fuzzy
 msgid "Stock Status"
 msgstr "Ibarura ry'ibicuruzwa"
+#: App/templates/visuals.html:43
+
+msgid ""
+"Explore visual insights that help you understand your business "
+"performance at a glance."
+msgstr ""
+"Sura ibishushanyo bigufasha gusobanukirwa uko ubucuruzibukora mu buryo "
+"bwihuse."
 
 #: App/templates/stock.html:118 App/templates/stock.html:341
 msgid "Stock-Out"
