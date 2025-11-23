@@ -9,96 +9,113 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+    <!-- Mobile Header -->
     <header class="topbar">
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
         <div class="user-profile">
             <span class="user-initials">NP</span>
         </div>
     </header>
-    <nav>
-        <ul>
-            <li>
-                <a href="" class="logo">
+
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <a href="" class="logo">
                 <h1>BIZPULSE</h1>
-                </a>
-            </li>
+            </a>
+            <div class="nav-close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <ul>
             <li><a href="#Dashboard"><i data-feather="home" class="icon"></i><span class="nav-item">Dashboard</span></a></li>
             <li><a href="{{url_for('expense.display_all')}}"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">Expenses</span></a></li>
             <li><a href="{{ url_for('sale.displayall') }}"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">Sales</span></a></li>
+<<<<<<< HEAD
+            <li><a href="{{url_for('stock.displayall')}}"><i data-feather="trending-up" class="icon"></i><span class="nav-item">Stock</span></a></li>
+=======
             <li><a href="{{ url_for('stock.displayall') }}"><i data-feather="trending-up" class="icon"></i><span class="nav-item">Stock</span></a></li>
             <li><a href="./visuals.html"><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">Visuals</span></a></li>
+>>>>>>> main
             <li><a href="{{url_for('auth.logout')}}"><i data-feather="log-out" class="icon"></i><span class="nav-item">Log Out</span></a></li>
         </ul>
     </nav>
+
+    <!-- Overlay for mobile -->
+    <div class="overlay"></div>
     
+    <!-- Main Content -->
     <div class="dashboard">
         <!-- Date Filter -->
         <div class="date-filter card">
-            <h2>Filter by Date Range</h2>
+            <h2>{{_("Filter by Date Range")}}</h2>
             <div class="filter-controls">
                 <select id="period-select">
-                    <option value="current_month">Current Month</option>
-                    <option value="last_month">Last Month</option>
-                    <option value="last_3_months">Last 3 Months</option>
-                    <option value="last_6_months">Last 6 Months</option>
-                    <option value="current_year">Current Year</option>
-                    <option value="custom">Custom Range</option>
+                    <option value="current_month">{{_("Current Month")}}</option>
+                    <option value="last_month">{{_("Last Month")}}</option>
+                    <option value="last_3_months">{{_("Last 3 Months")}}</option>
+                    <option value="last_6_months">{{_("Last 6 Months")}}</option>
+                    <option value="current_year">{{_("Current Yea")}}r</option>
+                    <option value="custom">{{_("Custom Range")}}</option>
                 </select>
                 
                 <div id="custom-range" class="custom-range">
                     <input type="date" id="start-date" />
-                    <span>to</span>
+                    <span>{{_("to")}}</span>
                     <input type="date" id="end-date" />
                 </div>
                 
-                <button id="apply-filter" class="btn-primary">Apply Filter</button>
-                <button id="reset-filter" class="btn-secondary">Reset</button>
+                <button id="apply-filter" class="btn-primary">{{_("Apply Filter")}}</button>
+                <button id="reset-filter" class="btn-secondary">{{_("Reset")}}</button>
             </div>
         </div>
 
         <!-- Stats Cards -->
         <div class="stats-container">
             <div class="stat-card">
-                <h3>Total Balance</h3>
+                <h3>{{_("Total Balance")}}</h3>
                 <div class="stat-value" id="total-balance">0 RWF</div>
-                <div class="stat-period" id="balance-period">Current Period</div>
+                <div class="stat-period" id="balance-period">{{_("Current Period")}}</div>
             </div>
             
             <div class="stat-card">
-                <h3>Total Revenue</h3>
+                <h3>{{_("Total Revenue")}}</h3>
                 <div class="stat-value" id="total-revenue">0 RWF</div>
-                <div class="stat-period" id="revenue-period">Current Period</div>
+                <div class="stat-period" id="revenue-period">{{_("Current Period")}}</div>
             </div>
             
             <div class="stat-card">
-                <h3>Total Expenses</h3>
+                <h3>{{_("Total Expenses")}}</h3>
                 <div class="stat-value" id="total-expenses">0 RWF</div>
-                <div class="stat-period" id="expenses-period">Current Period</div>
+                <div class="stat-period" id="expenses-period">{{_("Current Period")}}</div>
             </div>
             
             <div class="stat-card">
-                <h3>Net Profit</h3>
+                <h3>{{_("Net Profit")}}</h3>
                 <div class="stat-value" id="net-profit">0 RWF</div>
-                <div class="stat-period" id="profit-period">Current Period</div>
+                <div class="stat-period" id="profit-period">{{_("Current Period")}}</div>
             </div>
         </div>
 
         <!-- Main Chart -->
         <div class="card main-chart">
-            <h2>Revenue vs Expenses Over Time</h2>
+            <h2>{{_("Revenue vs Expenses Over Time")}}</h2>
             <div id="bar-chart"></div>
         </div>
 
         <!-- Top Lists -->
         <div class="flex-container">
             <div class="box box-left card">
-                <h2>Top Five Expenses</h2>
-                <div id="expenses-loading" class="loading">Loading...</div>
+                <h2>{{_("Top Five Expenses")}}</h2>
+                <div id="expenses-loading" class="loading">{{_("Loading...")}}</div>
                 <ul class="top-list" id="top-expenses"></ul>
             </div>
 
             <div class="box box-right card">
-                <h2>Top Five Sales</h2>
-                <div id="sales-loading" class="loading">Loading...</div>
+                <h2>{{_("Top Five Sales")}}</h2>
+                <div id="sales-loading" class="loading">{{_("Loading...")}}</div>
                 <ul class="top-list" id="top-sales"></ul>
             </div>
         </div>
@@ -110,9 +127,29 @@
     <script src="../static/JS/dashboard.js"></script>
     <script>
         feather.replace();
+        
+        // Mobile menu functionality
+        $(document).ready(function() {
+            $('.mobile-menu-toggle').click(function() {
+                $('.sidebar').addClass('active');
+                $('.overlay').addClass('active');
+            });
+            
+            $('.nav-close, .overlay').click(function() {
+                $('.sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+        });
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

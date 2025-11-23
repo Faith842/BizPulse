@@ -8,7 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+<<<<<<< HEAD
+"POT-Creation-Date: 2025-11-23 12:45+0200\n"
+=======
 "POT-Creation-Date: 2025-11-15 16:24+0200\n"
+>>>>>>> main
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,15 +46,25 @@ msgid "you have been logout successfully, you might want to login again"
 msgstr ""
 
 #: App/routes/expensesAPI.py:25 App/routes/expensesAPI.py:62
+<<<<<<< HEAD
+=======
 #: App/routes/salesAPI.py:24 App/routes/salesAPI.py:61
 #: App/routes/stock_management.py:23 App/routes/stock_management.py:60
+>>>>>>> main
 msgid "invalid format!!"
 msgstr ""
 
-#: App/routes/expensesAPI.py:28 App/routes/salesAPI.py:27
+#: App/routes/expensesAPI.py:28
 msgid "please provide atleast productname, cost_per_unit,amount, or qauntity"
 msgstr ""
 
+<<<<<<< HEAD
+#: App/routes/expensesAPI.py:37
+msgid "record added successfully"
+msgstr ""
+
+#: App/routes/expensesAPI.py:50
+=======
 #: App/routes/expensesAPI.py:37 App/routes/salesAPI.py:36
 #: App/routes/stock_management.py:35
 msgid "record added successfully"
@@ -58,6 +72,7 @@ msgstr ""
 
 #: App/routes/expensesAPI.py:50 App/routes/salesAPI.py:49
 #: App/routes/stock_management.py:48
+>>>>>>> main
 msgid "no changes detected"
 msgstr ""
 
@@ -65,6 +80,18 @@ msgstr ""
 msgid "expense updated successfully!"
 msgstr ""
 
+<<<<<<< HEAD
+#: App/routes/expensesAPI.py:80 App/routes/salesAPI.py:87
+#: App/routes/stock_management.py:85
+msgid "No valid changes detected"
+msgstr ""
+
+#: App/routes/expensesAPI.py:93
+msgid "record no longer exists"
+msgstr ""
+
+#: App/routes/expensesAPI.py:99
+=======
 #: App/routes/expensesAPI.py:80 App/routes/salesAPI.py:79
 #: App/routes/stock_management.py:78
 msgid "No valid changes detected"
@@ -77,11 +104,57 @@ msgstr ""
 
 #: App/routes/expensesAPI.py:99 App/routes/salesAPI.py:98
 #: App/routes/stock_management.py:97
+>>>>>>> main
 msgid "record deleted successfully"
 msgstr ""
 
-#: App/routes/salesAPI.py:75
-msgid "sale updated successfully!"
+#: App/routes/salesAPI.py:24 App/routes/salesAPI.py:78
+#: App/routes/stock_management.py:23 App/routes/stock_management.py:76
+msgid "Invalid date format!"
+msgstr ""
+
+#: App/routes/salesAPI.py:28
+msgid ""
+"Please provide at least product name, price per unit, debit, quantity, "
+"and amount"
+msgstr ""
+
+#: App/routes/salesAPI.py:45 App/routes/stock_management.py:43
+msgid "Record added successfully"
+msgstr ""
+
+#: App/routes/salesAPI.py:59
+msgid "Sale record not found"
+msgstr ""
+
+#: App/routes/salesAPI.py:63 App/routes/stock_management.py:61
+msgid "No changes detected"
+msgstr ""
+
+#: App/routes/salesAPI.py:85
+msgid "Sale updated successfully!"
+msgstr ""
+
+#: App/routes/salesAPI.py:99 App/routes/stock_management.py:97
+msgid "Record no longer exists"
+msgstr ""
+
+#: App/routes/salesAPI.py:105 App/routes/stock_management.py:103
+msgid "Record deleted successfully"
+msgstr ""
+
+#: App/routes/stock_management.py:27
+msgid ""
+"Please provide at least product name, stock status, quantity, and buying "
+"price"
+msgstr ""
+
+#: App/routes/stock_management.py:57
+msgid "Stock record not found"
+msgstr ""
+
+#: App/routes/stock_management.py:83
+msgid "Stock updated successfully!"
 msgstr ""
 
 #: App/routes/stock_management.py:26
@@ -196,35 +269,129 @@ msgstr ""
 msgid "Back to Home"
 msgstr ""
 
-#: App/templates/dashboard.html:36
+#: App/templates/dashboard.html:48
+msgid "Filter by Date Range"
+msgstr ""
+
+#: App/templates/dashboard.html:51
+msgid "Current Month"
+msgstr ""
+
+#: App/templates/dashboard.html:52
+msgid "Last Month"
+msgstr ""
+
+#: App/templates/dashboard.html:53
+msgid "Last 3 Months"
+msgstr ""
+
+#: App/templates/dashboard.html:54
+msgid "Last 6 Months"
+msgstr ""
+
+#: App/templates/dashboard.html:55
+msgid "Current Yea"
+msgstr ""
+
+#: App/templates/dashboard.html:56
+msgid "Custom Range"
+msgstr ""
+
+#: App/templates/dashboard.html:61
+msgid "to"
+msgstr ""
+
+#: App/templates/dashboard.html:65
+msgid "Apply Filter"
+msgstr ""
+
+#: App/templates/dashboard.html:66
+msgid "Reset"
+msgstr ""
+
+#: App/templates/dashboard.html:73 App/templates/dashboard.html:190
 msgid "Total Balance"
 msgstr ""
 
-#: App/templates/dashboard.html:38
-msgid "October’s Revenue"
+#: App/templates/dashboard.html:75 App/templates/dashboard.html:81
+#: App/templates/dashboard.html:87 App/templates/dashboard.html:93
+msgid "Current Period"
 msgstr ""
 
-#: App/templates/dashboard.html:41
-msgid "Revenue vs Time"
+#: App/templates/dashboard.html:79
+msgid "Total Revenue"
 msgstr ""
 
-#: App/templates/dashboard.html:48
+#: App/templates/dashboard.html:85
+msgid "Total Expenses"
+msgstr ""
+
+#: App/templates/dashboard.html:91
+msgid "Net Profit"
+msgstr ""
+
+#: App/templates/dashboard.html:99
+msgid "Revenue vs Expenses Over Time"
+msgstr ""
+
+#: App/templates/dashboard.html:106 App/templates/dashboard.html:202
 msgid "Top Five Expenses"
 msgstr ""
 
-#: App/templates/dashboard.html:60
+#: App/templates/dashboard.html:107 App/templates/dashboard.html:113
+msgid "Loading..."
+msgstr ""
+
+#: App/templates/dashboard.html:112 App/templates/dashboard.html:214
 msgid "Top Five Sales"
 msgstr ""
 
+<<<<<<< HEAD
+#: App/templates/dashboard.html:192
+msgid "October’s Revenue"
+=======
 #: App/templates/expense.html:6 App/templates/sales.html:6
 #: App/templates/stock.html:6 App/templates/visuals.html:6
 msgid "BIZPULSE Dashboard"
+>>>>>>> main
 msgstr ""
 
-#: App/templates/expense.html:16 App/templates/sales.html:16
+#: App/templates/dashboard.html:195
+msgid "Revenue vs Time"
+msgstr ""
+
+#: App/templates/expense.html:6
+msgid "BIZPULSE - Expenses"
+msgstr ""
+
+#: App/templates/expense.html:20
 msgid "search by values eg:cocacola, yes for credit..."
 msgstr ""
 
+<<<<<<< HEAD
+#: App/templates/expense.html:38 App/templates/sales.html:38
+#: App/templates/stock.html:41 App/templates/stock.html:279
+msgid "Dashboard"
+msgstr ""
+
+#: App/templates/expense.html:39 App/templates/sales.html:39
+#: App/templates/stock.html:47 App/templates/stock.html:285
+msgid "Expenses"
+msgstr ""
+
+#: App/templates/expense.html:40 App/templates/sales.html:40
+#: App/templates/stock.html:53 App/templates/stock.html:291
+msgid "Sales"
+msgstr ""
+
+#: App/templates/expense.html:41 App/templates/sales.html:41
+#: App/templates/stock.html:59 App/templates/stock.html:297
+msgid "Stock"
+msgstr ""
+
+#: App/templates/expense.html:42 App/templates/sales.html:42
+#: App/templates/stock.html:65 App/templates/stock.html:309
+=======
 #: App/templates/expense.html:30 App/templates/sales.html:30
 #: App/templates/stock.html:33 App/templates/visuals.html:30
 msgid "Dashboard"
@@ -252,25 +419,30 @@ msgstr ""
 
 #: App/templates/expense.html:35 App/templates/sales.html:35
 #: App/templates/stock.html:63 App/templates/visuals.html:35
+>>>>>>> main
 msgid "Log Out"
 msgstr ""
 
-#: App/templates/expense.html:59
+#: App/templates/expense.html:71
 msgid "Expenses Overview"
 msgstr ""
 
-#: App/templates/expense.html:63 App/templates/expense.html:97
+#: App/templates/expense.html:75 App/templates/expense.html:108
 msgid "Category"
 msgstr ""
 
-#: App/templates/expense.html:64
+#: App/templates/expense.html:76
 msgid "Fixed Expenses"
 msgstr ""
 
-#: App/templates/expense.html:65
+#: App/templates/expense.html:77
 msgid "Variable Expenses"
 msgstr ""
 
+<<<<<<< HEAD
+#: App/templates/expense.html:80 App/templates/sales.html:76
+#: App/templates/stock.html:121 App/templates/stock.html:360
+=======
 #: App/templates/expense.html:68 App/templates/sales.html:64
 #: App/templates/stock.html:98
 msgid "Product name:"
@@ -339,13 +511,32 @@ msgstr ""
 
 #: App/templates/expense.html:98 App/templates/sales.html:92
 #: App/templates/stock.html:114
+>>>>>>> main
 msgid "Product name"
 msgstr ""
 
-#: App/templates/expense.html:99 App/templates/sales.html:94
+#: App/templates/expense.html:81 App/templates/sales.html:78
+#: App/templates/stock.html:125
 msgid "Quantity"
 msgstr ""
 
+<<<<<<< HEAD
+#: App/templates/expense.html:82 App/templates/expense.html:111
+#: App/templates/sales.html:77 App/templates/sales.html:105
+#: App/templates/stock.html:122 App/templates/stock.html:139
+#: App/templates/stock.html:361
+msgid "Description"
+msgstr ""
+
+#: App/templates/expense.html:83 App/templates/expense.html:112
+#: App/templates/sales.html:103 App/templates/stock.html:140
+#: App/templates/stock.html:362
+msgid "Date"
+msgstr ""
+
+#: App/templates/expense.html:84
+msgid "Cost per unit"
+=======
 #: App/templates/expense.html:100 App/templates/sales.html:93
 #: App/templates/stock.html:115
 msgid "Description"
@@ -358,21 +549,100 @@ msgstr ""
 
 #: App/templates/expense.html:102 App/templates/stock.html:104
 msgid "Credit"
+>>>>>>> main
 msgstr ""
 
-#: App/templates/expense.html:103 App/templates/sales.html:76
-#: App/templates/sales.html:97
-msgid "Payment method"
-msgstr ""
-
-#: App/templates/expense.html:104
-msgid "Price per unit"
-msgstr ""
-
-#: App/templates/expense.html:105 App/templates/sales.html:98
+#: App/templates/expense.html:85 App/templates/expense.html:116
+#: App/templates/sales.html:95 App/templates/sales.html:110
 msgid "Amount"
 msgstr ""
 
+<<<<<<< HEAD
+#: App/templates/expense.html:88 App/templates/expense.html:113
+#: App/templates/stock.html:127 App/templates/stock.html:350
+msgid "Credit"
+msgstr ""
+
+#: App/templates/expense.html:89 App/templates/sales.html:83
+msgid "Yes"
+msgstr ""
+
+#: App/templates/expense.html:90 App/templates/sales.html:84
+msgid "Not"
+msgstr ""
+
+#: App/templates/expense.html:94 App/templates/sales.html:88
+msgid "Payment Method"
+msgstr ""
+
+#: App/templates/expense.html:95 App/templates/sales.html:89
+msgid "Mobile Money"
+msgstr ""
+
+#: App/templates/expense.html:96 App/templates/sales.html:90
+msgid "Airtel Money"
+msgstr ""
+
+#: App/templates/expense.html:97 App/templates/sales.html:91
+msgid "Cash"
+msgstr ""
+
+#: App/templates/expense.html:98 App/templates/sales.html:92
+msgid "Bank"
+msgstr ""
+
+#: App/templates/expense.html:101 App/templates/sales.html:96
+#: App/templates/stock.html:130
+msgid "Save Record"
+msgstr ""
+
+#: App/templates/expense.html:107 App/templates/sales.html:102
+#: App/templates/stock.html:136 App/templates/stock.html:358
+msgid "ID"
+msgstr ""
+
+#: App/templates/expense.html:109 App/templates/sales.html:104
+#: App/templates/stock.html:138
+msgid "Product"
+msgstr ""
+
+#: App/templates/expense.html:110 App/templates/sales.html:106
+#: App/templates/stock.html:143
+msgid "Qty"
+msgstr ""
+
+#: App/templates/expense.html:114 App/templates/sales.html:109
+msgid "Payment"
+msgstr ""
+
+#: App/templates/expense.html:115 App/templates/sales.html:107
+msgid "Price/Unit"
+msgstr ""
+
+#: App/templates/expense.html:117 App/templates/sales.html:111
+#: App/templates/stock.html:144 App/templates/stock.html:366
+msgid "Actions"
+msgstr ""
+
+#: App/templates/expense.html:136 App/templates/sales.html:128
+#: App/templates/stock.html:166 App/templates/stock.html:382
+msgid "Edit"
+msgstr ""
+
+#: App/templates/expense.html:139 App/templates/sales.html:131
+#: App/templates/stock.html:169 App/templates/stock.html:385
+msgid "Remove"
+msgstr ""
+
+#: App/templates/expense.html:147 App/templates/sales.html:138
+#: App/templates/stock.html:177 App/templates/stock.html:392
+msgid "View All"
+msgstr ""
+
+#: App/templates/expense.html:151 App/templates/sales.html:142
+#: App/templates/stock.html:179
+msgid "No results found."
+=======
 #: App/templates/expense.html:106 App/templates/sales.html:99
 #: App/templates/stock.html:120
 msgid "Actions"
@@ -396,12 +666,36 @@ msgstr ""
 #: App/templates/expense.html:141 App/templates/sales.html:130
 #: App/templates/stock.html:148
 msgid " No results found."
+>>>>>>> main
 msgstr ""
 
-#: App/templates/expense.html:144
+#: App/templates/expense.html:158
+msgid "Expense Analysis by Product"
+msgstr ""
+
+#: App/templates/expense.html:159
 msgid ""
 "A visual summary of your recorded business expenses to help you monitor "
 "spending and improve financial decisions."
+msgstr ""
+
+#: App/templates/expense.html:207 App/templates/sales.html:161
+#: App/templates/stock.html:78
+msgid "Confirm Deletion"
+msgstr ""
+
+#: App/templates/expense.html:214
+msgid "Are you sure you want to delete this expense record?"
+msgstr ""
+
+#: App/templates/expense.html:217 App/templates/sales.html:171
+#: App/templates/stock.html:85
+msgid "Cancel"
+msgstr ""
+
+#: App/templates/expense.html:218 App/templates/sales.html:172
+#: App/templates/stock.html:86
+msgid "Delete"
 msgstr ""
 
 #: App/templates/login.html:6
@@ -442,53 +736,55 @@ msgstr ""
 msgid "Sign Up"
 msgstr ""
 
+<<<<<<< HEAD
+#: App/templates/sales.html:6
+msgid "BIZPULSE - Sales"
+msgstr ""
+
+#: App/templates/sales.html:20
+msgid "search by values eg:cocacola, yes for debit..."
+msgstr ""
+
+#: App/templates/sales.html:31 App/templates/stock.html:31
+#: App/templates/stock.html:273
+=======
 #: App/templates/sales.html:27 App/templates/stock.html:27
 #: App/templates/visuals.html:27
+>>>>>>> main
 msgid "BIZPULSE"
 msgstr ""
 
-#: App/templates/sales.html:59
+#: App/templates/sales.html:71
 msgid "Sales Records"
 msgstr ""
 
-#: App/templates/sales.html:60
+#: App/templates/sales.html:72
 msgid ""
 "Add and track all sales transactions to maintain accurate and up-to-date "
 "business performance data."
 msgstr ""
 
-#: App/templates/sales.html:67
-msgid "Price_per_unit:"
+#: App/templates/sales.html:79
+msgid "Price per unit"
 msgstr ""
 
-#: App/templates/sales.html:69 App/templates/sales.html:96
-msgid "debit"
+#: App/templates/sales.html:82 App/templates/sales.html:108
+#: App/templates/stock.html:128 App/templates/stock.html:351
+msgid "Debit"
 msgstr ""
 
-#: App/templates/sales.html:70
-msgid "yes"
-msgstr ""
-
-#: App/templates/sales.html:84
-msgid "Save record"
-msgstr ""
-
-#: App/templates/sales.html:90
-msgid "id"
-msgstr ""
-
-#: App/templates/sales.html:95
-msgid "Price_per_unit"
-msgstr ""
-
-#: App/templates/sales.html:134
+#: App/templates/sales.html:149
 msgid "Sales Performance Overview"
 msgstr ""
 
-#: App/templates/sales.html:135
+#: App/templates/sales.html:150
 msgid ""
 "A graphical view of your sales trends to help you analyze growth, demand,"
 " and revenue patterns."
+msgstr ""
+
+#: App/templates/sales.html:168
+msgid "Are you sure you want to delete this sales record?"
 msgstr ""
 
 #: App/templates/signup.html:6
@@ -503,6 +799,18 @@ msgstr ""
 msgid "Already have an account?"
 msgstr ""
 
+<<<<<<< HEAD
+#: App/templates/stock.html:6
+msgid "BIZPULSE - Stock"
+msgstr ""
+
+#: App/templates/stock.html:20 App/templates/stock.html:262
+msgid "Search something here..."
+msgstr ""
+
+#: App/templates/stock.html:82
+msgid "Are you sure you want to delete this stock record?"
+=======
 #: App/templates/stock.html:16 App/templates/visuals.html:16
 msgid "Search something here..."
 msgstr ""
@@ -571,16 +879,103 @@ msgstr ""
 msgid ""
 "Explore visual insights that help you understand your business "
 "performance at a glance."
+>>>>>>> main
 msgstr ""
 
-#: App/templates/visuals.html:46
-msgid "Business Visual Insights"
-msgstr ""
-
-#: App/templates/visuals.html:47
+#: App/templates/stock.html:111 App/templates/stock.html:334
 msgid ""
-"A clear side-by-side view of your sales and expenses to highlight "
-"performance trends."
+"Monitor and manage your inventory levels efficiently to reduce shortages "
+"and support smooth business operations."
+msgstr ""
+
+#: App/templates/stock.html:114 App/templates/stock.html:337
+msgid "Stock Overview"
+msgstr ""
+
+#: App/templates/stock.html:117
+msgid "Stock Status"
+msgstr ""
+
+#: App/templates/stock.html:118 App/templates/stock.html:341
+msgid "Stock-Out"
+msgstr ""
+
+#: App/templates/stock.html:119 App/templates/stock.html:342
+msgid "Stock-In"
+msgstr ""
+
+#: App/templates/stock.html:124
+msgid "Buying Price"
+msgstr ""
+
+#: App/templates/stock.html:137
+msgid "Status"
+msgstr ""
+
+#: App/templates/stock.html:141
+msgid "Type"
+msgstr ""
+
+#: App/templates/stock.html:142
+msgid "Price"
+msgstr ""
+
+#: App/templates/stock.html:186 App/templates/stock.html:398
+msgid "Stock Analysis"
+msgstr ""
+
+#: App/templates/stock.html:187 App/templates/stock.html:399
+msgid ""
+"An overview of your current inventory status to help you make informed "
+"restocking and supply decisions."
+msgstr ""
+
+#: App/templates/stock.html:252
+msgid "BIZPULSE Dashboard"
+msgstr ""
+
+#: App/templates/stock.html:303
+msgid "Visuals"
+msgstr ""
+
+#: App/templates/stock.html:340 App/templates/stock.html:359
+msgid "stock status"
+msgstr ""
+
+#: App/templates/stock.html:344
+msgid "Product name:"
+msgstr ""
+
+#: App/templates/stock.html:345
+msgid "Description:"
+msgstr ""
+
+#: App/templates/stock.html:347
+msgid "buyingprice: "
+msgstr ""
+
+#: App/templates/stock.html:348
+msgid "quantity: "
+msgstr ""
+
+#: App/templates/stock.html:353
+msgid "save record"
+msgstr ""
+
+#: App/templates/stock.html:363
+msgid "debit/credit"
+msgstr ""
+
+#: App/templates/stock.html:364
+msgid "buying price"
+msgstr ""
+
+#: App/templates/stock.html:365
+msgid "quantity"
+msgstr ""
+
+#: App/templates/stock.html:394
+msgid " No results found."
 msgstr ""
 
 #: App/templates/font/font.html:41

@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ _('BIZPULSE Dashboard') }}</title>
-
-    <link rel="stylesheet" href="../static/CSS/dashboard.css" />
+    <title>{{ _('BIZPULSE - Expenses') }}</title>
+    <link rel="stylesheet" href="../static/CSS/dashboard.css">
+    <link rel="stylesheet" href="../static/CSS/expense.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+    <!-- Mobile Header -->
     <header class="topbar">
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
         <div class="search">
             <i class="fa fa-search search-icon"></i>
             <input type="text" id="search-input" placeholder="{{ _('search by values eg:cocacola, yes for credit...') }}" />
@@ -20,34 +24,40 @@
         </div>
     </header>
 
-    <nav>
+    <!-- Navigation -->
+    <nav class="sidebar">
+        <div class="nav-header">
+            <a href="" class="logo">
+                <h1>BIZPULSE</h1>
+            </a>
+            <div class="nav-close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
         <ul>
-            <li>
-                <a href="" class="logo">
-                    <h1>BIZPULSE</h1>
-                </a>
-            </li>
             <li><a href="{{ url_for('dashboard.dashboard') }}"><i data-feather="home" class="icon"></i><span class="nav-item">{{ _('Dashboard') }}</span></a></li>
-            <li><a href="#Expenses"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">{{ _('Expenses') }}</span></a></li>
+            <li><a href="#Expenses" class="active"><i data-feather="dollar-sign" class="icon"></i><span class="nav-item">{{ _('Expenses') }}</span></a></li>
             <li><a href="{{ url_for('sale.displayall') }}"><i data-feather="shopping-cart" class="icon"></i><span class="nav-item">{{ _('Sales') }}</span></a></li>
             <li><a href="{{url_for('stock.displayall')}}"><i data-feather="trending-up" class="icon"></i><span class="nav-item">{{ _('Stock') }}</span></a></li>
-            <li><a href=""><i data-feather="bar-chart-2" class="icon"></i><span class="nav-item">{{ _('Visuals') }}</span></a></li>
             <li><a href="{{ url_for('auth.logout') }}"><i data-feather="log-out" class="icon"></i><span class="nav-item">{{ _('Log Out') }}</span></a></li>
         </ul>
     </nav>
 
-    <!-- Expenses section -->
+    <!-- Overlay for mobile -->
+    <div class="overlay"></div>
+    
+    
     <div class="dashboard">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 <ul class="flashes">
                     {% for category, message in messages %}
                         {% if category == 'success' %}
-                            <span style="color: blue;">{{ message }}</span>
+                            <span style="color: #4ade80;">{{ message }}</span>
                         {% elif category == 'danger' %}
-                            <span style="color: red;">{{ message }}</span>
+                            <span style="color: #f87171;">{{ message }}</span>
                         {% elif category == 'info' %}
-                            <span style="color: #00ff66;">{{ message }}</span>
+                            <span style="color: #60a5fa;">{{ message }}</span>
                         {% endif %}
                     {% endfor %}
                 </ul>
@@ -55,112 +65,159 @@
         {% endwith %}
 
         <div class="bottom-section" id="Expenses">
-            <div class="card expenses-info">
-                <h3>{{ _('Expenses Overview') }}</h3>
+            <!-- Expenses Overview Section -->
+            <div class="expenses-main-section">
+                <div class="card expenses-info">
+                    <h3>{{ _('Expenses Overview') }}</h3>
 
-                <form id="expenseform" action="{{ url_for('expense.add_record') }}" method="POST">
-                    <select id="category" name="category" required>
-                        <option disabled selected>{{ _('Category') }}</option>
-                        <option>{{ _('Fixed Expenses') }}</option>
-                        <option>{{ _('Variable Expenses') }}</option>
-                    </select>
+                    <form id="expenseform" action="{{ url_for('expense.add_record') }}" method="POST">
+                        <select id="category" name="category" required>
+                            <option value="" disabled selected>{{ _('Category') }}</option>
+                            <option value="Fixed Expenses">{{ _('Fixed Expenses') }}</option>
+                            <option value="Variable Expenses">{{ _('Variable Expenses') }}</option>
+                        </select>
 
-                    <input type="text" name="productname" id="productname" placeholder="{{ _('Product name:') }}" required />
-                    <input type="text" name="quantity" id="quantity" placeholder="{{ _('Quantity:') }}" required />
-                    <input type="text" name="description" id="description" placeholder="{{ _('Description:') }}" />
-                    <input type="date" name="date" id="date" placeholder="{{ _('Date:') }}" required />
-                    <input type="text" name="cost_per_unit" id="price" placeholder="{{ _('Cost per unit:') }}" />
-                    <input type="number" name="amount" id="amount" placeholder="{{ _('Amount:') }}" required />
+                        <input type="text" name="productname" id="productname" placeholder="{{ _('Product name') }}" required />
+                        <input type="text" name="quantity" id="quantity" placeholder="{{ _('Quantity') }}" required />
+                        <input type="text" name="description" id="description" placeholder="{{ _('Description') }}" />
+                        <input type="date" name="date" id="date" placeholder="{{ _('Date') }}" required />
+                        <input type="text" name="cost_per_unit" id="price" placeholder="{{ _('Cost per unit') }}" />
+                        <input type="number" name="amount" id="amount" placeholder="{{ _('Amount') }}" required />
 
-                    <select id="credit" name="credit" required>
-                        <option disabled  selected>{{ _('credit') }}</option>
-                        <option>{{ _('Yes') }}</option>
-                        <option>{{ _('Not') }}</option>
-                    </select>
+                        <select id="credit" name="credit" required>
+                            <option value="" disabled selected>{{ _('Credit') }}</option>
+                            <option value="Yes">{{ _('Yes') }}</option>
+                            <option value="Not">{{ _('Not') }}</option>
+                        </select>
 
+                        <select id="paymentmethod" name="paymentmethod" required>
+                            <option value="" disabled selected>{{ _('Payment Method') }}</option>
+                            <option value="Mobile Money">{{ _('Mobile Money') }}</option>
+                            <option value="Airtel Money">{{ _('Airtel Money') }}</option>
+                            <option value="Cash">{{ _('Cash') }}</option>
+                            <option value="Bank">{{ _('Bank') }}</option>
+                        </select>
+
+                        <button type="submit">{{ _('Save Record') }}</button>
+                    </form>
+
+                    <table id="expensetable" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>{{ _('ID') }}</th>
+                                <th>{{ _('Category') }}</th>
+                                <th>{{ _('Product') }}</th>
+                                <th>{{ _('Qty') }}</th>
+                                <th>{{ _('Description') }}</th>
+                                <th>{{ _('Date') }}</th>
+                                <th>{{ _('Credit') }}</th>
+                                <th>{{ _('Payment') }}</th>
+                                <th>{{ _('Price/Unit') }}</th>
+                                <th>{{ _('Amount') }}</th>
+                                <th>{{ _('Actions') }}</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for data in all_records %}
+                            <tr>
+                                <td>{{ data.expenseid }}</td>
+                                <td>{{ data.category }}</td>
+                                <td>{{ data.productname }}</td>
+                                <td>{{ data.quantity }}</td>
+                                <td>{{ data.description }}</td>
+                                <td>{{ data.date }}</td>
+                                <td>{{ data.credit }}</td>
+                                <td>{{ data.paymentmethod }}</td>
+                                <td>{{ data.cost_per_unit }}</td>
+                                <td>{{ data.amount }}</td>
+                                <td class="actions">
+                                    <button class="btn btn-sm btn-outline-primary edit-expense-btn" data-expense-id="{{ data.expenseid }}">
+                                        <i class="fas fa-edit"></i> {{ _('Edit') }}
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger delete-expense-btn" data-expense-id="{{ data.expenseid }}">
+                                        <i class="fas fa-trash"></i> {{ _('Remove') }}
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                     
-                    <select id="paymentmethod" name="paymentmethod" required>
-                        <option disabled  selected>{{ _('payment-method') }}</option>
-                        <option>{{ _('Mobile Money') }}</option>
-                        <option>{{ _('Airtel Money') }}</option>
-                        <option>{{ _('Cash') }}</option>
-                        <option>{{ _('Bank') }}</option>
-                    </select>
+                    <button class="toggle-rows-btn" data-table="expensetable">{{_("View All")}}</button>
+                </div>
 
-                    <button type="submit">{{ _('Save Record') }}</button>
-                </form>
-
-                <table id="expensetable" class="data-table">
-                    <thead>
-                        <tr>
-                            <th>{{ _('ID') }}</th>
-                            <th>{{ _('Category') }}</th>
-                            <th>{{ _('Product name') }}</th>
-                            <th>{{ _('Quantity') }}</th>
-                            <th>{{ _('Description') }}</th>
-                            <th>{{ _('Date') }}</th>
-                            <th>{{ _('Credit') }}</th>
-                            <th>{{ _('Payment method') }}</th>
-                            <th>{{ _('Price per unit') }}</th> 
-                            <th>{{ _('Amount') }}</th> 
-                            <th>{{ _('Actions') }}</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {% for data in all_records %}
-                        <tr>
-                            <td>{{ data.expenseid }}</td>
-                            <td>{{ data.category }}</td>
-                            <td>{{ data.productname }}</td>
-                            <td>{{ data.quantity }}</td>
-                            <td>{{ data.description }}</td>
-                            <td>{{ data.date }}</td>
-                            <td>{{ data.credit }}</td>
-                            <td>{{ data.paymentmethod }}</td>
-                            <td>{{ data.cost_per_unit }}</td>
-                            <td>{{ data.amount }}</td>
-                            
-                            
-                            <td>
-                                <button class="btn btn-sm btn-outline-primary me-2 edit-expense-btn" data-bs-toggle="modal" data-sponsor-id="{{ data.expenseid }}">
-                                    <i class="bi bi-pencil"></i> {{ _('Edit') }}
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger delete-talent-btn" data-sponsor-id="{{ data.expenseid }}">
-                                    <i class="bi bi-trash"></i> {{ _('Remove') }}
-                                </button>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                <button class="toggle-rows-btn" data-table="expensetable">{{_("View All")}}</button>
+                <div id="no-results" style="display:none;">
+                   {{_("No results found.")}}
+                </div>
             </div>
 
-            <div id="no-results" style="display:none; text-align:center; margin-top:15px; color:#ff4545; font-weight:bold;">
-               {{_(" No results found.")}}
-            </div>
-            <div class="card expenses">
-                <p>{{ _('A visual summary of your recorded business expenses to help you monitor spending and improve financial decisions.') }}</p>
-                <div id="expensechart"></div>
+            <!-- Expense Chart Section - Now below the overview -->
+            <div class="expenses-chart-section">
+                <div class="card expenses">
+                    <h3>{{ _('Expense Analysis by Product') }}</h3>
+                    <p>{{ _('A visual summary of your recorded business expenses to help you monitor spending and improve financial decisions.') }}</p>
+                    <div id="expensechart"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script>feather.replace();</script>
 
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
     <script>
         const EDIT_URL_BASE = "{{ url_for('expense.edit_record', id=0) }}";
         const ADD_URL = "{{ url_for('expense.add_record') }}";
+        
+        // Mobile menu functionality
+        $(document).ready(function() {
+            $('.mobile-menu-toggle').click(function() {
+                $('.sidebar').addClass('active');
+                $('.overlay').addClass('active');
+            });
+            
+            $('.nav-close, .overlay').click(function() {
+                $('.sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+            
+            // Set today's date as default
+            const today = new Date().toISOString().split('T')[0];
+            $('#date').val(today);
+        });
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
     <script src="{{ url_for('static', filename='JS/removeexpense.js') }}"></script>
     <script src="{{ url_for('static', filename='JS/editexpense.js') }}"></script>
+    <script src="../static/JS/removeexpense.js"></script>
     <script src="../static/JS/smartsearch.js"></script>
     <script src="../static/JS/viewall.js"></script>
     <script src="../static/JS/expense.js"></script>
+    
+    <script>
+        feather.replace();
+    </script>
+    <!-- Delete Confirmation Modal -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>{{ _('Confirm Deletion') }}</h3>
+            <span class="close-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="modal-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <p id="modalMessage">{{ _('Are you sure you want to delete this expense record?') }}</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" id="cancelDelete">{{ _('Cancel') }}</button>
+            <button class="btn btn-danger" id="confirmDelete">{{ _('Delete') }}</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>

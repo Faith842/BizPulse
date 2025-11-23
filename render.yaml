@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: alugottalent
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+    healthCheckPath: "/"
