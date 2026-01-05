@@ -137,3 +137,9 @@ Contributions are welcome!
 - Replace placeholders (OWNER/REPO, YOUR NAME, email, SECRET_KEY) before publishing.
 - For production, switch to a robust DB (Postgres/MySQL), configure secrets, enable HTTPS, and set appropriate logging and error handling.
 - Add automated tests and CI (GitHub Actions) for better reliability.
+
+## 📝 links
+-Demo Link:
+https://youtu.be/YmMDE9Uolks
+-BizPulse link
+https://bizpulse.onrender.com/
