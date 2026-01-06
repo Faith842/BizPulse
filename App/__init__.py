@@ -70,7 +70,8 @@ def create_app(test_config=None):
     @app.route('/')
     def index():
         return render_template('font/font.html')
-
+    
+#load user in session before any request
     @app.before_request
     def load_user_id():
         user_id = session.get('user_id')
