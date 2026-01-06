@@ -21,16 +21,16 @@ from .routes.expensesAPI import expensebp
 
 def create_app(test_config=None):
     app = Flask(__name__)
-    database_url = os.environ.get("DATABASE_URL")
+    #database_url = os.environ.get("DATABASE_URL")
 
     # Render sometimes provides postgres:// instead of postgresql://
-    if database_url and database_url.startswith("postgres://"):
-        database_url = database_url.replace("postgres://", "postgresql://", 1)
+    #if database_url and database_url.startswith("postgres://"):
+        #database_url = database_url.replace("postgres://", "postgresql://", 1)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] =  'sqlite:///my_database.db' #database_url
+    app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite:///my_database.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     #secret_key = os.environ.get("SECRET_KEY", "testing")
-    app.config['SECRET_KEY'] = "secret_key"
+    app.config['SECRET_KEY'] = 'secret_key'
 
     init_extensions(app) 
     with app.app_context():
